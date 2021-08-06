@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "es6",
+    "baseUrl": "src",
+    "module": "commonjs",
+    "paths": {
+      "components/*": ["./components/*"],
+      "pages/*": ["./pages/*"],
+      "assets/*": ["./assets/*"],
+      "services/*": ["./services/*"],
+      "commons/*": ["./commons/*"],
+      "templates/*": ["./templates/*"],
+      "test-utils": ["./test-utils"]
+    }
+  },
+  "moduleResolution": "classic",
+  "exclude": ["node_modules", "**/node_modules/*", "build"]
+}
