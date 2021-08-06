@@ -60,7 +60,9 @@
       "eslint"
     ],
     "*.+(js|json|md|jsx)": [
-      "prettier --write"
+      "eslint --fix",
+      "prettier --write",
+      "jest --findRelatedTests --coverage"
     ]
   },
   "husky": {
