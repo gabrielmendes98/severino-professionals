@@ -13,7 +13,7 @@ const App = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        Learn Reac
+        Learn Rea
       </a>
     </header>
   </div>

@@ -56,9 +56,12 @@
     "prettier": "^2.3.2"
   },
   "lint-staged": {
-    "*.+(js|jsx)": [
+    "src/**/*.+(js|jsx)": [
       "eslint --fix",
       "jest --findRelatedTests --coverage"
+    ],
+    "src/**/*.+(js|json|md|jsx)": [
+      "prettier --write"
     ],
     "*.+(js|json|md|jsx)": [
       "prettier --write"
