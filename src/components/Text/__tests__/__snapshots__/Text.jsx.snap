@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin-top: 16px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 16px;
+  color: #363636;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  font-family: Roboto;
+}
+
+<p
+    class="MuiTypography-root c0 MuiTypography-body1"
+    margin="[object Object]"
+    required=""
+    transform="uppercase"
+  >
+    Test Text *
+  </p>
+</DocumentFragment>
+`;
