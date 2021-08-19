@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Container, Toolbar } from '@material-ui/core';
+import PAGE_URL from 'commons/constants/routes';
 import AppBrand from 'components/AppBrand';
 import Button from 'components/Button';
 import { AppBar, Divider } from './style';
@@ -17,13 +18,13 @@ const Header = () => {
           <Button
             color="inherit"
             component={Link}
-            to={signed ? '/profile' : '/login'}
+            to={signed ? PAGE_URL.PROFILE : PAGE_URL.LOGIN}
           >
             {signed ? 'Perfil' : 'Login'}
           </Button>
 
           {!signed && (
-            <Button color="inherit" component={Link} to="/sign-up">
+            <Button color="inherit" component={Link} to={PAGE_URL.SIGN_UP}>
               Cadastre-se
             </Button>
           )}

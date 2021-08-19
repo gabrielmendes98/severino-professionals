@@ -4,6 +4,7 @@
     "target": "es6",
     "baseUrl": "src",
     "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "components/*": ["./components/*"],
       "pages/*": ["./pages/*"],

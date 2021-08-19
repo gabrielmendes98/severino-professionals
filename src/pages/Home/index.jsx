@@ -4,6 +4,7 @@ import { Container } from '@material-ui/core';
 
 import joinUs from 'assets/doodles/join-us.svg';
 import goingUp from 'assets/doodles/going-up.svg';
+import PAGE_URL from 'commons/constants/routes';
 import Text from 'components/Text';
 import Doodle from 'components/Doodle';
 import { Grid } from 'components/Styled';
@@ -38,7 +39,11 @@ const Home = () => (
               Seja um profissional do Severino e divulgue seu trabalho
               gratuitamente
             </Text>
-            <WhiteButton variant="contained" component={Link} to="/sign-up">
+            <WhiteButton
+              variant="contained"
+              component={Link}
+              to={PAGE_URL.SIGN_UP}
+            >
               Cadastre-se
             </WhiteButton>
           </Grid>
