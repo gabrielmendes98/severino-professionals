@@ -6,7 +6,16 @@ const Button = ({ children, ...props }) => (
 );
 
 Button.propTypes = {
+  type: PropTypes.oneOf(['submit', 'button']),
+  color: PropTypes.string,
+  variant: PropTypes.oneOf(['contained', 'outlined', 'text']),
   children: PropTypes.any.isRequired,
+};
+
+Button.defaultProps = {
+  type: 'button',
+  color: 'primary',
+  variant: 'contained',
 };
 
 export default Button;

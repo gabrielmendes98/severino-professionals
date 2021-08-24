@@ -8,18 +8,24 @@
     "@fontsource/ubuntu": "^4.5.0",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
+    "formik": "^2.2.9",
+    "jwt-decode": "^3.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-input-mask": "^2.0.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-slick": "^0.28.1",
     "react-toastify": "^7.0.4",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.0",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:prod": "sh -ac '. ./.env.production; react-scripts start'",
     "build": "react-scripts build",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -61,6 +67,7 @@
     "husky": "4",
     "jest-styled-components": "^7.0.5",
     "lint-staged": "^11.1.1",
+    "msw": "^0.35.0",
     "prettier": "^2.3.2"
   },
   "husky": {
@@ -76,5 +83,8 @@
     "**/*.+(js|json|md|jsx)": [
       "prettier --write"
     ]
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

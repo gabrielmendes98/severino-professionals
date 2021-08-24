@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import PAGE_URL from 'commons/constants/routes';
 import Home from 'pages/Home';
 import NotFound from 'pages/NotFound';
+import Login from 'pages/Login';
 import Loading from 'components/Loading';
 import Main from 'components/Main';
 
@@ -12,6 +13,7 @@ const Routes = () => (
       <Suspense fallback={<Loading fullScreen />}>
         <Switch>
           <Route path={PAGE_URL.HOME} component={Home} exact />
+          <Route path={PAGE_URL.LOGIN} component={Login} exact />
 
           <Route component={NotFound} />
         </Switch>

@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Container, Toolbar } from '@material-ui/core';
 import PAGE_URL from 'commons/constants/routes';
+import useUser from 'commons/contexts/User/useUser';
 import AppBrand from 'components/AppBrand';
 import Button from 'components/Button';
 import { AppBar, Divider } from './style';
 
 const Header = () => {
-  const signed = false;
+  const { signed } = useUser();
   const signOutUser = () => {};
 
   return (
@@ -16,6 +17,7 @@ const Header = () => {
           <AppBrand data-testid="brand" />
           <Divider />
           <Button
+            variant="text"
             color="inherit"
             component={Link}
             to={signed ? PAGE_URL.PROFILE : PAGE_URL.LOGIN}
@@ -24,13 +26,18 @@ const Header = () => {
           </Button>
 
           {!signed && (
-            <Button color="inherit" component={Link} to={PAGE_URL.SIGN_UP}>
+            <Button
+              variant="text"
+              color="inherit"
+              component={Link}
+              to={PAGE_URL.SIGN_UP}
+            >
               Cadastre-se
             </Button>
           )}
 
           {signed && (
-            <Button color="inherit" onClick={signOutUser}>
+            <Button variant="text" color="inherit" onClick={signOutUser}>
               Sair
             </Button>
           )}

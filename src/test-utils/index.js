@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { render, configure, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import { Form, Formik } from 'formik';
 import MainProvider from 'commons/providers/MainProvider';
 
 configure({ testIdAttribute: 'id' });
@@ -10,6 +11,11 @@ const RouteWrapper = ({ children }) => (
   <Wrapper>
     <BrowserRouter>{children}</BrowserRouter>
   </Wrapper>
+);
+const FormikWrapper = ({ children, initialValues }) => (
+  <Formik initialValues={initialValues}>
+    <Form>{children}</Form>
+  </Formik>
 );
 
 const customRender = (ui, options) =>
@@ -41,4 +47,5 @@ export {
   toMatchSnapshot,
   asFragment,
   renderWithRouter,
+  FormikWrapper,
 };

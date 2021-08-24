@@ -3,7 +3,7 @@ const PAGE_URL = {
   ABOUT_US: '/about-us',
   TERMS_AND_CONDITIONS: '/terms-and-conditions',
   SIGN_UP: '/sign-up',
-  PROFILE: 'profile',
+  PROFILE: '/profile',
   LOGIN: '/login',
 };
 
