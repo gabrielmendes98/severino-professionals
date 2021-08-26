@@ -72,13 +72,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "jest --coverage"
     }
   },
   "lint-staged": {
-    "src/**/*.+(js|jsx)": [
+    "./src/**/*.+(js|jsx)": [
       "eslint --fix",
-      "jest --findRelatedTests --coverage"
+      "jest --findRelatedTests"
     ],
     "**/*.+(js|json|md|jsx)": [
       "prettier --write"

@@ -1,6 +1,7 @@
 import { renderWithRouter, screen, userEvent } from 'test-utils';
 import PAGE_URL from 'commons/constants/routes';
 import UserProvider, { UserContext } from 'commons/contexts/User';
+import { getToken } from 'commons/utils/storage';
 import Header from '..';
 
 it('should redirect to home', () => {
@@ -49,6 +50,6 @@ describe('when user is signed', () => {
 
   it('should sign-out', () => {
     userEvent.click(screen.getByText(/sair/i));
-    expect(localStorage.getItem('token')).toBeFalsy();
+    expect(getToken()).toBeFalsy();
   });
 });

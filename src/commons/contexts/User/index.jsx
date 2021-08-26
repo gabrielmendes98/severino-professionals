@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import api from 'services/api';
 import API_ROUTES from 'services/routes';
+import { getToken, removeToken, setToken } from 'commons/utils/storage';
 import PAGE_URL from 'commons/constants/routes';
 import Loading from 'components/Loading';
 
@@ -16,7 +17,7 @@ const UserProvider = ({ children, history }) => {
   const login = ({ email, password }) =>
     api.post(API_ROUTES.LOGIN, { email, password }).then(({ token }) => {
       const decodedToken = jwtDecode(token);
-      localStorage.setItem('token', token);
+      setToken(token);
       setUser(decodedToken.user);
       api.defaults.headers.Authorization = `Bearer ${token}`;
       history.push(PAGE_URL.PROFILE);
@@ -24,14 +25,14 @@ const UserProvider = ({ children, history }) => {
 
   const signOut = () => {
     setUser(null);
-    localStorage.removeItem('token');
+    removeToken();
     api.defaults.headers.Authorization = undefined;
   };
 
   const signed = Boolean(user);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = getToken();
     if (token) {
       const decodedToken = jwtDecode(token);
       setUser(decodedToken.user);

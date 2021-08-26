@@ -1,6 +1,7 @@
 import { renderWithRouter, screen, userEvent, waitFor } from 'test-utils';
 import UserProvider from 'commons/contexts/User';
 import PAGE_URL from 'commons/constants/routes';
+import { getToken } from 'commons/utils/storage';
 import Login from '..';
 
 it('should login and redirect to profile', async () => {
@@ -15,5 +16,5 @@ it('should login and redirect to profile', async () => {
   userEvent.click(screen.getByRole('button', { name: /entrar/i }));
 
   await waitFor(() => expect(window.location.pathname).toBe(PAGE_URL.PROFILE));
-  expect(localStorage.getItem('token')).toBeTruthy();
+  expect(getToken()).toBeTruthy();
 });
