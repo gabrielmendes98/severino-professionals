@@ -320,12 +320,6 @@
     "no-new-wrappers": "error",
     "radix": "error",
     "camelcase": "error",
-    "new-cap": [
-      "error",
-      {
-        "newIsCap": true
-      }
-    ],
     "no-underscore-dangle": "error",
     "no-restricted-globals": ["error", "event"],
     "complexity": ["error", 8],

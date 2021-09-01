@@ -14,3 +14,7 @@ export const FooterContainer = styled.footer`
 export const StyledAppBrand = styled(AppBrand)`
   text-align: center;
 `;
+
+export const Wrapper = styled.div`
+  display: flex;
+`;

@@ -1,16 +1,38 @@
 import axios from 'axios';
+import loading from 'commons/utils/loading';
 
-const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
-});
+const createApi = (baseURL = '') => {
+  const api = axios.create({
+    baseURL,
+  });
 
-const responseHandler = response => response.data;
+  api.interceptors.request.use(
+    config => {
+      loading.show();
+      return config;
+    },
+    error => {
+      loading.hide();
+      return Promise.reject(error);
+    },
+  );
 
-const errorHandler = error => Promise.reject(error);
+  api.interceptors.response.use(
+    response => {
+      loading.hide();
+      return response.data;
+    },
+    error => {
+      loading.hide();
+      return Promise.reject(error);
+    },
+  );
 
-api.interceptors.response.use(
-  response => responseHandler(response),
-  error => errorHandler(error),
-);
+  return api;
+};
 
-export default api;
+const defaultApi = createApi(process.env.REACT_APP_API_URL);
+const ibgeApi = createApi(process.env.REACT_APP_IBGE_API_URL);
+
+export { ibgeApi };
+export default defaultApi;

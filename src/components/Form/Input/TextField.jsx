@@ -6,11 +6,11 @@ const TextField = ({ name, id, ...otherProps }) => {
   const [field, meta] = useField(name);
 
   const configTextfield = {
+    ...field,
     fullWidth: true,
     variant: 'outlined',
     size: 'small',
     id: id || name,
-    ...field,
     ...otherProps,
   };
 

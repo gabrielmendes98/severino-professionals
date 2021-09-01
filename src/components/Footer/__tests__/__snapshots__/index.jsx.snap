@@ -43,7 +43,7 @@ exports[`should match snapshot 1`] = `
   font-family: Roboto;
 }
 
-.c0 {
+.c1 {
   margin-top: 80px;
   margin-left: 0px;
   margin-right: 0px;
@@ -55,7 +55,7 @@ exports[`should match snapshot 1`] = `
   cursor: pointer;
 }
 
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -71,11 +71,12 @@ exports[`should match snapshot 1`] = `
   text-align: center;
 }
 
-<div
-    class="MuiGrid-root c0 MuiGrid-container"
+<footer
+    class="c0 MuiGrid-root c1 MuiGrid-container"
   >
-    <footer
-      class="c1 MuiContainer-root MuiContainer-maxWidthXl"
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthXl"
+      style="display: flex;"
     >
       <div
         class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-center MuiGrid-grid-sm-4"
@@ -246,7 +247,7 @@ exports[`should match snapshot 1`] = `
           </a>
         </p>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 </DocumentFragment>
 `;

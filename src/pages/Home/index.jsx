@@ -13,7 +13,7 @@ import CarouselItem from './CarouselItem';
 import { Wrapper, WhiteButton } from './style';
 
 const Home = () => (
-  <Grid container distance={{ bottom: 20 }}>
+  <Grid container padding={{ bottom: 20 }}>
     <Grid item xs={12} margin={{ bottom: 10 }}>
       <Container maxWidth="lg">
         <Carousel {...carouselSettings}>

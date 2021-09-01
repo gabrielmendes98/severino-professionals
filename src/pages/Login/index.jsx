@@ -43,7 +43,7 @@ const Login = () => {
               onSubmit={onSubmit}
               validationSchema={validations}
             >
-              <Form>
+              <Form noValidate>
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
                     <Input name="email" label="E-mail" />

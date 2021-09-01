@@ -12,8 +12,8 @@ const RouteWrapper = ({ children }) => (
     <BrowserRouter>{children}</BrowserRouter>
   </Wrapper>
 );
-const FormikWrapper = ({ children, initialValues }) => (
-  <Formik initialValues={initialValues}>
+const FormikWrapper = ({ children, initialValues, ...config }) => (
+  <Formik initialValues={initialValues} {...config}>
     <Form>{children}</Form>
   </Formik>
 );

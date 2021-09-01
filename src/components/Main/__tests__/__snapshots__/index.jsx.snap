@@ -61,14 +61,14 @@ exports[`should match snapshot 1`] = `
   font-family: Roboto;
 }
 
-.c5 {
+.c6 {
   margin-top: 80px;
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 0px;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -167,11 +167,12 @@ exports[`should match snapshot 1`] = `
         Test
       </div>
     </main>
-    <div
-      class="MuiGrid-root c5 MuiGrid-container"
+    <footer
+      class="c5 MuiGrid-root c6 MuiGrid-container"
     >
-      <footer
-        class="c6 MuiContainer-root MuiContainer-maxWidthXl"
+      <div
+        class="MuiContainer-root MuiContainer-maxWidthXl"
+        style="display: flex;"
       >
         <div
           class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-center MuiGrid-grid-sm-4"
@@ -342,8 +343,8 @@ exports[`should match snapshot 1`] = `
             </a>
           </p>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   </div>
 </DocumentFragment>
 `;

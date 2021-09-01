@@ -10,8 +10,8 @@ import { Grid } from 'components/Styled';
 import { FooterContainer, StyledAppBrand } from './style';
 
 const Footer = () => (
-  <Grid container margin={{ top: 10 }}>
-    <Container maxWidth="xl" component={FooterContainer}>
+  <Grid container margin={{ top: 10 }} component={FooterContainer}>
+    <Container maxWidth="xl" style={{ display: 'flex' }}>
       <Grid container item sm={4} justifyContent="center">
         <Grid container item xs={12} justifyContent="center">
           <StyledAppBrand />
