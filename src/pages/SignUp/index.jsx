@@ -75,7 +75,6 @@ const SignUp = () => {
               initialValues={initialValues}
               onSubmit={onSubmit}
               validationSchema={validations}
-              validate={() => ({ hasWhatsapp: 'deoke' })}
             >
               {({ setFieldValue }) => (
                 <Form noValidate>

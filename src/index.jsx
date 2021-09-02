@@ -3,9 +3,13 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+console.log(process.env.NODE_ENV);
+
 if (process.env.NODE_ENV === 'development' && process.env.REACT_APP_MOCK_ON) {
   const { worker } = require('./services/mocks/browser');
-  worker.start();
+  worker.start({
+    onUnhandledRequest: 'bypass',
+  });
 }
 
 ReactDOM.render(
