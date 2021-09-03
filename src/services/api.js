@@ -1,5 +1,7 @@
 import axios from 'axios';
+import { ERRORS } from 'commons/constants';
 import loading from 'commons/utils/loading';
+import { toast } from 'commons/utils/toast';
 
 const createApi = (baseURL = '') => {
   const api = axios.create({
@@ -24,6 +26,8 @@ const createApi = (baseURL = '') => {
     },
     error => {
       loading.hide();
+      const message = error.response?.data?.message;
+      toast.error(message || ERRORS.DEFAULT);
       return Promise.reject(error);
     },
   );
