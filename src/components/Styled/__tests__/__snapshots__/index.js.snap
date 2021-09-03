@@ -16,5 +16,8 @@ exports[`Styled Grid should match snapshot 1`] = `
 <div
     class="MuiGrid-root c0"
   />
+  <div
+    class="Toastify"
+  />
 </DocumentFragment>
 `;

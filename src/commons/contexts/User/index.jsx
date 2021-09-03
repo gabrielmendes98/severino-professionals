@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import api from 'services/api';
 import API_ROUTES from 'services/routes';
+import { toast } from 'commons/utils/toast';
 import { getToken, removeToken, setToken } from 'commons/utils/storage';
 import PAGE_URL from 'commons/constants/routes';
 import Loading from 'components/Loading';
@@ -20,6 +21,7 @@ const UserProvider = ({ children, history }) => {
       setToken(token);
       setUser(decodedToken.user);
       api.defaults.headers.Authorization = `Bearer ${token}`;
+      toast.success('Bem-vindo(a) ao Severino!');
       history.push(PAGE_URL.PROFILE);
     });
 
@@ -29,6 +31,21 @@ const UserProvider = ({ children, history }) => {
     api.defaults.headers.Authorization = undefined;
   };
 
+  const changePassword = ({ newPassword, currentPassword }) => {
+    api
+      .put(API_ROUTES.WORKER_ID(user.id), { newPassword, currentPassword })
+      .then(() => {
+        toast.success('Senha trocada com sucesso!');
+        history.push(PAGE_URL.PROFILE);
+      });
+  };
+
+  const signUp = data => {
+    api
+      .post(API_ROUTES.WORKERS, data)
+      .then(() => login({ email: data.email, password: data.password }));
+  };
+
   const signed = Boolean(user);
 
   useEffect(() => {
@@ -36,12 +53,15 @@ const UserProvider = ({ children, history }) => {
     if (token) {
       const decodedToken = jwtDecode(token);
       setUser(decodedToken.user);
+      api.defaults.headers.Authorization = `Bearer ${token}`;
     }
     setLoading(false);
   }, []);
 
   return (
-    <UserContext.Provider value={{ login, user, signed, signOut }}>
+    <UserContext.Provider
+      value={{ login, user, signed, signOut, changePassword, signUp }}
+    >
       {loading ? <Loading fullScreen /> : children}
     </UserContext.Provider>
   );

@@ -25,5 +25,8 @@ exports[`should match snapshot 1`] = `
   >
     Test Text *
   </p>
+  <div
+    class="Toastify"
+  />
 </DocumentFragment>
 `;

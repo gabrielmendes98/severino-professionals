@@ -5,6 +5,7 @@ import Home from 'pages/Home';
 import NotFound from 'pages/NotFound';
 import Login from 'pages/Login';
 import SignUp from 'pages/SignUp';
+import ChangePassword from 'pages/ChangePassword';
 import Loading from 'components/Loading';
 import Main from 'components/Main';
 
@@ -16,6 +17,11 @@ const Routes = () => (
           <Route path={PAGE_URL.HOME} component={Home} exact />
           <Route path={PAGE_URL.LOGIN} component={Login} exact />
           <Route path={PAGE_URL.SIGN_UP} component={SignUp} exact />
+          <Route
+            path={PAGE_URL.CHANGE_PASSWORD}
+            component={ChangePassword}
+            exact
+          />
 
           <Route component={NotFound} />
         </Switch>

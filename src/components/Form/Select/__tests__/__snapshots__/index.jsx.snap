@@ -70,5 +70,8 @@ exports[`should match snapshot 1`] = `
       </div>
     </div>
   </form>
+  <div
+    class="Toastify"
+  />
 </DocumentFragment>
 `;

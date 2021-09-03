@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Form, Formik } from 'formik';
-import API_ROUTES, { IBGE_API_ROUTES } from 'services/routes';
-import api, { ibgeApi } from 'services/api';
+import { IBGE_API_ROUTES } from 'services/routes';
+import { ibgeApi } from 'services/api';
 import signUpDoodle from 'assets/doodles/sign-up.svg';
 import useUser from 'commons/contexts/User/useUser';
 import { Grid } from 'components/Styled';
@@ -21,15 +21,13 @@ import {
 import { StyledGrid, Paper } from './style';
 
 const SignUp = () => {
-  const { login } = useUser();
+  const { signUp } = useUser();
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState();
 
   const onSubmit = values => {
     const data = parseDataToService(values);
-    api
-      .post(API_ROUTES.WORKERS, data)
-      .then(() => login({ email: values.email, password: values.password }));
+    signUp(data);
   };
 
   const onChangeState = (event, setFieldValue) => {

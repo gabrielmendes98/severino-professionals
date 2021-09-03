@@ -11,5 +11,8 @@ exports[`should match snapshot 1`] = `
     class="c0"
     size="2"
   />
+  <div
+    class="Toastify"
+  />
 </DocumentFragment>
 `;

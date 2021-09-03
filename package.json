@@ -26,6 +26,7 @@
   "scripts": {
     "start": "react-scripts start",
     "start:prod": "sh -ac '. ./.env.production; react-scripts start'",
+    "start:prod-mock": "export REACT_APP_MOCK_ON=true || set REACT_APP_MOCK_ON=true && sh -ac '. ./.env.production; react-scripts start'",
     "build": "react-scripts build",
     "test": "jest",
     "test:coverage": "jest --coverage",

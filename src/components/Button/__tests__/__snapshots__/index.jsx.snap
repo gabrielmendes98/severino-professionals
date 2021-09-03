@@ -16,5 +16,8 @@ exports[`should match snapshot 1`] = `
       class="MuiTouchRipple-root"
     />
   </button>
+  <div
+    class="Toastify"
+  />
 </DocumentFragment>
 `;

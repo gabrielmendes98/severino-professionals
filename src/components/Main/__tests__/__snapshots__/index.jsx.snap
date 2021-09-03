@@ -346,5 +346,8 @@ exports[`should match snapshot 1`] = `
       </div>
     </footer>
   </div>
+  <div
+    class="Toastify"
+  />
 </DocumentFragment>
 `;
