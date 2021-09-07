@@ -5,6 +5,7 @@ import Home from 'pages/Home';
 import NotFound from 'pages/NotFound';
 import Login from 'pages/Login';
 import SignUp from 'pages/SignUp';
+import Profile from 'pages/Profile';
 import ChangePassword from 'pages/ChangePassword';
 import Loading from 'components/Loading';
 import Main from 'components/Main';
@@ -22,6 +23,7 @@ const Routes = () => (
             component={ChangePassword}
             exact
           />
+          <Route path={PAGE_URL.PROFILE} component={Profile} exact />
 
           <Route component={NotFound} />
         </Switch>

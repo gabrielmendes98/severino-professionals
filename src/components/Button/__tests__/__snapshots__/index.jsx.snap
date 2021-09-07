@@ -2,8 +2,50 @@
 
 exports[`should match snapshot 1`] = `
 <DocumentFragment>
-  <button
-    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+  .c0 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+<button
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained c0 MuiButton-containedPrimary"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      Test button
+    </span>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
+  <div
+    class="Toastify"
+  />
+</DocumentFragment>
+`;
+
+exports[`should match snapshot with custom color 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  background-color: #F44336;
+  color: #fff;
+}
+
+.c0:hover {
+  background-color: rgb(195,53,43);
+}
+
+<button
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained c0"
     tabindex="0"
     type="button"
   >

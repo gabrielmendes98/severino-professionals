@@ -7,8 +7,7 @@ import Button from 'components/Button';
 import { AppBar, Divider } from './style';
 
 const Header = () => {
-  const { signed } = useUser();
-  const signOutUser = () => {};
+  const { signed, signOut } = useUser();
 
   return (
     <AppBar position="static" color="default" elevation={2}>
@@ -37,7 +36,7 @@ const Header = () => {
           )}
 
           {signed && (
-            <Button variant="text" color="inherit" onClick={signOutUser}>
+            <Button variant="text" color="inherit" onClick={signOut}>
               Sair
             </Button>
           )}

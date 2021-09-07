@@ -1,35 +1,28 @@
 /* eslint-disable func-names */
 /* eslint-disable func-style */
 
+import api from 'services/api';
+import API_ROUTES from 'services/routes';
 import yup from 'commons/utils/yup';
 
 const initialValues = {
-  email: '',
   name: '',
   lastName: '',
+  email: '',
+  description: '',
   phone: '',
-  hasWhatsapp: false,
   state: '',
   city: '',
-  password: '',
-  confirmPassword: '',
+  hasWhatsapp: false,
 };
 
 const validations = yup.object().shape({
-  email: yup.string().trim().email().required(),
   name: yup.string().trim().required(),
   lastName: yup.string().trim().required(),
+  email: yup.string().trim().email().required(),
   phone: yup.string().trim().phone().required(),
   state: yup.string().trim().required(),
   city: yup.string().trim().required(),
-  password: yup.string().trim().min(6).required(),
-  confirmPassword: yup
-    .string()
-    .trim()
-    .min(6)
-    .test('passwords-match', 'As senhas devem ser iguais', function (value) {
-      return this.parent.password === value;
-    }),
 });
 
 const parseStateToSelect = states =>
@@ -47,10 +40,31 @@ const parseDataToService = values => {
   };
 };
 
+const parseUserToForm = user => {
+  const { name, avatarUrl, ...other } = user;
+
+  const firstOccurrence = name.indexOf(' ');
+  const [firstName, lastName] = [
+    name.slice(0, firstOccurrence),
+    name.slice(firstOccurrence + 1),
+  ];
+
+  return {
+    ...other,
+    name: firstName,
+    lastName,
+    description: other.description ?? initialValues.description,
+  };
+};
+
+const saveUserData = (values, userId) =>
+  api.put(API_ROUTES.WORKER_ID(userId), parseDataToService(values));
+
 export {
   initialValues,
   validations,
   parseStateToSelect,
   parseCityToSelect,
-  parseDataToService,
+  parseUserToForm,
+  saveUserData,
 };

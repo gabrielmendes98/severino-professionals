@@ -24,7 +24,9 @@ const Checkbox = ({ name, label, legend, ...otherProps }) => {
       <FormLabel component="legend">{legend}</FormLabel>
       <FormGroup>
         <FormControlLabel
-          control={<MuiCheckbox {...configCheckbox} />}
+          control={
+            <MuiCheckbox checked={configCheckbox.value} {...configCheckbox} />
+          }
           label={label}
         />
       </FormGroup>

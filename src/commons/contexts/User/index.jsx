@@ -29,6 +29,7 @@ const UserProvider = ({ children, history }) => {
     setUser(null);
     removeToken();
     api.defaults.headers.Authorization = undefined;
+    history.push(PAGE_URL.HOME);
   };
 
   const changePassword = ({ newPassword, currentPassword }) => {

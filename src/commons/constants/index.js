@@ -5,3 +5,5 @@ export const SEVERINO_EMAIL = 'severino@gmail.com';
 export const ERRORS = {
   DEFAULT: 'Ocorreu um erro inesperado, tente novamente.',
 };
+
+export const SUCCESS_OPERATION_MESSAGE = 'Operação realizada com sucesso!';

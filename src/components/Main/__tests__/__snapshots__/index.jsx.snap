@@ -7,6 +7,13 @@ exports[`should match snapshot 1`] = `
   cursor: pointer;
 }
 
+.c4 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
 .c1 {
   background-color: #FFFFFF;
   border-bottom: 1px solid #DDDDDD;
@@ -20,7 +27,7 @@ exports[`should match snapshot 1`] = `
   flex-grow: 1;
 }
 
-.c8 {
+.c9 {
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -35,7 +42,7 @@ exports[`should match snapshot 1`] = `
   font-family: Roboto;
 }
 
-.c9 {
+.c10 {
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -48,7 +55,7 @@ exports[`should match snapshot 1`] = `
   font-family: Roboto;
 }
 
-.c10 {
+.c11 {
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -61,14 +68,14 @@ exports[`should match snapshot 1`] = `
   font-family: Roboto;
 }
 
-.c6 {
+.c7 {
   margin-top: 80px;
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 0px;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -80,7 +87,7 @@ exports[`should match snapshot 1`] = `
   padding-bottom: 40px;
 }
 
-.c7 {
+.c8 {
   text-align: center;
 }
 
@@ -96,7 +103,7 @@ exports[`should match snapshot 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c5 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -127,7 +134,7 @@ exports[`should match snapshot 1`] = `
           />
           <a
             aria-disabled="false"
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text c4 MuiButton-colorInherit"
             href="/login"
             role="button"
             tabindex="0"
@@ -143,7 +150,7 @@ exports[`should match snapshot 1`] = `
           </a>
           <a
             aria-disabled="false"
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text c4 MuiButton-colorInherit"
             href="/sign-up"
             role="button"
             tabindex="0"
@@ -161,14 +168,14 @@ exports[`should match snapshot 1`] = `
       </div>
     </header>
     <main
-      class="c4"
+      class="c5"
     >
       <div>
         Test
       </div>
     </main>
     <footer
-      class="c5 MuiGrid-root c6 MuiGrid-container"
+      class="c6 MuiGrid-root c7 MuiGrid-container"
     >
       <div
         class="MuiContainer-root MuiContainer-maxWidthXl"
@@ -182,7 +189,7 @@ exports[`should match snapshot 1`] = `
           >
             <img
               alt="Severino"
-              class="c2 c7"
+              class="c2 c8"
               src="[object Object]"
             />
           </div>
@@ -275,7 +282,7 @@ exports[`should match snapshot 1`] = `
           class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-center MuiGrid-grid-sm-4"
         >
           <p
-            class="MuiTypography-root c8 MuiTypography-body1"
+            class="MuiTypography-root c9 MuiTypography-body1"
             margin="[object Object]"
             size="1.1"
             textcolor="secondary"
@@ -285,7 +292,7 @@ exports[`should match snapshot 1`] = `
             Ajuda & Dúvidas
           </p>
           <p
-            class="MuiTypography-root c9 MuiTypography-body1"
+            class="MuiTypography-root c10 MuiTypography-body1"
             margin="[object Object]"
             transform=""
           >
@@ -298,7 +305,7 @@ exports[`should match snapshot 1`] = `
             </a>
           </p>
           <p
-            class="MuiTypography-root c9 MuiTypography-body1"
+            class="MuiTypography-root c10 MuiTypography-body1"
             margin="[object Object]"
             transform=""
           >
@@ -309,7 +316,7 @@ exports[`should match snapshot 1`] = `
             </a>
           </p>
           <p
-            class="MuiTypography-root c10 MuiTypography-body1"
+            class="MuiTypography-root c11 MuiTypography-body1"
             transform=""
           >
             <a
@@ -323,7 +330,7 @@ exports[`should match snapshot 1`] = `
           class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-center MuiGrid-grid-sm-4"
         >
           <p
-            class="MuiTypography-root c8 MuiTypography-body1"
+            class="MuiTypography-root c9 MuiTypography-body1"
             margin="[object Object]"
             size="1.1"
             textcolor="secondary"
@@ -333,7 +340,7 @@ exports[`should match snapshot 1`] = `
             Contatos
           </p>
           <p
-            class="MuiTypography-root c10 MuiTypography-body1"
+            class="MuiTypography-root c11 MuiTypography-body1"
             transform=""
           >
             <a

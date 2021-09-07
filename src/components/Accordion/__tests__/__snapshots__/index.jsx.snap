@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot when accordion is closed 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  color: #3700B3;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  font-family: Roboto;
+}
+
+<div
+    class="MuiPaper-root MuiAccordion-root MuiAccordion-rounded MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <div
+      aria-controls="test-content"
+      aria-disabled="false"
+      aria-expanded="false"
+      class="MuiButtonBase-root MuiAccordionSummary-root"
+      id="test-header"
+      role="button"
+      tabindex="0"
+    >
+      <div
+        class="MuiAccordionSummary-content"
+      >
+        <p
+          class="MuiTypography-root c0 MuiTypography-body1"
+          textcolor="secondary"
+          transform=""
+        >
+          Test Accordion
+        </p>
+      </div>
+      <div
+        aria-disabled="false"
+        aria-hidden="true"
+        class="MuiButtonBase-root MuiIconButton-root MuiAccordionSummary-expandIcon MuiIconButton-edgeEnd"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="Toastify"
+  />
+</DocumentFragment>
+`;
+
+exports[`should match snapshot when accordion is opened 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  color: #3700B3;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  font-family: Roboto;
+}
+
+<div
+    class="MuiPaper-root MuiAccordion-root Mui-expanded MuiAccordion-rounded MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <div
+      aria-controls="test-content"
+      aria-disabled="false"
+      aria-expanded="true"
+      class="MuiButtonBase-root MuiAccordionSummary-root Mui-expanded"
+      id="test-header"
+      role="button"
+      tabindex="0"
+    >
+      <div
+        class="MuiAccordionSummary-content Mui-expanded"
+      >
+        <p
+          class="MuiTypography-root c0 MuiTypography-body1"
+          textcolor="secondary"
+          transform=""
+        >
+          Test Accordion
+        </p>
+      </div>
+      <div
+        aria-disabled="false"
+        aria-hidden="true"
+        class="MuiButtonBase-root MuiIconButton-root MuiAccordionSummary-expandIcon Mui-expanded MuiIconButton-edgeEnd"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </div>
+    </div>
+    <div
+      class="MuiCollapse-root MuiCollapse-entered"
+      style="min-height: 0px;"
+    >
+      <div
+        class="MuiCollapse-wrapper"
+      >
+        <div
+          class="MuiCollapse-wrapperInner"
+        >
+          <div
+            aria-labelledby="test-header"
+            id="test-content"
+            role="region"
+          >
+            <div
+              class="MuiAccordionDetails-root"
+            >
+              <div>
+                Test
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="Toastify"
+  />
+</DocumentFragment>
+`;
