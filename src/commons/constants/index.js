@@ -7,3 +7,5 @@ export const ERRORS = {
 };
 
 export const SUCCESS_OPERATION_MESSAGE = 'Operação realizada com sucesso!';
+
+export const DATE_LOCALE = 'pt-br';

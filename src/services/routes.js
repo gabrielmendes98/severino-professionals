@@ -2,6 +2,10 @@ const API_ROUTES = {
   LOGIN: '/workers/session',
   WORKERS: '/workers',
   WORKER_ID: id => `/workers/${id}`,
+  EXPERIENCES: id => `/workers/${id}/experiences`,
+  EXPERIENCES_ID: (workerId, experienceId) =>
+    `/workers/${workerId}/experiences/${experienceId}`,
+  JOB_TYPES: '/job-types',
 };
 
 const IBGE_API_ROUTES = {

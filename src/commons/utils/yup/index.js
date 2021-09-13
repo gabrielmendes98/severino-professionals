@@ -1,4 +1,5 @@
 import * as yup from 'yup';
+import { dateStartEndValidate } from './date';
 import { phoneValidate } from './phone';
 
 const locale = {
@@ -17,5 +18,6 @@ const locale = {
 yup.setLocale(locale);
 
 yup.addMethod(yup.string, 'phone', phoneValidate);
+yup.addMethod(yup.string, 'dateStartEnd', dateStartEndValidate);
 
 export default yup;
