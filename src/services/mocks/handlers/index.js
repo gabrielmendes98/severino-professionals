@@ -6,13 +6,15 @@ import postWorkers from '../data/workers/post';
 import putWorkers from '../data/workers/put';
 import user from '../data/workers/getById';
 import userNullDescription from '../data/workers/userNullDescription';
+import getExperiences from '../data/workers/getExperiences';
+import getJobTypes from '../data/workers/getJobTypes';
 import ibgeHandler from './ibge';
 
 export const handlers = [
+  ...ibgeHandler,
   rest.post(mountApiUrl(API_ROUTES.LOGIN), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(session)),
   ),
-  ...ibgeHandler,
   rest.post(mountApiUrl(API_ROUTES.WORKERS), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(postWorkers)),
   ),
@@ -25,5 +27,14 @@ export const handlers = [
   ),
   rest.get(mountApiUrl(API_ROUTES.WORKER_ID(':id')), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(user)),
+  ),
+  rest.get(mountApiUrl(API_ROUTES.EXPERIENCES(':id')), (req, res, ctx) =>
+    res(ctx.status(200), ctx.json(getExperiences)),
+  ),
+  rest.post(mountApiUrl(API_ROUTES.EXPERIENCES(':id')), (req, res, ctx) =>
+    res(ctx.status(200), ctx.json(getExperiences)),
+  ),
+  rest.get(mountApiUrl(API_ROUTES.JOB_TYPES), (req, res, ctx) =>
+    res(ctx.status(200), ctx.json(getJobTypes)),
   ),
 ];

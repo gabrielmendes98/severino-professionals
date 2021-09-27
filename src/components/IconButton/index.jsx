@@ -36,6 +36,7 @@ IconButton.propTypes = {
 
 IconButton.defaultProps = {
   variant: 'contained',
+  color: 'primary',
 };
 
 export default IconButton;

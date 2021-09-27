@@ -72,7 +72,7 @@ it('should be able to edit and save', async () => {
     ),
   );
 
-  userEvent.click(screen.getByRole('button', { name: /editar/i }));
+  act(() => userEvent.click(screen.getByRole('button', { name: /editar/i })));
   const nameInput = screen.getByLabelText('Nome', { exact: true });
 
   expect(nameInput).not.toBeDisabled();

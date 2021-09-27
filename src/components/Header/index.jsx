@@ -13,7 +13,7 @@ const Header = () => {
     <AppBar position="static" color="default" elevation={2}>
       <Container maxWidth="xl">
         <Toolbar>
-          <AppBrand data-testid="brand" />
+          <AppBrand />
           <Divider />
           <Button
             variant="text"

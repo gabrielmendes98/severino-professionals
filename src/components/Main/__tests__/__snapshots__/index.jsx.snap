@@ -126,7 +126,6 @@ exports[`should match snapshot 1`] = `
           <img
             alt="Severino"
             class="c2"
-            data-testid="brand"
             src="[object Object]"
           />
           <div
