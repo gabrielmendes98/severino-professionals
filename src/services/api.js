@@ -35,8 +35,8 @@ const createApi = (baseURL = '') => {
   return api;
 };
 
-const defaultApi = createApi(process.env.REACT_APP_API_URL);
+const api = createApi(process.env.REACT_APP_API_URL);
 const ibgeApi = createApi(process.env.REACT_APP_IBGE_API_URL);
 
 export { ibgeApi };
-export default defaultApi;
+export default api;

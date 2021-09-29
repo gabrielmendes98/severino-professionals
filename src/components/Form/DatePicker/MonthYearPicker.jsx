@@ -12,8 +12,8 @@ const MonthYearPicker = ({ name, id, ...otherProps }) => {
   const configTextfield = {
     ...field,
     autoOk: true,
-    id: id || name,
     fullWidth: true,
+    id: id || name,
     onChange,
     views: ['year', 'month'],
     inputVariant: 'outlined',
@@ -27,7 +27,12 @@ const MonthYearPicker = ({ name, id, ...otherProps }) => {
     configTextfield.helperText = meta.error;
   }
 
-  return <DatePicker {...configTextfield} />;
+  return (
+    <DatePicker
+      {...configTextfield}
+      DialogProps={{ id: `${id || name}Dialog` }}
+    />
+  );
 };
 
 MonthYearPicker.propTypes = {
