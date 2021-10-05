@@ -45,7 +45,11 @@ const Select = ({
   }
 
   return (
-    <MuiTextField {...configSelect} SelectProps={selectProps}>
+    <MuiTextField
+      {...configSelect}
+      SelectProps={selectProps}
+      InputProps={{ id: `${id || name}-input` }}
+    >
       {buildOptions}
     </MuiTextField>
   );

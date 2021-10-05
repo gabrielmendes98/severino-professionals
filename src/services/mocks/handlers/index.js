@@ -8,6 +8,7 @@ import user from '../data/workers/getById';
 import userNullDescription from '../data/workers/userNullDescription';
 import getExperiences from '../data/workers/getExperiences';
 import getJobTypes from '../data/workers/getJobTypes';
+import deleteExperience from '../data/workers/deleteExperience';
 import ibgeHandler from './ibge';
 
 export const handlers = [
@@ -36,5 +37,9 @@ export const handlers = [
   ),
   rest.get(mountApiUrl(API_ROUTES.JOB_TYPES), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(getJobTypes)),
+  ),
+  rest.delete(
+    mountApiUrl(API_ROUTES.EXPERIENCES_ID(':userId', ':experienceId')),
+    (req, res, ctx) => res(ctx.status(200), ctx.json(deleteExperience)),
   ),
 ];

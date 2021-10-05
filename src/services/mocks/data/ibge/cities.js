@@ -79,4 +79,36 @@ export default [
       },
     },
   },
+  {
+    id: 3170206,
+    nome: 'Uberlândia',
+    microrregiao: {
+      id: 31018,
+      nome: 'Uberlândia',
+      mesorregiao: {
+        id: 3105,
+        nome: 'Triângulo Mineiro/Alto Paranaíba',
+        UF: {
+          id: 31,
+          sigla: 'MG',
+          nome: 'Minas Gerais',
+          regiao: { id: 3, sigla: 'SE', nome: 'Sudeste' },
+        },
+      },
+    },
+    'regiao-imediata': {
+      id: 310059,
+      nome: 'Uberlândia',
+      'regiao-intermediaria': {
+        id: 3111,
+        nome: 'Uberlândia',
+        UF: {
+          id: 31,
+          sigla: 'MG',
+          nome: 'Minas Gerais',
+          regiao: { id: 3, sigla: 'SE', nome: 'Sudeste' },
+        },
+      },
+    },
+  },
 ];

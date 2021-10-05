@@ -1,4 +1,5 @@
 module.exports = {
+  testTimeout: 20000,
   setupFilesAfterEnv: ['<rootDir>/src/setupTests'],
   moduleDirectories: ['src', 'node_modules'],
   moduleNameMapper: {

@@ -7,7 +7,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Text from 'components/Text';
 import IconButton from 'components/IconButton';
-import { Wrapper, TextWrapper } from './style';
+import { Wrapper, TextWrapper, Container } from './style';
 import {
   formatCompanyJobType,
   formatExperienceTime,
@@ -15,12 +15,13 @@ import {
 } from './util';
 
 const ExperiencesList = ({ experiences, deleteExperience, editExperience }) => (
-  <Paper component={Wrapper}>
-    <List component={Wrapper}>
+  <Paper component={Container}>
+    <List component={Wrapper} role="list">
       {experiences?.map((experience, index) => (
         <ListItem
           key={experience.id}
           divider={index !== experiences.length - 1}
+          role="listitem"
         >
           <TextWrapper>
             <Text weight="bold">{experience.role}</Text>
@@ -34,12 +35,16 @@ const ExperiencesList = ({ experiences, deleteExperience, editExperience }) => (
               color="primary"
               tooltip="Editar"
               onClick={() => editExperience(experience)}
+              // eslint-disable-next-line prefer-template
+              id={'edit-experience-' + index}
             >
               <EditIcon />
             </IconButton>
             <IconButton
               tooltip="Deletar"
               onClick={() => deleteExperience(experience.id)}
+              // eslint-disable-next-line prefer-template
+              id={'delete-experience-' + index}
             >
               <DeleteIcon />
             </IconButton>

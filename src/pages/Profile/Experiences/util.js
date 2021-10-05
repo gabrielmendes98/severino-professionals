@@ -1,4 +1,6 @@
 import moment from 'moment';
+import API_ROUTES from 'services/routes';
+import api from 'services/api';
 import yup from 'commons/utils/yup';
 
 export const initialValues = {
@@ -56,3 +58,21 @@ export const parseExperienceToFrom = experience => {
     jobType: jobId,
   };
 };
+
+export const addExperience = (userId, values) =>
+  api.post(API_ROUTES.EXPERIENCES(userId), values);
+
+export const fetchExperiences = userId =>
+  api.get(API_ROUTES.EXPERIENCES(userId));
+
+export const cancelEditing = (handleReset, setFormData, setEditing) => {
+  handleReset();
+  setFormData(initialValues);
+  setEditing(false);
+};
+
+export const updateExperience = (userId, values) =>
+  api.put(API_ROUTES.EXPERIENCES_ID(userId, values.id), values);
+
+export const removeExperience = (userId, experienceId) =>
+  api.delete(API_ROUTES.EXPERIENCES_ID(userId, experienceId));

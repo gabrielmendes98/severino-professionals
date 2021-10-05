@@ -20,6 +20,11 @@ import {
   validations,
   parseJobTypes,
   parseExperienceToFrom,
+  addExperience,
+  fetchExperiences,
+  cancelEditing,
+  removeExperience,
+  updateExperience,
 } from './util';
 import ExperiencesList from './ExperiencesList';
 
@@ -42,15 +47,9 @@ const Experiences = () => {
   };
 
   const getExperiences = useCallback(
-    () => api.get(API_ROUTES.EXPERIENCES(user.id)).then(setData),
+    () => fetchExperiences(user.id).then(setData),
     [user.id],
   );
-
-  const cancelEditing = handleReset => {
-    handleReset();
-    setFormData(initialValues);
-    setEditing(false);
-  };
 
   const editExperience = experience => {
     ibgeApi
@@ -63,26 +62,24 @@ const Experiences = () => {
   };
 
   const deleteExperience = experienceId =>
-    api
-      .delete(API_ROUTES.EXPERIENCES_ID(user.id, experienceId))
+    removeExperience(user.id, experienceId)
       .then(() => toast.success('Experiência removida com sucesso'))
       .then(getExperiences);
 
   const onSubmit = (values, { resetForm }) => {
     if (editing) {
-      api
-        .put(API_ROUTES.EXPERIENCES_ID(user.id, values.id), values)
+      updateExperience(user.id, values)
         .then(() => toast.success('Experiência atualizada com sucesso'))
         .then(getExperiences)
-        .then(() => cancelEditing(resetForm));
+        .then(() => cancelEditing(resetForm, setFormData, setEditing));
 
       return;
     }
 
-    api
-      .post(API_ROUTES.EXPERIENCES(user.id), values)
+    addExperience(user.id, values)
       .then(() => toast.success('Experiência adicionada com sucesso'))
-      .then(getExperiences);
+      .then(getExperiences)
+      .then(() => cancelEditing(resetForm, setFormData, setEditing));
   };
 
   useEffect(() => {
@@ -159,7 +156,9 @@ const Experiences = () => {
                       color="red"
                       startIcon={<BlockIcon />}
                       margin={{ right: 2 }}
-                      onClick={() => cancelEditing(handleReset)}
+                      onClick={() =>
+                        cancelEditing(handleReset, setFormData, setEditing)
+                      }
                     >
                       Cancelar
                     </Button>
@@ -178,6 +177,7 @@ const Experiences = () => {
                     key="add-experience"
                     type="submit"
                     startIcon={<AddIcon />}
+                    size="large"
                   >
                     Adicionar
                   </Button>
