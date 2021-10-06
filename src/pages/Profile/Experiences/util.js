@@ -1,6 +1,5 @@
 import moment from 'moment';
-import API_ROUTES from 'services/routes';
-import api from 'services/api';
+import experiencesApi from 'services/requests/experiences';
 import yup from 'commons/utils/yup';
 
 export const initialValues = {
@@ -60,10 +59,9 @@ export const parseExperienceToFrom = experience => {
 };
 
 export const addExperience = (userId, values) =>
-  api.post(API_ROUTES.EXPERIENCES(userId), values);
+  experiencesApi.create(userId, values);
 
-export const fetchExperiences = userId =>
-  api.get(API_ROUTES.EXPERIENCES(userId));
+export const fetchExperiences = userId => experiencesApi.getList(userId);
 
 export const cancelEditing = (handleReset, setFormData, setEditing) => {
   handleReset();
@@ -72,7 +70,7 @@ export const cancelEditing = (handleReset, setFormData, setEditing) => {
 };
 
 export const updateExperience = (userId, values) =>
-  api.put(API_ROUTES.EXPERIENCES_ID(userId, values.id), values);
+  experiencesApi.update(userId, values.id, values);
 
 export const removeExperience = (userId, experienceId) =>
-  api.delete(API_ROUTES.EXPERIENCES_ID(userId, experienceId));
+  experiencesApi.exclude(userId, experienceId);

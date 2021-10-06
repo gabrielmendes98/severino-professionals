@@ -3,8 +3,8 @@ import { Form, Formik } from 'formik';
 import AddIcon from '@material-ui/icons/Add';
 import SaveIcon from '@material-ui/icons/Save';
 import BlockIcon from '@material-ui/icons/Block';
-import api, { ibgeApi } from 'services/api';
-import API_ROUTES, { IBGE_API_ROUTES } from 'services/routes';
+import jobTypesApi from 'services/requests/jobTypes';
+import ibgeApi from 'services/requests/ibge';
 import { toast } from 'commons/utils/toast';
 import useUser from 'commons/contexts/User/useUser';
 import withAccordion from 'components/Accordion/withAccordion';
@@ -39,10 +39,7 @@ const Experiences = () => {
 
   const onChangeState = (event, setFieldValue) => {
     const { value: state, name } = event.target;
-    ibgeApi
-      .get(IBGE_API_ROUTES.CITIES_BY_STATE(state))
-      .then(parseCityToSelect)
-      .then(setCities);
+    ibgeApi.getCitiesByState(state).then(parseCityToSelect).then(setCities);
     setFieldValue(name, state);
   };
 
@@ -53,7 +50,7 @@ const Experiences = () => {
 
   const editExperience = experience => {
     ibgeApi
-      .get(IBGE_API_ROUTES.CITIES_BY_STATE(experience.state))
+      .getCitiesByState(experience.state)
       .then(parseCityToSelect)
       .then(setCities)
       .then(() => parseExperienceToFrom(experience))
@@ -85,12 +82,9 @@ const Experiences = () => {
   useEffect(() => {
     getExperiences();
 
-    api.get(API_ROUTES.JOB_TYPES).then(parseJobTypes).then(setJobTypes);
+    jobTypesApi.getList().then(parseJobTypes).then(setJobTypes);
 
-    ibgeApi
-      .get(IBGE_API_ROUTES.STATES)
-      .then(parseStateToSelect)
-      .then(setStates);
+    ibgeApi.getStates().then(parseStateToSelect).then(setStates);
   }, [getExperiences]);
 
   return (

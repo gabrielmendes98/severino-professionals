@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Form, Formik } from 'formik';
-import { IBGE_API_ROUTES } from 'services/routes';
-import { ibgeApi } from 'services/api';
+import ibgeApi from 'services/requests/ibge';
 import signUpDoodle from 'assets/doodles/sign-up.svg';
 import useUser from 'commons/contexts/User/useUser';
 import { Grid } from 'components/Styled';
@@ -32,18 +31,12 @@ const SignUp = () => {
 
   const onChangeState = (event, setFieldValue) => {
     const { value: state, name } = event.target;
-    ibgeApi
-      .get(IBGE_API_ROUTES.CITIES_BY_STATE(state))
-      .then(parseCityToSelect)
-      .then(setCities);
+    ibgeApi.getCitiesByState(state).then(parseCityToSelect).then(setCities);
     setFieldValue(name, state);
   };
 
   useEffect(() => {
-    ibgeApi
-      .get(IBGE_API_ROUTES.STATES)
-      .then(parseStateToSelect)
-      .then(setStates);
+    ibgeApi.getStates().then(parseStateToSelect).then(setStates);
   }, []);
 
   return (

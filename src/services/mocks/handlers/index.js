@@ -1,5 +1,4 @@
 import { rest } from 'msw';
-import API_ROUTES from 'services/routes';
 import { mountApiUrl } from '../helpers/util';
 import session from '../data/session';
 import postWorkers from '../data/workers/post';
@@ -9,41 +8,46 @@ import userNullDescription from '../data/workers/userNullDescription';
 import getExperiences from '../data/workers/getExperiences';
 import getJobTypes from '../data/workers/getJobTypes';
 import deleteExperience from '../data/workers/deleteExperience';
+import { loginRoutes } from '../../requests/login';
+import { workersRoutes } from '../../requests/workers';
+import { experiencesRoutes } from '../../requests/experiences';
+import { jobTypesRoutes } from '../../requests/jobTypes';
 import ibgeHandler from './ibge';
 
 export const handlers = [
   ...ibgeHandler,
-  rest.post(mountApiUrl(API_ROUTES.LOGIN), (req, res, ctx) =>
+  rest.post(mountApiUrl(loginRoutes.login), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(session)),
   ),
-  rest.post(mountApiUrl(API_ROUTES.WORKERS), (req, res, ctx) =>
+  rest.post(mountApiUrl(workersRoutes.workers), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(postWorkers)),
   ),
-  rest.put(mountApiUrl(API_ROUTES.WORKER_ID(':id')), (req, res, ctx) =>
+  rest.put(mountApiUrl(workersRoutes.workersId(':id')), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(putWorkers)),
   ),
   rest.get(
-    mountApiUrl(API_ROUTES.WORKER_ID('nullDescriptionUser')),
+    mountApiUrl(workersRoutes.workersId('nullDescriptionUser')),
     (req, res, ctx) => res(ctx.status(200), ctx.json(userNullDescription)),
   ),
-  rest.get(mountApiUrl(API_ROUTES.WORKER_ID(':id')), (req, res, ctx) =>
+  rest.get(mountApiUrl(workersRoutes.workersId(':id')), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(user)),
   ),
-  rest.get(mountApiUrl(API_ROUTES.EXPERIENCES(':id')), (req, res, ctx) =>
+  rest.get(mountApiUrl(experiencesRoutes.experiences(':id')), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(getExperiences)),
   ),
-  rest.post(mountApiUrl(API_ROUTES.EXPERIENCES(':id')), (req, res, ctx) =>
-    res(ctx.status(200), ctx.json(getExperiences)),
+  rest.post(
+    mountApiUrl(experiencesRoutes.experiences(':id')),
+    (req, res, ctx) => res(ctx.status(200), ctx.json(getExperiences)),
   ),
-  rest.get(mountApiUrl(API_ROUTES.JOB_TYPES), (req, res, ctx) =>
+  rest.get(mountApiUrl(jobTypesRoutes.jobTypes), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(getJobTypes)),
   ),
   rest.delete(
-    mountApiUrl(API_ROUTES.EXPERIENCES_ID(':userId', ':experienceId')),
+    mountApiUrl(experiencesRoutes.experiencesId(':userId', ':experienceId')),
     (req, res, ctx) => res(ctx.status(200), ctx.json(deleteExperience)),
   ),
   rest.put(
-    mountApiUrl(API_ROUTES.EXPERIENCES_ID(':userId', ':experienceId')),
+    mountApiUrl(experiencesRoutes.experiencesId(':userId', ':experienceId')),
     (req, res, ctx) => res(ctx.status(200), ctx.json(getExperiences)),
   ),
 ];

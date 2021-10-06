@@ -3,8 +3,8 @@ import { Form, Formik } from 'formik';
 import EditIcon from '@material-ui/icons/Edit';
 import SaveIcon from '@material-ui/icons/Save';
 import BlockIcon from '@material-ui/icons/Block';
-import api, { ibgeApi } from 'services/api';
-import API_ROUTES, { IBGE_API_ROUTES } from 'services/routes';
+import ibgeApi from 'services/requests/ibge';
+import workersApi from 'services/requests/workers';
 import { SUCCESS_OPERATION_MESSAGE } from 'commons/constants';
 import { toast } from 'commons/utils/toast';
 import useUser from 'commons/contexts/User/useUser';
@@ -32,10 +32,7 @@ const MainInfo = () => {
 
   const onChangeState = (event, setFieldValue) => {
     const { value: state, name } = event.target;
-    ibgeApi
-      .get(IBGE_API_ROUTES.CITIES_BY_STATE(state))
-      .then(parseCityToSelect)
-      .then(setCities);
+    ibgeApi.getCitiesByState(state).then(parseCityToSelect).then(setCities);
     setFieldValue(name, state);
   };
 
@@ -53,18 +50,17 @@ const MainInfo = () => {
   };
 
   useEffect(() => {
-    Promise.all([
-      api.get(API_ROUTES.WORKER_ID(user.id)),
-      ibgeApi.get(IBGE_API_ROUTES.STATES),
-    ]).then(([responseWorker, responseStates]) => {
-      setStates(parseStateToSelect(responseStates));
-      ibgeApi
-        .get(IBGE_API_ROUTES.CITIES_BY_STATE(responseWorker.state))
-        .then(parseCityToSelect)
-        .then(setCities)
-        .then(() => parseUserToForm(responseWorker))
-        .then(setData);
-    });
+    Promise.all([workersApi.getById(user.id), ibgeApi.getStates()]).then(
+      ([responseWorker, responseStates]) => {
+        setStates(parseStateToSelect(responseStates));
+        ibgeApi
+          .getCitiesByState(responseWorker.state)
+          .then(parseCityToSelect)
+          .then(setCities)
+          .then(() => parseUserToForm(responseWorker))
+          .then(setData);
+      },
+    );
   }, [user.id]);
 
   return (

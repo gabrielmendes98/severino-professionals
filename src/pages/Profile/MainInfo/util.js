@@ -1,8 +1,7 @@
 /* eslint-disable func-names */
 /* eslint-disable func-style */
 
-import api from 'services/api';
-import API_ROUTES from 'services/routes';
+import workersApi from 'services/requests/workers';
 import yup from 'commons/utils/yup';
 
 const initialValues = {
@@ -58,7 +57,7 @@ const parseUserToForm = user => {
 };
 
 const saveUserData = (values, userId) =>
-  api.put(API_ROUTES.WORKER_ID(userId), parseDataToService(values));
+  workersApi.update(userId, parseDataToService(values));
 
 export {
   initialValues,
