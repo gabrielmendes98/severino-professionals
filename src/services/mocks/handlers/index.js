@@ -42,4 +42,8 @@ export const handlers = [
     mountApiUrl(API_ROUTES.EXPERIENCES_ID(':userId', ':experienceId')),
     (req, res, ctx) => res(ctx.status(200), ctx.json(deleteExperience)),
   ),
+  rest.put(
+    mountApiUrl(API_ROUTES.EXPERIENCES_ID(':userId', ':experienceId')),
+    (req, res, ctx) => res(ctx.status(200), ctx.json(getExperiences)),
+  ),
 ];

@@ -225,9 +225,7 @@ it('should fill form and change buttons when click on edit experience button', a
 });
 
 it('should be able to edit experience and save then clear form', async () => {
-  const updateExperienceMock = jest
-    .spyOn(utils, 'updateExperience')
-    .mockImplementationOnce(() => Promise.resolve());
+  const updateExperienceMock = jest.spyOn(utils, 'updateExperience');
   const cancelEditingMock = jest
     .spyOn(utils, 'cancelEditing')
     .mockImplementationOnce(() => Promise.resolve());
@@ -358,4 +356,14 @@ it('should be able to cancel experience edit and cancel should clear form data',
   expect(screen.getByTestId('city-input')).toHaveValue('');
   expect(screen.getByLabelText(/^data de início$/i)).toHaveValue('');
   expect(screen.getByLabelText(/^data de término$/i)).toHaveValue('');
+});
+
+it('formatCompanyJobType should show just company when do not have job description ', () => {
+  const formatCompanyJobType = jest.spyOn(utils, 'formatCompanyJobType');
+
+  const experienceMock = {
+    company: 'Test Company',
+  };
+
+  expect(formatCompanyJobType(experienceMock)).toBe(experienceMock.company);
 });
