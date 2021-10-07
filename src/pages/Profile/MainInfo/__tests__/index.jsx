@@ -1,3 +1,4 @@
+import 'test-utils/mocks/material-ui/select';
 import { userEvent, screen, renderWithRouter, waitFor, act } from 'test-utils';
 import mockedUser from 'test-utils/mockedUser';
 import mockedApiUser from 'services/mocks/data/workers/getById';
@@ -38,14 +39,8 @@ it('should get user info and set fields correctly', async () => {
   expect(screen.getByLabelText(/^telefone$/i, { exact: true })).toHaveValue(
     parsedMockUser.phone,
   );
-  await waitFor(() => {
-    expect(screen.getByLabelText(/estado/i).innerHTML).toBe(
-      parsedMockUser.state,
-    );
-    expect(screen.getByLabelText(/cidade/i).innerHTML).toBe(
-      parsedMockUser.city,
-    );
-  });
+  expect(screen.getByLabelText(/estado/i)).toHaveValue(parsedMockUser.state);
+  expect(screen.getByLabelText(/cidade/i)).toHaveValue(parsedMockUser.city);
 });
 
 it('should be able to edit and save', async () => {
@@ -67,13 +62,11 @@ it('should be able to edit and save', async () => {
   const parsedMockUser = utils.parseUserToForm(mockedApiUser);
 
   await waitFor(() =>
-    expect(screen.getByLabelText('Nome', { exact: true })).toHaveValue(
-      parsedMockUser.name,
-    ),
+    expect(screen.getByLabelText(/^nome$/i)).toHaveValue(parsedMockUser.name),
   );
 
   act(() => userEvent.click(screen.getByRole('button', { name: /editar/i })));
-  const nameInput = screen.getByLabelText('Nome', { exact: true });
+  const nameInput = screen.getByLabelText(/^nome$/i);
 
   expect(nameInput).not.toBeDisabled();
 
@@ -104,13 +97,11 @@ it('should cancel editing and disable inputs when click on cancel button', async
   const parsedMockUser = utils.parseUserToForm(mockedApiUser);
 
   await waitFor(() =>
-    expect(screen.getByLabelText('Nome', { exact: true })).toHaveValue(
-      parsedMockUser.name,
-    ),
+    expect(screen.getByLabelText(/^nome$/i)).toHaveValue(parsedMockUser.name),
   );
 
   userEvent.click(screen.getByRole('button', { name: /editar/i }));
-  const nameInput = screen.getByLabelText('Nome', { exact: true });
+  const nameInput = screen.getByLabelText(/^nome$/i);
   expect(nameInput).not.toBeDisabled();
   userEvent.click(screen.getByRole('button', { name: /cancelar/i }));
   expect(nameInput).toBeDisabled();
@@ -130,16 +121,24 @@ it('should retrive cities when change state', async () => {
     { route: PAGE_URL.PROFILE },
   );
 
+  const parsedMockUser = utils.parseUserToForm(mockedApiUser);
+
+  await waitFor(() =>
+    expect(screen.getByLabelText(/estado/i)).toHaveValue(parsedMockUser.state),
+  );
+
   userEvent.click(screen.getByRole('button', { name: /editar/i }));
-  userEvent.click(screen.getByLabelText(/estado/i));
-  await act(async () => userEvent.click(await screen.findByText(/^sp$/i)));
+  userEvent.selectOptions(screen.getByLabelText(/estado/i), 'SP');
   await waitFor(() => {
     expect(parseCitiesToSelectMock).toHaveBeenCalledTimes(1);
-    expect(screen.getByLabelText(/estado/i).innerHTML).toBe('SP');
+  });
+
+  await waitFor(() => {
+    expect(screen.getByLabelText(/estado/i)).toHaveValue('SP');
   });
 });
 
-it('should get initialValues description if it comes null from api and remove avatarUrl', async () => {
+it('should get initialValues for description if it comes null from api and remove avatarUrl', async () => {
   const parseUserToFormSpy = jest.spyOn(utils, 'parseUserToForm');
   renderWithRouter(
     <UserContext.Provider value={{ user: { id: 'nullDescriptionUser' } }}>
