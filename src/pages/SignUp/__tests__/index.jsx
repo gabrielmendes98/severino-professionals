@@ -1,17 +1,22 @@
+import 'test-utils/mocks/material-ui/select';
 import { renderWithRouter, userEvent, screen, waitFor } from 'test-utils';
 import session from 'services/mocks/data/session';
 import { getToken, removeToken } from 'commons/utils/storage';
 import PAGE_URL from 'commons/constants/routes';
 import UserProvider from 'commons/contexts/User';
 import SignUp from '..';
+import * as utils from '../util';
 
 it('should signup, login and redirect user to profile page', async () => {
+  const parseStateToSelect = jest.spyOn(utils, 'parseStateToSelect');
+  const parseCityToSelect = jest.spyOn(utils, 'parseCityToSelect');
   renderWithRouter(
     <UserProvider>
       <SignUp />
     </UserProvider>,
     { route: PAGE_URL.SIGN_UP },
   );
+
   removeToken();
 
   userEvent.type(screen.getByLabelText(/e-mail/i), 'test@test.com');
@@ -21,10 +26,17 @@ it('should signup, login and redirect user to profile page', async () => {
     screen.getByLabelText(/celular com whatsapp, de preferência/i),
     '34999999999',
   );
-  userEvent.click(screen.getByLabelText(/estado/i));
-  userEvent.click(await screen.findByText(/mg/i));
-  userEvent.click(screen.getByLabelText(/cidade/i));
-  userEvent.click(await screen.findByText(/Abadia dos Dourados/i));
+  await waitFor(() => {
+    expect(parseStateToSelect).toHaveBeenCalledTimes(1);
+  });
+  userEvent.selectOptions(screen.getByLabelText(/estado/i), 'MG');
+  await waitFor(() => {
+    expect(parseCityToSelect).toHaveBeenCalledTimes(1);
+  });
+  userEvent.selectOptions(
+    screen.getByLabelText(/cidade/i),
+    'Abadia dos Dourados',
+  );
   userEvent.type(screen.getByLabelText(/^senha/i), '123123');
   userEvent.type(screen.getByLabelText(/confirmar senha/i), '123123');
   userEvent.click(screen.getByRole('button', { name: /finalizar/i }));
