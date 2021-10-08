@@ -3,9 +3,11 @@ import session from 'services/mocks/data/session';
 import UserProvider from 'commons/contexts/User';
 import PAGE_URL from 'commons/constants/routes';
 import { setToken } from 'commons/utils/storage';
+import { toast } from 'commons/utils/toast';
 import ChangePassword from '..';
 
 it('should change password and redirect to profile', async () => {
+  const toastSuccess = jest.spyOn(toast, 'success');
   setToken(session.token);
 
   renderWithRouter(
@@ -19,8 +21,8 @@ it('should change password and redirect to profile', async () => {
   userEvent.type(screen.getByLabelText(/confirmar nova senha/i), '123456');
   userEvent.click(screen.getByRole('button', { name: /confirmar/i }));
 
-  expect(
-    await screen.findByText(/Senha trocada com sucesso!/i),
-  ).toBeInTheDocument();
-  await waitFor(() => expect(window.location.pathname).toBe(PAGE_URL.PROFILE));
+  await waitFor(() => {
+    expect(toastSuccess).toHaveBeenCalledTimes(1);
+    expect(window.location.pathname).toBe(PAGE_URL.PROFILE);
+  });
 });

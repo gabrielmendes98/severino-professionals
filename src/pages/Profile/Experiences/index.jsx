@@ -4,6 +4,7 @@ import AddIcon from '@material-ui/icons/Add';
 import SaveIcon from '@material-ui/icons/Save';
 import BlockIcon from '@material-ui/icons/Block';
 import jobTypesApi from 'services/requests/jobTypes';
+import experiencesApi from 'services/requests/experiences';
 import ibgeApi from 'services/requests/ibge';
 import { toast } from 'commons/utils/toast';
 import useUser from 'commons/contexts/User/useUser';
@@ -20,11 +21,9 @@ import {
   validations,
   parseJobTypes,
   parseExperienceToFrom,
-  addExperience,
   fetchExperiences,
   cancelEditing,
   removeExperience,
-  updateExperience,
 } from './util';
 import ExperiencesList from './ExperiencesList';
 
@@ -65,7 +64,8 @@ const Experiences = () => {
 
   const onSubmit = (values, { resetForm }) => {
     if (editing) {
-      updateExperience(user.id, values)
+      experiencesApi
+        .update(user.id, values.id, values)
         .then(() => toast.success('Experiência atualizada com sucesso'))
         .then(getExperiences)
         .then(() => cancelEditing(resetForm, setFormData, setEditing));
@@ -73,7 +73,8 @@ const Experiences = () => {
       return;
     }
 
-    addExperience(user.id, values)
+    experiencesApi
+      .create(user.id, values)
       .then(() => toast.success('Experiência adicionada com sucesso'))
       .then(getExperiences)
       .then(() => cancelEditing(resetForm, setFormData, setEditing));

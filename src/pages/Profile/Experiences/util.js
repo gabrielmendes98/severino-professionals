@@ -58,9 +58,6 @@ export const parseExperienceToFrom = experience => {
   };
 };
 
-export const addExperience = (userId, values) =>
-  experiencesApi.create(userId, values);
-
 export const fetchExperiences = userId => experiencesApi.getList(userId);
 
 export const cancelEditing = (handleReset, setFormData, setEditing) => {
@@ -68,9 +65,6 @@ export const cancelEditing = (handleReset, setFormData, setEditing) => {
   setFormData(initialValues);
   setEditing(false);
 };
-
-export const updateExperience = (userId, values) =>
-  experiencesApi.update(userId, values.id, values);
 
 export const removeExperience = (userId, experienceId) =>
   experiencesApi.exclude(userId, experienceId);

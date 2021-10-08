@@ -14,6 +14,7 @@ import getJobTypes from 'services/mocks/data/workers/getJobTypes';
 import states from 'services/mocks/data/ibge/states';
 import cities from 'services/mocks/data/ibge/cities';
 import getExperiences from 'services/mocks/data/workers/getExperiences';
+import experiencesApi from 'services/requests/experiences';
 import deleteExperience from 'services/mocks/data/workers/deleteExperience';
 import PAGE_URL from 'commons/constants/routes';
 import { UserContext } from 'commons/contexts/User';
@@ -26,7 +27,7 @@ beforeEach(() => {
 
 it('should fill data and call createExperience api on form submit', async () => {
   const addExperienceSpy = jest
-    .spyOn(utils, 'addExperience')
+    .spyOn(experiencesApi, 'create')
     .mockImplementation(() => Promise.resolve());
   jest.spyOn(utils, 'cancelEditing').mockImplementation(jest.fn);
 
@@ -198,7 +199,7 @@ it('should fill form and change buttons when click on edit experience button', a
 
 it('should be able to edit experience and save then clear form', async () => {
   const updateExperienceMock = jest
-    .spyOn(utils, 'updateExperience')
+    .spyOn(experiencesApi, 'update')
     .mockImplementation(() => Promise.resolve());
   const cancelEditingMock = jest
     .spyOn(utils, 'cancelEditing')
@@ -265,6 +266,7 @@ it('should be able to edit experience and save then clear form', async () => {
   });
   expect(updateExperienceMock).toHaveBeenCalledWith(
     mockedUser.id,
+    expectedPayload.id,
     expect.objectContaining({
       role: expectedPayload.role,
     }),
@@ -299,8 +301,12 @@ it('should be able to cancel experience edit and cancel should clear form data',
   userEvent.click(firstEditButton);
 
   await waitFor(() => {
-    userEvent.click(screen.getByRole('button', { name: /^cancelar$/i }));
+    expect(screen.getByLabelText(/^cargo$/i)).toHaveValue(
+      getExperiences[0].role,
+    );
   });
+
+  userEvent.click(screen.getByRole('button', { name: /^cancelar$/i }));
 
   expect(cancelEditingMock).toHaveBeenCalledTimes(1);
 
