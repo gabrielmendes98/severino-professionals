@@ -25,7 +25,7 @@ const Select = jest.mock(
             value={values[name]}
             onChange={handleChange}
           >
-            <option disabled defaultValue value>
+            <option disabled defaultValue value="">
               {label}
             </option>
             {options?.map(({ label, value }) => (
