@@ -77,6 +77,9 @@ const globalStyle = createGlobalStyle`
   h1,h2,h3,h4,h5,h6 {
     font-family: ${({ theme }) => theme.typography.titleFontFamily}
   }
+  form {
+    width: 100%;
+  }
 `;
 
 export default globalStyle;

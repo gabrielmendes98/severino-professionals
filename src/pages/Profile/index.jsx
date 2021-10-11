@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Container from '@material-ui/core/Container';
 import MainInfo from './MainInfo';
 import Experiences from './Experiences';
+import Photos from './Photos';
 
 const Profile = () => {
   const [expanded, setExpanded] = useState(false);
@@ -22,6 +23,13 @@ const Profile = () => {
       <Experiences
         name="experiences"
         title="Experiências profissionais"
+        expanded={expanded}
+        handleChange={handleChange}
+      />
+
+      <Photos
+        name="photos"
+        title="Fotos dos meus trabalhos"
         expanded={expanded}
         handleChange={handleChange}
       />

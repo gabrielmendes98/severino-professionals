@@ -3,9 +3,10 @@ import { ERRORS } from 'commons/constants';
 import loading from 'commons/utils/loading';
 import { toast } from 'commons/utils/toast';
 
-const createApi = (baseURL = '') => {
+const createApi = (baseURL = '', config = {}) => {
   const api = axios.create({
     baseURL,
+    ...config,
   });
 
   api.interceptors.request.use(
@@ -37,6 +38,9 @@ const createApi = (baseURL = '') => {
 
 const api = createApi(process.env.REACT_APP_API_URL);
 const ibgeApi = createApi(process.env.REACT_APP_IBGE_API_URL);
+const filesApi = createApi(process.env.REACT_APP_API_URL, {
+  headers: { 'Content-Type': 'multipart/form-data' },
+});
 
-export { ibgeApi };
+export { ibgeApi, filesApi };
 export default api;

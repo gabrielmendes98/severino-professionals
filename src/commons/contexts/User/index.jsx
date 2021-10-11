@@ -2,13 +2,18 @@ import { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
-import api from 'services/api';
+import api, { filesApi } from 'services/api';
 import loginApi from 'services/requests/login';
 import workersApi from 'services/requests/workers';
 import { toast } from 'commons/utils/toast';
 import { getToken, removeToken, setToken } from 'commons/utils/storage';
 import PAGE_URL from 'commons/constants/routes';
 import Loading from 'components/Loading';
+
+const setApiHeaders = token => {
+  api.defaults.headers.Authorization = `Bearer ${token}`;
+  filesApi.defaults.headers.Authorization = `Bearer ${token}`;
+};
 
 export const UserContext = createContext();
 
@@ -21,7 +26,7 @@ const UserProvider = ({ children, history }) => {
       const decodedToken = jwtDecode(token);
       setToken(token);
       setUser(decodedToken.user);
-      api.defaults.headers.Authorization = `Bearer ${token}`;
+      setApiHeaders(token);
       toast.success('Bem-vindo(a) ao Severino!');
       history.push(PAGE_URL.PROFILE);
     });
@@ -29,7 +34,7 @@ const UserProvider = ({ children, history }) => {
   const signOut = () => {
     setUser(null);
     removeToken();
-    api.defaults.headers.Authorization = undefined;
+    setApiHeaders(undefined);
     history.push(PAGE_URL.HOME);
   };
 
@@ -53,7 +58,7 @@ const UserProvider = ({ children, history }) => {
     if (token) {
       const decodedToken = jwtDecode(token);
       setUser(decodedToken.user);
-      api.defaults.headers.Authorization = `Bearer ${token}`;
+      setApiHeaders(token);
     }
     setLoading(false);
   }, []);
