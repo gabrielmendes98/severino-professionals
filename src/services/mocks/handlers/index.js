@@ -13,9 +13,11 @@ import { workersRoutes } from '../../requests/workers';
 import { experiencesRoutes } from '../../requests/experiences';
 import { jobTypesRoutes } from '../../requests/jobTypes';
 import ibgeHandler from './ibge';
+import photosHandler from './photos';
 
 export const handlers = [
   ...ibgeHandler,
+  ...photosHandler,
   rest.post(mountApiUrl(loginRoutes.login), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(session)),
   ),

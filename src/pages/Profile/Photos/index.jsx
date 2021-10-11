@@ -24,6 +24,7 @@ const Photos = () => {
     event.target.value = '';
   };
 
+  /* istanbul ignore next */
   const onClickUploadFile = () => {
     fileRef.current.click();
   };
