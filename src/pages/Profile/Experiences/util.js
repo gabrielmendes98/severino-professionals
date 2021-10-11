@@ -14,6 +14,7 @@ export const initialValues = {
 
 export const validations = yup.object().shape({
   role: yup.string().trim().required(),
+  jobType: yup.string().trim().required(),
   state: yup.string().trim().required(),
   city: yup.string().trim().required(),
   startDate: yup.string().dateStartEnd().required(),
@@ -30,9 +31,9 @@ export const parseJobTypes = jobTypes =>
   jobTypes.map(jobType => ({ label: jobType.description, value: jobType.id }));
 
 export const formatCompanyJobType = experience =>
-  experience.job?.description
+  experience.company
     ? `${experience.company} - ${experience.job?.description}`
-    : experience.company;
+    : experience.job?.description;
 
 export const formatExperienceTime = experience => {
   const startDate = moment(experience.startDate).format('MM/YYYY');

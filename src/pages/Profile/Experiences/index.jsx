@@ -8,12 +8,14 @@ import experiencesApi from 'services/requests/experiences';
 import ibgeApi from 'services/requests/ibge';
 import { toast } from 'commons/utils/toast';
 import useUser from 'commons/contexts/User/useUser';
+import ItemList from 'components/ItemList';
 import withAccordion from 'components/Accordion/withAccordion';
 import Button from 'components/Button';
 import Select from 'components/Form/Select';
 import Input from 'components/Form/Input';
 import MonthYearPicker from 'components/Form/DatePicker/MonthYearPicker';
 import { Grid } from 'components/Styled';
+import ExperienceTemplate from './ExperienceTemplate';
 import {
   initialValues,
   parseCityToSelect,
@@ -25,7 +27,6 @@ import {
   cancelEditing,
   removeExperience,
 } from './util';
-import ExperiencesList from './ExperiencesList';
 
 const Experiences = () => {
   const { user } = useUser();
@@ -184,10 +185,12 @@ const Experiences = () => {
       </Formik>
 
       <Grid container margin={{ top: 3 }}>
-        <ExperiencesList
-          experiences={data}
-          deleteExperience={deleteExperience}
-          editExperience={editExperience}
+        <ItemList
+          items={data}
+          deleteItem={deleteExperience}
+          editItem={editExperience}
+          id="experience"
+          ItemTemplate={ExperienceTemplate}
         />
       </Grid>
     </Grid>

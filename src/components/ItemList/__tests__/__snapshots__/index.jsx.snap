@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+.c0 {
+  width: 100%;
+}
+
+.c1 {
+  width: 100%;
+}
+
+<div
+    class="c0 MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <ul
+      class="c1 MuiList-root MuiList-padding"
+      role="list"
+    >
+      <li
+        class="MuiListItem-container"
+      >
+        <div
+          class="MuiListItem-root MuiListItem-gutters MuiListItem-divider MuiListItem-secondaryAction"
+          role="listitem"
+        >
+          <div>
+            Engenheiro de Software
+          </div>
+        </div>
+        <div
+          class="MuiListItemSecondaryAction-root"
+        >
+          <button
+            aria-label="Editar"
+            class="MuiButtonBase-root MuiIconButton-root c2 MuiIconButton-colorPrimary"
+            id="edit-test-0"
+            tabindex="0"
+            title="Editar"
+            type="button"
+            variant="contained"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-label="Deletar"
+            class="MuiButtonBase-root MuiIconButton-root c2 MuiIconButton-colorPrimary"
+            id="delete-test-0"
+            tabindex="0"
+            title="Deletar"
+            type="button"
+            variant="contained"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </li>
+      <li
+        class="MuiListItem-container"
+      >
+        <div
+          class="MuiListItem-root MuiListItem-gutters MuiListItem-secondaryAction"
+          role="listitem"
+        >
+          <div>
+            Pedreiro
+          </div>
+        </div>
+        <div
+          class="MuiListItemSecondaryAction-root"
+        >
+          <button
+            aria-label="Editar"
+            class="MuiButtonBase-root MuiIconButton-root c2 MuiIconButton-colorPrimary"
+            id="edit-test-1"
+            tabindex="0"
+            title="Editar"
+            type="button"
+            variant="contained"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-label="Deletar"
+            class="MuiButtonBase-root MuiIconButton-root c2 MuiIconButton-colorPrimary"
+            id="delete-test-1"
+            tabindex="0"
+            title="Deletar"
+            type="button"
+            variant="contained"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div
+    class="Toastify"
+  />
+</DocumentFragment>
+`;

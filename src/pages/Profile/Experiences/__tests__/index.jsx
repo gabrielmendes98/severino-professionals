@@ -327,8 +327,10 @@ it('formatCompanyJobType should show just company when do not have job descripti
   const formatCompanyJobType = jest.spyOn(utils, 'formatCompanyJobType');
 
   const experienceMock = {
-    company: 'Test Company',
+    job: { description: 'Test Company' },
   };
 
-  expect(formatCompanyJobType(experienceMock)).toBe(experienceMock.company);
+  expect(formatCompanyJobType(experienceMock)).toBe(
+    experienceMock.job.description,
+  );
 });
