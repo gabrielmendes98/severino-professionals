@@ -7,3 +7,9 @@ export const Container = styled.div`
 export const Wrapper = styled.ul`
   width: 100%;
 `;
+
+export const ItemTemplateContainer = styled.div`
+  flex: 1;
+`;
+
+export const ItemTemplateActions = styled.div``;

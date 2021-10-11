@@ -2,11 +2,15 @@ import PropTypes from 'prop-types';
 import ListItem from '@material-ui/core/ListItem';
 import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from 'components/IconButton';
-import { Wrapper, Container } from './style';
+import {
+  Wrapper,
+  Container,
+  ItemTemplateContainer,
+  ItemTemplateActions,
+} from './style';
 
 const ItemList = ({ items, deleteItem, editItem, id, ItemTemplate }) => (
   <Paper component={Container}>
@@ -17,9 +21,11 @@ const ItemList = ({ items, deleteItem, editItem, id, ItemTemplate }) => (
           divider={index !== items.length - 1}
           role="listitem"
         >
-          <ItemTemplate item={item} />
+          <ItemTemplateContainer>
+            <ItemTemplate item={item} />
+          </ItemTemplateContainer>
 
-          <ListItemSecondaryAction>
+          <ItemTemplateActions>
             {editItem && (
               <IconButton
                 color="primary"
@@ -39,7 +45,7 @@ const ItemList = ({ items, deleteItem, editItem, id, ItemTemplate }) => (
             >
               <DeleteIcon />
             </IconButton>
-          </ListItemSecondaryAction>
+          </ItemTemplateActions>
         </ListItem>
       ))}
     </List>

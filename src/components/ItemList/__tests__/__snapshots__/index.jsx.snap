@@ -2,7 +2,7 @@
 
 exports[`should match snapshot 1`] = `
 <DocumentFragment>
-  .c2 {
+  .c3 {
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -17,6 +17,12 @@ exports[`should match snapshot 1`] = `
   width: 100%;
 }
 
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
 <div
     class="c0 MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
   >
@@ -25,22 +31,22 @@ exports[`should match snapshot 1`] = `
       role="list"
     >
       <li
-        class="MuiListItem-container"
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-divider"
+        role="listitem"
       >
         <div
-          class="MuiListItem-root MuiListItem-gutters MuiListItem-divider MuiListItem-secondaryAction"
-          role="listitem"
+          class="c2"
         >
           <div>
             Engenheiro de Software
           </div>
         </div>
         <div
-          class="MuiListItemSecondaryAction-root"
+          class=""
         >
           <button
             aria-label="Editar"
-            class="MuiButtonBase-root MuiIconButton-root c2 MuiIconButton-colorPrimary"
+            class="MuiButtonBase-root MuiIconButton-root c3 MuiIconButton-colorPrimary"
             id="edit-test-0"
             tabindex="0"
             title="Editar"
@@ -67,7 +73,7 @@ exports[`should match snapshot 1`] = `
           </button>
           <button
             aria-label="Deletar"
-            class="MuiButtonBase-root MuiIconButton-root c2 MuiIconButton-colorPrimary"
+            class="MuiButtonBase-root MuiIconButton-root c3 MuiIconButton-colorPrimary"
             id="delete-test-0"
             tabindex="0"
             title="Deletar"
@@ -95,22 +101,22 @@ exports[`should match snapshot 1`] = `
         </div>
       </li>
       <li
-        class="MuiListItem-container"
+        class="MuiListItem-root MuiListItem-gutters"
+        role="listitem"
       >
         <div
-          class="MuiListItem-root MuiListItem-gutters MuiListItem-secondaryAction"
-          role="listitem"
+          class="c2"
         >
           <div>
             Pedreiro
           </div>
         </div>
         <div
-          class="MuiListItemSecondaryAction-root"
+          class=""
         >
           <button
             aria-label="Editar"
-            class="MuiButtonBase-root MuiIconButton-root c2 MuiIconButton-colorPrimary"
+            class="MuiButtonBase-root MuiIconButton-root c3 MuiIconButton-colorPrimary"
             id="edit-test-1"
             tabindex="0"
             title="Editar"
@@ -137,7 +143,7 @@ exports[`should match snapshot 1`] = `
           </button>
           <button
             aria-label="Deletar"
-            class="MuiButtonBase-root MuiIconButton-root c2 MuiIconButton-colorPrimary"
+            class="MuiButtonBase-root MuiIconButton-root c3 MuiIconButton-colorPrimary"
             id="delete-test-1"
             tabindex="0"
             title="Deletar"
