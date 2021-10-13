@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container';
 import MainInfo from './MainInfo';
 import Experiences from './Experiences';
 import Photos from './Photos';
-import AcademicGraduation from './AcademicGraduation';
+import AcademicGraduation from './AcademicGraduations';
 
 const Profile = () => {
   const [expanded, setExpanded] = useState(false);

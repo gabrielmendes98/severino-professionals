@@ -7,7 +7,7 @@ import degreeTypesApi from 'services/requests/degreeTypes';
 import getDegreeTypes from 'services/mocks/data/getDegreeTypes';
 import { UserContext } from 'commons/contexts/User';
 import * as utils from '../util';
-import AcademicGraduation from '..';
+import AcademicGraduations from '..';
 
 beforeEach(() => {
   jest.restoreAllMocks();
@@ -19,7 +19,7 @@ it('should show academic graduation list', async () => {
     .mockImplementation(() => Promise.resolve());
   render(
     <UserContext.Provider value={{ user: mockedUser }}>
-      <AcademicGraduation
+      <AcademicGraduations
         name="academicGraduation"
         title="Formação Acadêmica"
         expanded="academicGraduation"
@@ -62,7 +62,7 @@ it('should be able to add academic graduation', async () => {
 
   render(
     <UserContext.Provider value={{ user: mockedUser }}>
-      <AcademicGraduation
+      <AcademicGraduations
         name="academicGraduation"
         title="Formação Acadêmica"
         expanded="academicGraduation"
@@ -118,7 +118,7 @@ it('should be able to edit', async () => {
 
   render(
     <UserContext.Provider value={{ user: mockedUser }}>
-      <AcademicGraduation
+      <AcademicGraduations
         name="academicGraduation"
         title="Formação Acadêmica"
         expanded="academicGraduation"
@@ -159,7 +159,7 @@ it('should be able to delete', async () => {
 
   render(
     <UserContext.Provider value={{ user: mockedUser }}>
-      <AcademicGraduation
+      <AcademicGraduations
         name="academicGraduation"
         title="Formação Acadêmica"
         expanded="academicGraduation"
@@ -189,7 +189,7 @@ it('should be able to delete', async () => {
 it('should be able to cancel edition', async () => {
   render(
     <UserContext.Provider value={{ user: mockedUser }}>
-      <AcademicGraduation
+      <AcademicGraduations
         name="academicGraduation"
         title="Formação Acadêmica"
         expanded="academicGraduation"

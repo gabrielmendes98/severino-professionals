@@ -22,7 +22,7 @@ import {
 } from './util';
 import AcademicGraduationTemplate from './AcademicGraduationTemplate';
 
-const AcademicGraduation = () => {
+const AcademicGraduations = () => {
   const { user } = useUser();
   const [formData, setFormData] = useState(initialValues);
   const [degrees, setDegrees] = useState();
@@ -148,4 +148,4 @@ const AcademicGraduation = () => {
   );
 };
 
-export default withAccordion(AcademicGraduation);
+export default withAccordion(AcademicGraduations);
