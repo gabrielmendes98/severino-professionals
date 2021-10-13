@@ -3,6 +3,7 @@ import Container from '@material-ui/core/Container';
 import MainInfo from './MainInfo';
 import Experiences from './Experiences';
 import Photos from './Photos';
+import AcademicGraduation from './AcademicGraduation';
 
 const Profile = () => {
   const [expanded, setExpanded] = useState(false);
@@ -30,6 +31,13 @@ const Profile = () => {
       <Photos
         name="photos"
         title="Fotos dos meus trabalhos"
+        expanded={expanded}
+        handleChange={handleChange}
+      />
+
+      <AcademicGraduation
+        name="academicGraduation"
+        title="Formação Acadêmica"
         expanded={expanded}
         handleChange={handleChange}
       />
