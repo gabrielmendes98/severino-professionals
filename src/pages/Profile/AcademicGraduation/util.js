@@ -18,7 +18,7 @@ export const cancelEditing = (handleReset, setFormData, setEditing) => {
 };
 
 export const parseDegreesToSelect = degrees =>
-  degrees.map(degree => ({ label: degree.description, value: degree.id }));
+  degrees?.map(degree => ({ label: degree.description, value: degree.id }));
 
 export const parseAcademicGraduationToForm = academicGraduation => {
   const { institution, studyArea, id, degreeId } = academicGraduation;

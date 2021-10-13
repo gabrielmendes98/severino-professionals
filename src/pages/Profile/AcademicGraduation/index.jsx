@@ -140,7 +140,7 @@ const AcademicGraduation = () => {
           items={academicGraduations}
           deleteItem={deleteAcademicGraduation}
           editItem={editAcademicGraduation}
-          id="experience"
+          id="academic-graduation"
           ItemTemplate={AcademicGraduationTemplate}
         />
       </Grid>

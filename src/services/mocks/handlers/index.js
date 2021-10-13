@@ -1,4 +1,5 @@
 import { rest } from 'msw';
+import { degreeTypesRoutes } from 'services/requests/degreeTypes';
 import { mountApiUrl } from '../helpers/util';
 import session from '../data/session';
 import postWorkers from '../data/workers/post';
@@ -12,12 +13,15 @@ import { loginRoutes } from '../../requests/login';
 import { workersRoutes } from '../../requests/workers';
 import { experiencesRoutes } from '../../requests/experiences';
 import { jobTypesRoutes } from '../../requests/jobTypes';
+import getDegreeTypes from '../data/getDegreeTypes';
 import ibgeHandler from './ibge';
 import photosHandler from './photos';
+import academicGraduationsHandler from './academicGraduations';
 
 export const handlers = [
   ...ibgeHandler,
   ...photosHandler,
+  ...academicGraduationsHandler,
   rest.post(mountApiUrl(loginRoutes.login), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(session)),
   ),
@@ -43,6 +47,9 @@ export const handlers = [
   ),
   rest.get(mountApiUrl(jobTypesRoutes.jobTypes), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(getJobTypes)),
+  ),
+  rest.get(mountApiUrl(degreeTypesRoutes.degreeTypes), (req, res, ctx) =>
+    res(ctx.status(200), ctx.json(getDegreeTypes)),
   ),
   rest.delete(
     mountApiUrl(experiencesRoutes.experiencesId(':userId', ':experienceId')),
