@@ -4,6 +4,7 @@ import MainInfo from './MainInfo';
 import Experiences from './Experiences';
 import Photos from './Photos';
 import AcademicGraduation from './AcademicGraduations';
+import Skills from './Skills';
 
 const Profile = () => {
   const [expanded, setExpanded] = useState(false);
@@ -38,6 +39,13 @@ const Profile = () => {
       <AcademicGraduation
         name="academicGraduation"
         title="Formação Acadêmica"
+        expanded={expanded}
+        handleChange={handleChange}
+      />
+
+      <Skills
+        name="skills"
+        title="Habilidades"
         expanded={expanded}
         handleChange={handleChange}
       />

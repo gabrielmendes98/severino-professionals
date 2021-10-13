@@ -17,11 +17,13 @@ import getDegreeTypes from '../data/getDegreeTypes';
 import ibgeHandler from './ibge';
 import photosHandler from './photos';
 import academicGraduationsHandler from './academicGraduations';
+import skillsHandler from './skills';
 
 export const handlers = [
   ...ibgeHandler,
   ...photosHandler,
   ...academicGraduationsHandler,
+  ...skillsHandler,
   rest.post(mountApiUrl(loginRoutes.login), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(session)),
   ),
