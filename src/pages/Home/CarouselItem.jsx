@@ -4,11 +4,11 @@ import Text from 'components/Text';
 import Doodle from 'components/Doodle';
 
 const CarouselItem = ({ doodle, title, subtitle }) => (
-  <Grid container alignItems="center">
-    <Grid container item xs={6} justifyContent="center">
+  <Grid container alignItems="center" spacing={3}>
+    <Grid container item xs={12} sm={6} justifyContent="center">
       <Doodle size={25} src={doodle} />
     </Grid>
-    <Grid container item xs={6}>
+    <Grid container item xs={12} sm={6}>
       <Grid item xs={12}>
         <Text size={1.4}>{title}</Text>
       </Grid>

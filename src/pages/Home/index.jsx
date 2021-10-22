@@ -30,8 +30,8 @@ const Home = () => (
     </Grid>
     <Wrapper>
       <Container maxWidth="lg">
-        <Grid container>
-          <Grid item xs={9}>
+        <Grid container spacing={2}>
+          <Grid item sm={8} md={9}>
             <Text color="white" size={1.4}>
               Faça parte
             </Text>
@@ -47,18 +47,18 @@ const Home = () => (
               Cadastre-se
             </WhiteButton>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item sm={4} md={3}>
             <Doodle size={25} src={joinUs} />
           </Grid>
         </Grid>
       </Container>
     </Wrapper>
     <Container maxWidth="lg">
-      <Grid container alignItems="center" margin={{ top: 5 }}>
-        <Grid item xs={3}>
+      <Grid container alignItems="center" margin={{ top: 5 }} spacing={2}>
+        <Grid item sm={4} md={3}>
           <Doodle size={25} src={goingUp} />
         </Grid>
-        <Grid item xs={9}>
+        <Grid item sm={8} md={9}>
           <Text size={1.1}>
             Severino é uma plataforma para pessoas encontrarem profissionais que
             consigam resolver seus problemas. Por isso, ao se cadastrar como um
