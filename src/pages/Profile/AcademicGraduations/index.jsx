@@ -83,14 +83,14 @@ const AcademicGraduations = () => {
                 <Input name="institution" label="Instituição de ensino" />
               </Grid>
 
-              <Grid item xs={6}>
+              <Grid item xs={12} sm={6}>
                 <Select
                   options={degrees}
                   name="degree"
                   label="Tipo de formação"
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={12} sm={6}>
                 <Input name="studyArea" label="Área de estudo" />
               </Grid>
 

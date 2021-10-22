@@ -73,19 +73,19 @@ const MainInfo = () => {
       {({ setFieldValue, handleReset }) => (
         <Form noValidate>
           <Grid container spacing={2}>
-            <Grid item md={12} lg={4}>
+            <Grid item xs={12} md={4}>
               <Input name="name" label="Nome" disabled={!editing} />
             </Grid>
 
-            <Grid item md={12} lg={4}>
+            <Grid item xs={12} md={4}>
               <Input name="lastName" label="Sobrenome" disabled={!editing} />
             </Grid>
 
-            <Grid item md={12} lg={4}>
+            <Grid item xs={12} md={4}>
               <Input name="email" label="E-mail" disabled={!editing} />
             </Grid>
 
-            <Grid item md={12} lg={12}>
+            <Grid item xs={12} lg={12}>
               <Input
                 name="description"
                 label="Nos conte um pouco sobre você"
@@ -93,11 +93,11 @@ const MainInfo = () => {
               />
             </Grid>
 
-            <Grid item md={12} lg={4}>
+            <Grid item xs={12} md={4}>
               <Input name="phone" label="Telefone" disabled={!editing} />
             </Grid>
 
-            <Grid item md={12} lg={4}>
+            <Grid item xs={12} md={4}>
               <Select
                 name="state"
                 label="Estado"
@@ -107,7 +107,7 @@ const MainInfo = () => {
               />
             </Grid>
 
-            <Grid item xs={4}>
+            <Grid item xs={12} md={4}>
               <Select
                 name="city"
                 label="Cidade"
@@ -117,7 +117,7 @@ const MainInfo = () => {
               />
             </Grid>
 
-            <Grid item xs={12}>
+            <Grid item xs={12} md={4}>
               <Checkbox
                 name="hasWhatsapp"
                 label="Este telefone tem Whatsapp?"

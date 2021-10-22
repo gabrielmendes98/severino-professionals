@@ -27,6 +27,7 @@ import {
   cancelEditing,
   removeExperience,
 } from './util';
+import { BreakLine } from './style';
 
 const Experiences = () => {
   const { user } = useUser();
@@ -100,10 +101,10 @@ const Experiences = () => {
         {({ setFieldValue, handleReset }) => (
           <Form noValidate>
             <Grid container spacing={2}>
-              <Grid item xs={4}>
+              <Grid item xs={12} md={4}>
                 <Input name="role" label="Cargo" />
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} md={4}>
                 <Select
                   name="jobType"
                   label="Tipo de emprego"
@@ -111,11 +112,11 @@ const Experiences = () => {
                 />
               </Grid>
 
-              <Grid item xs={4}>
+              <Grid item xs={12} md={4}>
                 <Input name="company" label="Empresa" />
               </Grid>
 
-              <Grid item xs={4}>
+              <Grid item xs={12} md={4}>
                 <Select
                   name="state"
                   label="Estado"
@@ -124,7 +125,7 @@ const Experiences = () => {
                 />
               </Grid>
 
-              <Grid item xs={4}>
+              <Grid item xs={12} md={4}>
                 <Select
                   name="city"
                   label="Cidade"
@@ -133,13 +134,13 @@ const Experiences = () => {
                 />
               </Grid>
 
-              <Grid item xs={4}></Grid>
+              <Grid item xs={12} md={4} component={BreakLine}></Grid>
 
-              <Grid item xs={4}>
+              <Grid item xs={12} md={4}>
                 <MonthYearPicker name="startDate" label="Data de início" />
               </Grid>
 
-              <Grid item xs={4}>
+              <Grid item xs={12} md={4}>
                 <MonthYearPicker name="endDate" label="Data de término" />
               </Grid>
 
