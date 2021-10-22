@@ -16,7 +16,7 @@ const Login = () => {
   const onSubmit = values => login(values);
 
   return (
-    <Grid container padding={{ bottom: 20 }}>
+    <Grid container padding={{ bottom: 20 }} spacing={5}>
       <StyledGrid
         container
         item
