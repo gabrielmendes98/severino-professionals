@@ -49,10 +49,17 @@ const parseUserToForm = user => {
   ];
 
   return {
-    ...other,
-    name: firstName,
-    lastName,
-    description: other.description ?? initialValues.description,
+    userData: {
+      ...other,
+      name: firstName,
+      lastName,
+      description: other.description ?? initialValues.description,
+    },
+    avatar: {
+      url: avatarUrl,
+      file: undefined,
+      editing: false,
+    },
   };
 };
 
