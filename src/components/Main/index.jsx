@@ -1,21 +1,16 @@
-import PropTypes from 'prop-types';
-import UserProvider from 'commons/contexts/User';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import { MainContainer, MainContent } from './style';
+import { Switch } from 'react-router';
+import routes from 'routes';
+import AppRoute from './AppRoute';
+import { MainContainer } from './style';
 
-const Main = ({ children }) => (
+const Main = () => (
   <MainContainer>
-    <UserProvider>
-      <Header />
-      <MainContent>{children}</MainContent>
-      <Footer />
-    </UserProvider>
+    <Switch>
+      {routes.map(route => (
+        <AppRoute key={route.path} {...route} />
+      ))}
+    </Switch>
   </MainContainer>
 );
-
-Main.propTypes = {
-  children: PropTypes.any.isRequired,
-};
 
 export default Main;

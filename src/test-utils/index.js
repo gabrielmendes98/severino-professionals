@@ -8,9 +8,9 @@ configure({ testIdAttribute: 'id' });
 
 const Wrapper = ({ children }) => <MainProvider>{children}</MainProvider>;
 const RouteWrapper = ({ children }) => (
-  <Wrapper>
-    <BrowserRouter>{children}</BrowserRouter>
-  </Wrapper>
+  <BrowserRouter>
+    <Wrapper>{children}</Wrapper>
+  </BrowserRouter>
 );
 const FormikWrapper = ({ children, initialValues, ...config }) => (
   <Formik initialValues={initialValues} {...config}>

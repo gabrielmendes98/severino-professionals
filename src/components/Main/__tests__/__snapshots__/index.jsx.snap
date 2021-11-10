@@ -2,9 +2,133 @@
 
 exports[`should match snapshot 1`] = `
 <DocumentFragment>
-  .c2 {
-  margin: 0;
-  cursor: pointer;
+  .c9 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  color: #363636;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  font-family: Roboto;
+}
+
+.c11 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  font-family: Roboto;
+}
+
+.c12 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 16px;
+  color: #FFFFFF;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  font-family: Roboto;
+}
+
+.c15 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  color: #363636;
+  font-size: 1.1rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  font-family: Roboto;
+}
+
+.c19 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 16px;
+  color: #3700B3;
+  font-weight: bold;
+  font-size: 1.1rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  font-family: Roboto;
+}
+
+.c20 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 16px;
+  color: #363636;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  font-family: Roboto;
+}
+
+.c21 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  color: #363636;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  font-family: Roboto;
+}
+
+.c8 {
+  width: 200px;
+  height: auto;
+}
+
+.c6 {
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 160px;
+}
+
+.c7 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 80px;
+}
+
+.c14 {
+  margin-top: 40px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+.c17 {
+  margin-top: 80px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
 }
 
 .c4 {
@@ -12,6 +136,26 @@ exports[`should match snapshot 1`] = `
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 0px;
+}
+
+.c10 {
+  background-color: #7D3CFF;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.c13 {
+  background-color: #FFFFFF;
+  font-weight: bold;
+}
+
+.c13 * {
+  color: #3700B3;
+}
+
+.c2 {
+  margin: 0;
+  cursor: pointer;
 }
 
 .c1 {
@@ -27,55 +171,7 @@ exports[`should match snapshot 1`] = `
   flex-grow: 1;
 }
 
-.c9 {
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 16px;
-  color: #3700B3;
-  font-weight: bold;
-  font-size: 1.1rem;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  font-family: Roboto;
-}
-
-.c10 {
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 16px;
-  color: #363636;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  font-family: Roboto;
-}
-
-.c11 {
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  color: #363636;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  font-family: Roboto;
-}
-
-.c7 {
-  margin-top: 80px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-}
-
-.c6 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -87,8 +183,16 @@ exports[`should match snapshot 1`] = `
   padding-bottom: 40px;
 }
 
-.c8 {
+.c18 {
   text-align: center;
+}
+
+.c5 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-top: 80px;
 }
 
 .c0 {
@@ -101,14 +205,6 @@ exports[`should match snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c5 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-top: 80px;
 }
 
 <div
@@ -169,185 +265,668 @@ exports[`should match snapshot 1`] = `
     <main
       class="c5"
     >
-      <div>
-        Test
+      <div
+        class="MuiGrid-root c6 MuiGrid-container"
+      >
+        <div
+          class="MuiGrid-root c7 MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <div
+            class="MuiContainer-root MuiContainer-maxWidthLg"
+          >
+            <div
+              class="slick-slider slick-initialized"
+              dir="ltr"
+            >
+              <button
+                class="slick-arrow slick-prev"
+                data-role="none"
+                style="display: block;"
+                type="button"
+              >
+                 Previous
+              </button>
+              <div
+                class="slick-list"
+              >
+                <div
+                  class="slick-track"
+                  style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
+                >
+                  <div
+                    aria-hidden="true"
+                    class="slick-slide slick-cloned"
+                    data-index="-1"
+                    style="width: 0px;"
+                    tabindex="-1"
+                  >
+                    <div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-align-items-xs-center"
+                      >
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <img
+                            class="c8"
+                            size="25"
+                            src="[object Object]"
+                          />
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root c9 MuiTypography-body1"
+                              size="1.4"
+                              transform=""
+                            >
+                              Aumente seus ganhos
+                            </p>
+                          </div>
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1"
+                            >
+                              Faça parte do Severino para que possa ser encontrado por diversos usuários da aplicação
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="false"
+                    class="slick-slide slick-active slick-current"
+                    data-index="0"
+                    style="outline: none; width: 0px;"
+                    tabindex="-1"
+                  >
+                    <div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-align-items-xs-center"
+                      >
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <img
+                            class="c8"
+                            size="25"
+                            src="[object Object]"
+                          />
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root c9 MuiTypography-body1"
+                              size="1.4"
+                              transform=""
+                            >
+                              Receba ofertas de onde estiver
+                            </p>
+                          </div>
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1"
+                            >
+                              Cadastre-se na aplicação Severino e receba chamados de clientes de onde estiver, direto no seu WhatsApp
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="slick-slide"
+                    data-index="1"
+                    style="outline: none; width: 0px;"
+                    tabindex="-1"
+                  >
+                    <div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-align-items-xs-center"
+                      >
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <img
+                            class="c8"
+                            size="25"
+                            src="[object Object]"
+                          />
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root c9 MuiTypography-body1"
+                              size="1.4"
+                              transform=""
+                            >
+                              Conecte-se
+                            </p>
+                          </div>
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1"
+                            >
+                              Entre em contato diretamente com seus clientes pelo WhatsApp ou ligação
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="slick-slide"
+                    data-index="2"
+                    style="outline: none; width: 0px;"
+                    tabindex="-1"
+                  >
+                    <div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-align-items-xs-center"
+                      >
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <img
+                            class="c8"
+                            size="25"
+                            src="[object Object]"
+                          />
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root c9 MuiTypography-body1"
+                              size="1.4"
+                              transform=""
+                            >
+                              Aumente seus ganhos
+                            </p>
+                          </div>
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1"
+                            >
+                              Faça parte do Severino para que possa ser encontrado por diversos usuários da aplicação
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="slick-slide slick-cloned"
+                    data-index="3"
+                    style="width: 0px;"
+                    tabindex="-1"
+                  >
+                    <div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-align-items-xs-center"
+                      >
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <img
+                            class="c8"
+                            size="25"
+                            src="[object Object]"
+                          />
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root c9 MuiTypography-body1"
+                              size="1.4"
+                              transform=""
+                            >
+                              Receba ofertas de onde estiver
+                            </p>
+                          </div>
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1"
+                            >
+                              Cadastre-se na aplicação Severino e receba chamados de clientes de onde estiver, direto no seu WhatsApp
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="slick-slide slick-cloned"
+                    data-index="4"
+                    style="width: 0px;"
+                    tabindex="-1"
+                  >
+                    <div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-align-items-xs-center"
+                      >
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <img
+                            class="c8"
+                            size="25"
+                            src="[object Object]"
+                          />
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root c9 MuiTypography-body1"
+                              size="1.4"
+                              transform=""
+                            >
+                              Conecte-se
+                            </p>
+                          </div>
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1"
+                            >
+                              Entre em contato diretamente com seus clientes pelo WhatsApp ou ligação
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="slick-slide slick-cloned"
+                    data-index="5"
+                    style="width: 0px;"
+                    tabindex="-1"
+                  >
+                    <div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-align-items-xs-center"
+                      >
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <img
+                            class="c8"
+                            size="25"
+                            src="[object Object]"
+                          />
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+                        >
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root c9 MuiTypography-body1"
+                              size="1.4"
+                              transform=""
+                            >
+                              Aumente seus ganhos
+                            </p>
+                          </div>
+                          <div
+                            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1"
+                            >
+                              Faça parte do Severino para que possa ser encontrado por diversos usuários da aplicação
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="slick-arrow slick-next"
+                data-role="none"
+                style="display: block;"
+                type="button"
+              >
+                 Next
+              </button>
+              <ul
+                class="slick-dots"
+                style="display: block;"
+              >
+                <li
+                  class="slick-active"
+                >
+                  <button>
+                    1
+                  </button>
+                </li>
+                <li
+                  class=""
+                >
+                  <button>
+                    2
+                  </button>
+                </li>
+                <li
+                  class=""
+                >
+                  <button>
+                    3
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c10"
+        >
+          <div
+            class="MuiContainer-root MuiContainer-maxWidthLg"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-8 MuiGrid-grid-md-9"
+              >
+                <p
+                  class="MuiTypography-root c11 MuiTypography-body1"
+                  size="1.4"
+                  textcolor="white"
+                  transform=""
+                >
+                  Faça parte
+                </p>
+                <p
+                  class="MuiTypography-root c12 MuiTypography-body1"
+                  margin="[object Object]"
+                  textcolor="white"
+                  transform=""
+                >
+                  Seja um profissional do Severino e divulgue seu trabalho gratuitamente
+                </p>
+                <a
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiButton-root MuiButton-contained c4 c13 MuiButton-containedPrimary"
+                  href="/sign-up"
+                  role="button"
+                  tabindex="0"
+                >
+                  <span
+                    class="MuiButton-label"
+                  >
+                    Cadastre-se
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </a>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-4 MuiGrid-grid-md-3"
+              >
+                <img
+                  class="c8"
+                  size="25"
+                  src="[object Object]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiContainer-root MuiContainer-maxWidthLg"
+        >
+          <div
+            class="MuiGrid-root c14 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-align-items-xs-center"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-4 MuiGrid-grid-md-3"
+            >
+              <img
+                class="c8"
+                size="25"
+                src="[object Object]"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-8 MuiGrid-grid-md-9"
+            >
+              <p
+                class="MuiTypography-root c15 MuiTypography-body1"
+                size="1.1"
+                transform=""
+              >
+                Severino é uma plataforma para pessoas encontrarem profissionais que consigam resolver seus problemas. Por isso, ao se cadastrar como um profissional da plataforma, você terá seu trabalho divulgado gratuitamente para milhares de pessoas. Disponibilizamos um cadastro de currículo, fotos de seus serviços e avaliações dos usuários para qualificar seu trabalho.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer
-      class="c6 MuiGrid-root c7 MuiGrid-container"
+      class="c16 MuiGrid-root c17 MuiGrid-container"
     >
       <div
         class="MuiContainer-root MuiContainer-maxWidthXl"
         style="display: flex;"
       >
         <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-center MuiGrid-grid-sm-4"
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
         >
           <div
-            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-center MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-sm-4"
           >
-            <img
-              alt="Severino"
-              class="c2 c8"
-              src="[object Object]"
-            />
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-center MuiGrid-grid-xs-12"
+            >
+              <img
+                alt="Severino"
+                class="c2 c18"
+                src="[object Object]"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-lg-1"
+            >
+              <button
+                aria-label="facebook"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-lg-1"
+            >
+              <button
+                aria-label="twitter"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-lg-1"
+            >
+              <button
+                aria-label="instagram"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-sm-4"
           >
-            <button
-              aria-label="facebook"
-              class="MuiButtonBase-root MuiIconButton-root"
-              tabindex="0"
-              type="button"
+            <p
+              class="MuiTypography-root c19 MuiTypography-body1"
+              margin="[object Object]"
+              size="1.1"
+              textcolor="secondary"
+              transform=""
+              weight="bold"
             >
-              <span
-                class="MuiIconButton-label"
+              Ajuda & Dúvidas
+            </p>
+            <p
+              class="MuiTypography-root c20 MuiTypography-body1"
+              margin="[object Object]"
+              transform=""
+            >
+              <a
+                href="https://www.google.com"
+                rel="noreferrer"
+                target="_blank"
               >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
+                Site dos clientes
+              </a>
+            </p>
+            <p
+              class="MuiTypography-root c20 MuiTypography-body1"
+              margin="[object Object]"
+              transform=""
+            >
+              <a
+                href="/about-us"
+              >
+                Sobre nós
+              </a>
+            </p>
+            <p
+              class="MuiTypography-root c21 MuiTypography-body1"
+              transform=""
+            >
+              <a
+                href="/terms-and-conditions"
+              >
+                Termos e condições
+              </a>
+            </p>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-sm-4"
           >
-            <button
-              aria-label="twitter"
-              class="MuiButtonBase-root MuiIconButton-root"
-              tabindex="0"
-              type="button"
+            <p
+              class="MuiTypography-root c19 MuiTypography-body1"
+              margin="[object Object]"
+              size="1.1"
+              textcolor="secondary"
+              transform=""
+              weight="bold"
             >
-              <span
-                class="MuiIconButton-label"
+              Contatos
+            </p>
+            <p
+              class="MuiTypography-root c21 MuiTypography-body1"
+              transform=""
+            >
+              <a
+                href="mailto:severino@gmail.com"
               >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
+                severino@gmail.com
+              </a>
+            </p>
           </div>
-          <div
-            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
-          >
-            <button
-              aria-label="instagram"
-              class="MuiButtonBase-root MuiIconButton-root"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiIconButton-label"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
-          </div>
-        </div>
-        <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-center MuiGrid-grid-sm-4"
-        >
-          <p
-            class="MuiTypography-root c9 MuiTypography-body1"
-            margin="[object Object]"
-            size="1.1"
-            textcolor="secondary"
-            transform=""
-            weight="bold"
-          >
-            Ajuda & Dúvidas
-          </p>
-          <p
-            class="MuiTypography-root c10 MuiTypography-body1"
-            margin="[object Object]"
-            transform=""
-          >
-            <a
-              href="https://www.google.com"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Site dos clientes
-            </a>
-          </p>
-          <p
-            class="MuiTypography-root c10 MuiTypography-body1"
-            margin="[object Object]"
-            transform=""
-          >
-            <a
-              href="/about-us"
-            >
-              Sobre nós
-            </a>
-          </p>
-          <p
-            class="MuiTypography-root c11 MuiTypography-body1"
-            transform=""
-          >
-            <a
-              href="/terms-and-conditions"
-            >
-              Termos e condições
-            </a>
-          </p>
-        </div>
-        <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-center MuiGrid-grid-sm-4"
-        >
-          <p
-            class="MuiTypography-root c9 MuiTypography-body1"
-            margin="[object Object]"
-            size="1.1"
-            textcolor="secondary"
-            transform=""
-            weight="bold"
-          >
-            Contatos
-          </p>
-          <p
-            class="MuiTypography-root c11 MuiTypography-body1"
-            transform=""
-          >
-            <a
-              href="mailto:severino@gmail.com"
-            >
-              severino@gmail.com
-            </a>
-          </p>
         </div>
       </div>
     </footer>

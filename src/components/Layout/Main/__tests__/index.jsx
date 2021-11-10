@@ -1,13 +1,13 @@
-import { homeRoutes } from 'routes/home';
 import { toMatchSnapshot } from 'test-utils';
 import UserProvider from 'commons/contexts/User';
-import Main from '..';
+import Layout from '..';
 
 it('should match snapshot', () => {
-  window.history.pushState({}, 'Test page', homeRoutes.main);
   toMatchSnapshot(
     <UserProvider>
-      <Main />
+      <Layout>
+        <div>Test</div>
+      </Layout>
     </UserProvider>,
     { useRouter: true },
   );

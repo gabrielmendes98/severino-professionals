@@ -2,7 +2,104 @@
 
 exports[`should match snapshot 1`] = `
 <DocumentFragment>
-  .c4 {
+  .c1 {
+  margin: 0;
+  cursor: pointer;
+}
+
+.c3 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+.c0 {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #DDDDDD;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
+}
+
+.c2 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+<header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorDefault c0 MuiPaper-elevation2"
+  >
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthXl"
+    >
+      <div
+        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      >
+        <img
+          alt="Severino"
+          class="c1"
+          src="[object Object]"
+        />
+        <div
+          class="c2"
+        />
+        <a
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiButton-root MuiButton-text c3 MuiButton-colorInherit"
+          href="/login"
+          role="button"
+          tabindex="0"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Login
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </a>
+        <a
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiButton-root MuiButton-text c3 MuiButton-colorInherit"
+          href="/sign-up"
+          role="button"
+          tabindex="0"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Cadastre-se
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </a>
+      </div>
+    </div>
+  </header>
+  .c0 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-top: 80px;
+}
+
+<main
+    class="c0"
+  >
+    <div>
+      Test
+    </div>
+  </main>
+  .c2 {
+  margin: 0;
+  cursor: pointer;
+}
+
+.c4 {
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -48,11 +145,6 @@ exports[`should match snapshot 1`] = `
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 0px;
-}
-
-.c2 {
-  margin: 0;
-  cursor: pointer;
 }
 
 .c0 {
