@@ -30,7 +30,7 @@ const AcademicGraduations = () => {
   const [academicGraduations, setAcademicGraduations] = useState([]);
 
   const getAcademicGraduations = useCallback(() => {
-    academicGraduationsApi.getList(user.id).then(setAcademicGraduations);
+    academicGraduationsApi.list(user.id).then(setAcademicGraduations);
   }, [user.id]);
 
   const onSubmit = (values, { resetForm }) => {
@@ -65,7 +65,7 @@ const AcademicGraduations = () => {
 
   useEffect(() => {
     getAcademicGraduations();
-    degreeTypesApi.getList().then(parseDegreesToSelect).then(setDegrees);
+    degreeTypesApi.list().then(parseDegreesToSelect).then(setDegrees);
   }, [getAcademicGraduations]);
 
   return (

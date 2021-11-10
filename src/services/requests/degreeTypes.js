@@ -4,10 +4,8 @@ export const degreeTypesRoutes = {
   degreeTypes: '/degree-types',
 };
 
-const getList = () => api.get(degreeTypesRoutes.degreeTypes);
-
 const degreeTypesApi = {
-  getList,
+  list: () => api.get(degreeTypesRoutes.degreeTypes),
 };
 
 export default degreeTypesApi;

@@ -14,7 +14,7 @@ it('should upload file and call api', async () => {
     .spyOn(photosApi, 'create')
     .mockImplementation(() => Promise.resolve());
   const getPhotosSpy = jest
-    .spyOn(photosApi, 'getAll')
+    .spyOn(photosApi, 'list')
     .mockImplementation(() => Promise.resolve([]));
   const file = new File(['hello'], 'hello.png', { type: 'image/png' });
 
@@ -98,7 +98,7 @@ it('should delete photo on button click and refresh list', async () => {
   expect(await screen.findByText(getPhotos[0].title)).toBeInTheDocument();
 
   const getPhotosSpy = jest
-    .spyOn(photosApi, 'getAll')
+    .spyOn(photosApi, 'list')
     .mockImplementationOnce(() => Promise.resolve([]));
 
   userEvent.click(screen.getByTestId('delete-photo-0'));
@@ -111,7 +111,7 @@ it('should delete photo on button click and refresh list', async () => {
 
 it('should show errors on form submit', async () => {
   jest
-    .spyOn(photosApi, 'getAll')
+    .spyOn(photosApi, 'list')
     .mockImplementationOnce(() => Promise.resolve([]));
 
   render(

@@ -30,7 +30,7 @@ const Photos = () => {
   };
 
   const getPhotos = useCallback(
-    () => photosApi.getAll(user.id).then(setPhotos),
+    () => photosApi.list(user.id).then(setPhotos),
     [user.id],
   );
 

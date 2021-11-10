@@ -5,14 +5,10 @@ export const workersRoutes = {
   workersId: id => `/workers/${id}`,
 };
 
-const create = data => api.post(workersRoutes.workers, data);
-const update = (id, data) => api.put(workersRoutes.workersId(id), data);
-const getById = id => api.get(workersRoutes.workersId(id));
-
 const workersApi = {
-  create,
-  update,
-  getById,
+  create: data => api.post(workersRoutes.workers, data),
+  update: (id, data) => api.put(workersRoutes.workersId(id), data),
+  get: id => api.get(workersRoutes.workersId(id)),
 };
 
 export default workersApi;

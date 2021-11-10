@@ -71,8 +71,8 @@ it('should delete skill', async () => {
 
   expect(await screen.findByTestId('delete-skill-0')).toBeInTheDocument();
 
-  const getAll = jest
-    .spyOn(skillsApi, 'getAll')
+  const list = jest
+    .spyOn(skillsApi, 'list')
     .mockImplementationOnce(() => Promise.resolve([]));
 
   userEvent.click(screen.getByTestId('delete-skill-0'));
@@ -81,7 +81,7 @@ it('should delete skill', async () => {
   expect(deleteSkill).toHaveBeenCalledWith(mockedUser.id, getSkills[0].id);
 
   await waitFor(() => {
-    expect(getAll).toHaveBeenCalledTimes(1);
+    expect(list).toHaveBeenCalledTimes(1);
   });
 
   await waitFor(() => {});

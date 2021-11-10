@@ -50,7 +50,7 @@ const MainInfo = () => {
   };
 
   useEffect(() => {
-    Promise.all([workersApi.getById(user.id), ibgeApi.getStates()]).then(
+    Promise.all([workersApi.get(user.id), ibgeApi.getStates()]).then(
       ([responseWorker, responseStates]) => {
         setStates(parseStateToSelect(responseStates));
         ibgeApi

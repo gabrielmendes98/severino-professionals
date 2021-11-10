@@ -17,7 +17,7 @@ const Skills = () => {
   const [skills, setSkills] = useState([]);
 
   const getSkills = useCallback(
-    () => skillsApi.getAll(user.id).then(setSkills),
+    () => skillsApi.list(user.id).then(setSkills),
     [user.id],
   );
 

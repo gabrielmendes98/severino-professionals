@@ -5,16 +5,11 @@ export const photosRoutes = {
   photosId: (userId, photoId) => `/workers/${userId}/photos/${photoId}`,
 };
 
-const create = (userId, data) =>
-  filesApi.post(photosRoutes.photos(userId), data);
-const getAll = userId => api.get(photosRoutes.photos(userId));
-const exclude = (userId, photoId) =>
-  api.delete(photosRoutes.photosId(userId, photoId));
-
 const photosApi = {
-  create,
-  getAll,
-  exclude,
+  create: (userId, data) => filesApi.post(photosRoutes.photos(userId), data),
+  list: userId => api.get(photosRoutes.photos(userId)),
+  exclude: (userId, photoId) =>
+    api.delete(photosRoutes.photosId(userId, photoId)),
 };
 
 export default photosApi;

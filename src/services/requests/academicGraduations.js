@@ -6,31 +6,26 @@ export const academicGraduationsRoutes = {
     `/workers/${userId}/academic-graduations/${academicGraduationId}`,
 };
 
-const create = (userId, data) =>
-  api.post(academicGraduationsRoutes.academicGraduations(userId), data);
-const update = (userId, academicGraduationId, data) =>
-  api.put(
-    academicGraduationsRoutes.academicGraduationsId(
-      userId,
-      academicGraduationId,
-    ),
-    data,
-  );
-const getList = userId =>
-  api.get(academicGraduationsRoutes.academicGraduations(userId));
-const exclude = (userId, academicGraduationId) =>
-  api.delete(
-    academicGraduationsRoutes.academicGraduationsId(
-      userId,
-      academicGraduationId,
-    ),
-  );
-
 const academicGraduationsApi = {
-  create,
-  update,
-  getList,
-  exclude,
+  create: (userId, data) =>
+    api.post(academicGraduationsRoutes.academicGraduations(userId), data),
+  update: (userId, academicGraduationId, data) =>
+    api.put(
+      academicGraduationsRoutes.academicGraduationsId(
+        userId,
+        academicGraduationId,
+      ),
+      data,
+    ),
+  list: userId =>
+    api.get(academicGraduationsRoutes.academicGraduations(userId)),
+  exclude: (userId, academicGraduationId) =>
+    api.delete(
+      academicGraduationsRoutes.academicGraduationsId(
+        userId,
+        academicGraduationId,
+      ),
+    ),
 };
 
 export default academicGraduationsApi;

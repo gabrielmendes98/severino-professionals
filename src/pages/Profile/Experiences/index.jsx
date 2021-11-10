@@ -85,7 +85,7 @@ const Experiences = () => {
   useEffect(() => {
     getExperiences();
 
-    jobTypesApi.getList().then(parseJobTypes).then(setJobTypes);
+    jobTypesApi.list().then(parseJobTypes).then(setJobTypes);
 
     ibgeApi.getStates().then(parseStateToSelect).then(setStates);
   }, [getExperiences]);

@@ -6,19 +6,14 @@ export const experiencesRoutes = {
     `/workers/${userId}/experiences/${experienceId}`,
 };
 
-const create = (userId, data) =>
-  api.post(experiencesRoutes.experiences(userId), data);
-const update = (userId, experienceId, data) =>
-  api.put(experiencesRoutes.experiencesId(userId, experienceId), data);
-const getList = userId => api.get(experiencesRoutes.experiences(userId));
-const exclude = (userId, experienceId) =>
-  api.delete(experiencesRoutes.experiencesId(userId, experienceId));
-
 const experiencesApi = {
-  create,
-  update,
-  getList,
-  exclude,
+  create: (userId, data) =>
+    api.post(experiencesRoutes.experiences(userId), data),
+  update: (userId, experienceId, data) =>
+    api.put(experiencesRoutes.experiencesId(userId, experienceId), data),
+  list: userId => api.get(experiencesRoutes.experiences(userId)),
+  exclude: (userId, experienceId) =>
+    api.delete(experiencesRoutes.experiencesId(userId, experienceId)),
 };
 
 export default experiencesApi;

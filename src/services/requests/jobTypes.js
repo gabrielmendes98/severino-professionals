@@ -4,10 +4,8 @@ export const jobTypesRoutes = {
   jobTypes: '/job-types',
 };
 
-const getList = () => api.get(jobTypesRoutes.jobTypes);
-
 const jobTypesApi = {
-  getList,
+  list: () => api.get(jobTypesRoutes.jobTypes),
 };
 
 export default jobTypesApi;

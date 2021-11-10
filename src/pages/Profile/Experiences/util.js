@@ -59,7 +59,7 @@ export const parseExperienceToFrom = experience => {
   };
 };
 
-export const fetchExperiences = userId => experiencesApi.getList(userId);
+export const fetchExperiences = userId => experiencesApi.list(userId);
 
 export const cancelEditing = (handleReset, setFormData, setEditing) => {
   handleReset();

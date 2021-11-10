@@ -6,12 +6,9 @@ export const ibgeRoutes = {
     `/localidades/estados/${state}/municipios?orderBy=nome`,
 };
 
-const getStates = () => api.get(ibgeRoutes.states);
-const getCitiesByState = state => api.get(ibgeRoutes.citiesByState(state));
-
 const ibgeApi = {
-  getStates,
-  getCitiesByState,
+  getStates: () => api.get(ibgeRoutes.states),
+  getCitiesByState: state => api.get(ibgeRoutes.citiesByState(state)),
 };
 
 export default ibgeApi;

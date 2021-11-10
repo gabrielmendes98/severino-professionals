@@ -4,11 +4,8 @@ export const loginRoutes = {
   login: '/workers/session',
 };
 
-const login = (email, password) =>
-  api.post(loginRoutes.login, { email, password });
-
 const loginApi = {
-  login,
+  login: (email, password) => api.post(loginRoutes.login, { email, password }),
 };
 
 export default loginApi;

@@ -15,7 +15,7 @@ beforeEach(() => {
 
 it('should show academic graduation list', async () => {
   jest
-    .spyOn(degreeTypesApi, 'getList')
+    .spyOn(degreeTypesApi, 'list')
     .mockImplementation(() => Promise.resolve());
   render(
     <UserContext.Provider value={{ user: mockedUser }}>
@@ -51,7 +51,7 @@ it('should be able to add academic graduation', async () => {
     .spyOn(academicGraduationsApi, 'create')
     .mockImplementationOnce(() => Promise.resolve());
   jest
-    .spyOn(academicGraduationsApi, 'getList')
+    .spyOn(academicGraduationsApi, 'list')
     .mockImplementationOnce(() => Promise.resolve([]));
 
   const postData = {
