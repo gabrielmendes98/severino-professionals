@@ -27,8 +27,6 @@ const UserProvider = ({ children, history }) => {
       setToken(token);
       setUser(decodedToken.user);
       setApiHeaders(token);
-      toast.success('Bem-vindo(a) ao Severino!');
-      history.push(PAGE_URL.PROFILE);
     });
 
   const signOut = () => {

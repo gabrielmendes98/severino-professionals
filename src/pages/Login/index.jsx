@@ -1,19 +1,25 @@
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { Form, Formik } from 'formik';
 import loginDoodle from 'assets/doodles/login.svg';
 import useUser from 'commons/contexts/User/useUser';
+import { toast } from 'commons/utils/toast';
 import { Grid } from 'components/Styled';
 import Doodle from 'components/Doodle';
 import Input from 'components/Form/Input';
 import Text from 'components/Text';
 import Button from 'components/Button';
-import { initialValues, validations } from './util';
+import { getRedirectRoute, initialValues, validations } from './util';
 import { StyledGrid, Paper } from './style';
 
-const Login = () => {
+const Login = ({ history, location }) => {
   const { login } = useUser();
 
-  const onSubmit = values => login(values);
+  const onSubmit = values =>
+    login(values).then(() => {
+      toast.success('Bem-vindo(a) ao Severino!');
+      history.push(getRedirectRoute(location));
+    });
 
   return (
     <Grid container padding={{ bottom: 20 }} spacing={5}>
@@ -66,6 +72,11 @@ const Login = () => {
       </StyledGrid>
     </Grid>
   );
+};
+
+Login.propTypes = {
+  history: PropTypes.object,
+  location: PropTypes.object,
 };
 
 export default withRouter(Login);
