@@ -1,5 +1,7 @@
-import Profile from 'pages/Profile';
+import { lazy } from 'react';
 import Layout from 'components/Layout/Main';
+
+const Profile = lazy(() => import('pages/Profile'));
 
 const profileRoutes = {
   main: '/profile',
@@ -11,6 +13,7 @@ const profile = [
     component: Profile,
     layout: Layout,
     exact: true,
+    isProtected: true,
   },
 ];
 

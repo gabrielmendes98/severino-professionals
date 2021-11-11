@@ -1,5 +1,7 @@
-import ChangePassword from 'pages/ChangePassword';
+import { lazy } from 'react';
 import Layout from 'components/Layout/Main';
+
+const ChangePassword = lazy(() => import('pages/ChangePassword'));
 
 const changePasswordRoutes = {
   main: '/change-password',
@@ -11,6 +13,7 @@ const changePassword = [
     component: ChangePassword,
     layout: Layout,
     exact: true,
+    isProtected: true,
   },
 ];
 
