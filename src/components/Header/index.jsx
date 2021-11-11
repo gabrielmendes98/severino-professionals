@@ -36,9 +36,19 @@ const Header = () => {
           )}
 
           {signed && (
-            <Button variant="text" color="inherit" onClick={signOut}>
-              Sair
-            </Button>
+            <>
+              <Button
+                variant="text"
+                color="inherit"
+                component={Link}
+                to={PAGE_URL.CHANGE_PASSWORD}
+              >
+                Mudar senha
+              </Button>
+              <Button variant="text" color="inherit" onClick={signOut}>
+                Sair
+              </Button>
+            </>
           )}
         </Toolbar>
       </Container>

@@ -6,6 +6,7 @@ export const StyledGrid = styled(Grid)`
   ${props => props.theme.breakpoints.down('sm')} {
     justify-content: center;
     padding-right: 0;
+    padding-bottom: ${({ theme }) => theme.spacing(5)}px;
   }
 `;
 

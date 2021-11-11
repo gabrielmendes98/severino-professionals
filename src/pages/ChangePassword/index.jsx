@@ -19,7 +19,7 @@ const ChangePassword = () => {
     });
 
   return (
-    <Grid container padding={{ bottom: 20 }} spacing={5}>
+    <Grid container padding={{ bottom: 20 }}>
       <StyledGrid
         container
         item
