@@ -21,7 +21,7 @@ it('should get user info and set fields correctly', async () => {
     { route: PAGE_URL.PROFILE },
   );
 
-  const parsedMockUser = utils.parseUserToForm(mockedApiUser);
+  const parsedMockUser = utils.parseUserToForm(mockedApiUser).userData;
 
   await waitFor(() =>
     expect(screen.getByLabelText('Nome', { exact: true })).toHaveValue(
@@ -59,7 +59,7 @@ it('should be able to edit and save', async () => {
     { route: PAGE_URL.PROFILE },
   );
 
-  const parsedMockUser = utils.parseUserToForm(mockedApiUser);
+  const parsedMockUser = utils.parseUserToForm(mockedApiUser).userData;
 
   await waitFor(() =>
     expect(screen.getByLabelText(/^nome$/i)).toHaveValue(parsedMockUser.name),

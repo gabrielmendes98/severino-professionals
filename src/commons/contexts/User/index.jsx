@@ -43,12 +43,10 @@ const UserProvider = ({ children, history }) => {
     });
   };
 
-  const signUp = data => {
+  const signUp = data =>
     workersApi
       .create(data)
       .then(() => login({ email: data.email, password: data.password }));
-  };
-
   const signed = Boolean(user);
 
   useEffect(() => {

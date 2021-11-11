@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import { Form, Formik } from 'formik';
 import ibgeApi from 'services/requests/ibge';
 import signUpDoodle from 'assets/doodles/sign-up.svg';
+import PAGE_URL from 'commons/constants/routes';
 import useUser from 'commons/contexts/User/useUser';
 import { Grid } from 'components/Styled';
 import Doodle from 'components/Doodle';
@@ -19,14 +22,14 @@ import {
 } from './util';
 import { StyledGrid, Paper } from './style';
 
-const SignUp = () => {
+const SignUp = ({ history }) => {
   const { signUp } = useUser();
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState();
 
   const onSubmit = values => {
     const data = parseDataToService(values);
-    signUp(data);
+    signUp(data).then(() => history.push(PAGE_URL.PROFILE));
   };
 
   const onChangeState = (event, setFieldValue) => {
@@ -152,4 +155,8 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+SignUp.propTypes = {
+  history: PropTypes.object,
+};
+
+export default withRouter(SignUp);
