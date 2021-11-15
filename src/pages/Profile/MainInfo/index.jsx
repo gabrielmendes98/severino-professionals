@@ -138,7 +138,8 @@ const MainInfo = () => {
               </Button>
             </>
           ) : (
-            <Button key="change-acatar" onClick={() => fileRef.current.click()}>
+            /* istanbul ignore next */
+            <Button key="change-avatar" onClick={() => fileRef.current.click()}>
               Alterar Foto
             </Button>
           )}

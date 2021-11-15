@@ -1,7 +1,9 @@
 import 'test-utils/mocks/material-ui/select';
 import { userEvent, screen, renderWithRouter, waitFor, act } from 'test-utils';
 import mockedUser from 'test-utils/mockedUser';
+import workersApi from 'services/requests/workers';
 import mockedApiUser from 'services/mocks/data/workers/getById';
+import { ibgeApi } from 'services/api';
 import PAGE_URL from 'commons/constants/routes';
 import { UserContext } from 'commons/contexts/User';
 import { toast } from 'commons/utils/toast';
@@ -157,4 +159,44 @@ it('should get initialValues for description if it comes null from api and remov
   expect(screen.getByLabelText(/nos conte um pouco sobre você/i)).toHaveValue(
     '',
   );
+});
+
+it('should be able to edit avatar', async () => {
+  const file = new File(['hello'], 'hello.png', { type: 'image/png' });
+  const bodyFormData = new FormData();
+  bodyFormData.append('file', file);
+
+  const mockAvatarUrl = 'mockAvatarUrl.com';
+
+  const updateAvatar = jest
+    .spyOn(workersApi, 'updateAvatar')
+    .mockImplementation(() => Promise.resolve({ avatarUrl: mockAvatarUrl }));
+
+  renderWithRouter(
+    <UserContext.Provider value={{ user: mockedUser }}>
+      <MainInfo
+        name="main"
+        title="Informações principais"
+        expanded="main"
+        handleChange={() => {}}
+      />
+    </UserContext.Provider>,
+    { route: PAGE_URL.PROFILE },
+  );
+
+  userEvent.upload(screen.getByTestId('photo-file'), file);
+  userEvent.click(screen.getByRole('button', { name: /salvar/i }));
+
+  await waitFor(() => {
+    expect(updateAvatar).toHaveBeenCalledTimes(1);
+  });
+  expect(updateAvatar).toHaveBeenCalledWith(mockedUser.id, bodyFormData);
+
+  expect(screen.getByAltText(/foto de perfil/i)).toHaveAttribute(
+    'src',
+    mockAvatarUrl,
+  );
+  expect(
+    screen.getByRole('button', { name: /alterar foto/i }),
+  ).toBeInTheDocument();
 });

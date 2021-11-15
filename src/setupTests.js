@@ -14,6 +14,8 @@ window.matchMedia =
     };
   };
 
+window.URL.createObjectURL = function () {};
+
 // mock http requests
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());

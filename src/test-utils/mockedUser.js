@@ -5,7 +5,7 @@ const mockedUser = {
   email: 'test@test.com',
   name: 'Testerson da Silva',
   description: null,
-  avatarUrl: null,
+  avatarUrl: 'www.avatarurlfake.com',
   phone: '(11) 11111-1112',
   state: 'MG',
   city: 'Águas Formosas',
