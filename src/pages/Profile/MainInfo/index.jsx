@@ -45,6 +45,9 @@ const MainInfo = () => {
     setEditing(false);
   };
 
+  /* istanbul ignore next */
+  const fileInputClick = () => fileRef.current.click();
+
   const cancelAvatarUpdate = () => {
     setAvatar(init => ({ ...init, editing: false, preview: null }));
   };
@@ -138,8 +141,7 @@ const MainInfo = () => {
               </Button>
             </>
           ) : (
-            /* istanbul ignore next */
-            <Button key="change-avatar" onClick={() => fileRef.current.click()}>
+            <Button key="change-avatar" onClick={fileInputClick}>
               Alterar Foto
             </Button>
           )}

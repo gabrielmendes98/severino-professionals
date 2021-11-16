@@ -203,3 +203,41 @@ it('should be able to edit avatar', async () => {
     screen.getByRole('button', { name: /alterar foto/i }),
   ).toBeInTheDocument();
 });
+
+it('should be able to cancel avatar editing', async () => {
+  const file = new File(['hello'], 'hello.png', { type: 'image/png' });
+  const bodyFormData = new FormData();
+  bodyFormData.append('file', file);
+
+  const updateAvatar = jest.spyOn(workersApi, 'updateAvatar');
+
+  renderWithRouter(
+    <UserContext.Provider value={{ user: mockedUser }}>
+      <MainInfo
+        name="main"
+        title="Informações principais"
+        expanded="main"
+        handleChange={() => {}}
+      />
+    </UserContext.Provider>,
+    { route: PAGE_URL.PROFILE },
+  );
+
+  await waitFor(() => {
+    expect(screen.getByAltText(/foto de perfil/i)).toHaveAttribute(
+      'src',
+      mockedApiUser.avatarUrl,
+    );
+  });
+
+  userEvent.upload(screen.getByTestId('photo-file'), file);
+  userEvent.click(await screen.findByRole('button', { name: /cancelar/i }));
+
+  expect(
+    await screen.findByRole('button', { name: /alterar foto/i }),
+  ).toBeInTheDocument();
+  expect(screen.getByAltText(/foto de perfil/i)).toHaveAttribute(
+    'src',
+    mockedApiUser.avatarUrl,
+  );
+});
