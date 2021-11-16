@@ -1,6 +1,7 @@
 /* eslint-disable func-names */
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
+import 'test-utils/mocks/loading';
 import { server } from 'services/mocks/server';
 
 // To fix react-slick "matchMedia not present"

@@ -14,6 +14,7 @@ import { workersRoutes } from '../../requests/workers';
 import { experiencesRoutes } from '../../requests/experiences';
 import { jobTypesRoutes } from '../../requests/jobTypes';
 import getDegreeTypes from '../data/getDegreeTypes';
+import updateAvatar from '../data/workers/updateAvatar';
 import ibgeHandler from './ibge';
 import photosHandler from './photos';
 import academicGraduationsHandler from './academicGraduations';
@@ -60,5 +61,8 @@ export const handlers = [
   rest.put(
     mountApiUrl(experiencesRoutes.experiencesId(':userId', ':experienceId')),
     (req, res, ctx) => res(ctx.status(200), ctx.json(getExperiences)),
+  ),
+  rest.put(mountApiUrl(workersRoutes.avatar(':userId')), (req, res, ctx) =>
+    res(ctx.status(200), ctx.json(updateAvatar)),
   ),
 ];

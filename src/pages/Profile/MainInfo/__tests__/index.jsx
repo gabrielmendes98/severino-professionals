@@ -3,7 +3,7 @@ import { userEvent, screen, renderWithRouter, waitFor, act } from 'test-utils';
 import mockedUser from 'test-utils/mockedUser';
 import workersApi from 'services/requests/workers';
 import mockedApiUser from 'services/mocks/data/workers/getById';
-import { ibgeApi } from 'services/api';
+import updateAvatarResponse from 'services/mocks/data/workers/updateAvatar';
 import PAGE_URL from 'commons/constants/routes';
 import { UserContext } from 'commons/contexts/User';
 import { toast } from 'commons/utils/toast';
@@ -166,11 +166,7 @@ it('should be able to edit avatar', async () => {
   const bodyFormData = new FormData();
   bodyFormData.append('file', file);
 
-  const mockAvatarUrl = 'mockAvatarUrl.com';
-
-  const updateAvatar = jest
-    .spyOn(workersApi, 'updateAvatar')
-    .mockImplementation(() => Promise.resolve({ avatarUrl: mockAvatarUrl }));
+  const updateAvatar = jest.spyOn(workersApi, 'updateAvatar');
 
   renderWithRouter(
     <UserContext.Provider value={{ user: mockedUser }}>
@@ -184,6 +180,13 @@ it('should be able to edit avatar', async () => {
     { route: PAGE_URL.PROFILE },
   );
 
+  await waitFor(() => {
+    expect(screen.getByAltText(/foto de perfil/i)).toHaveAttribute(
+      'src',
+      mockedApiUser.avatarUrl,
+    );
+  });
+
   userEvent.upload(screen.getByTestId('photo-file'), file);
   userEvent.click(screen.getByRole('button', { name: /salvar/i }));
 
@@ -192,9 +195,9 @@ it('should be able to edit avatar', async () => {
   });
   expect(updateAvatar).toHaveBeenCalledWith(mockedUser.id, bodyFormData);
 
-  expect(screen.getByAltText(/foto de perfil/i)).toHaveAttribute(
+  expect(await screen.findByAltText(/foto de perfil/i)).toHaveAttribute(
     'src',
-    mockAvatarUrl,
+    updateAvatarResponse.avatarUrl,
   );
   expect(
     screen.getByRole('button', { name: /alterar foto/i }),
