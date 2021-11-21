@@ -34,7 +34,7 @@ const AppRoute = ({
       path={path}
       exact={exact}
       render={props => (
-        <Layout>
+        <Layout id="layout">
           <Suspense fallback={<Loading full />}>
             <Component {...props} {...routeProps} />
           </Suspense>

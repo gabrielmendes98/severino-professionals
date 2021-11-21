@@ -2,7 +2,32 @@
 
 exports[`should match snapshot 1`] = `
 <DocumentFragment>
-  .c9 {
+  .c2 {
+  margin: 0;
+  cursor: pointer;
+}
+
+.c4 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #DDDDDD;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
+}
+
+.c3 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c9 {
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -98,11 +123,6 @@ exports[`should match snapshot 1`] = `
   font-family: Roboto;
 }
 
-.c8 {
-  width: 200px;
-  height: auto;
-}
-
 .c6 {
   padding-top: 0px;
   padding-left: 0px;
@@ -131,46 +151,6 @@ exports[`should match snapshot 1`] = `
   margin-bottom: 0px;
 }
 
-.c4 {
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-}
-
-.c10 {
-  background-color: #7D3CFF;
-  width: 100%;
-  padding: 40px 0;
-}
-
-.c13 {
-  background-color: #FFFFFF;
-  font-weight: bold;
-}
-
-.c13 * {
-  color: #3700B3;
-}
-
-.c2 {
-  margin: 0;
-  cursor: pointer;
-}
-
-.c1 {
-  background-color: #FFFFFF;
-  border-bottom: 1px solid #DDDDDD;
-  box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
-}
-
-.c3 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-}
-
 .c16 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -193,6 +173,26 @@ exports[`should match snapshot 1`] = `
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-top: 80px;
+}
+
+.c8 {
+  width: 200px;
+  height: auto;
+}
+
+.c10 {
+  background-color: #7D3CFF;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.c13 {
+  background-color: #FFFFFF;
+  font-weight: bold;
+}
+
+.c13 * {
+  color: #3700B3;
 }
 
 .c0 {

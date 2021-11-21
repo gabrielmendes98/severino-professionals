@@ -1,9 +1,14 @@
+import * as routes from 'routes';
 import { homeRoutes } from 'routes/home';
 import { renderWithRouter, screen, toMatchSnapshot, waitFor } from 'test-utils';
 import UserProvider from 'commons/contexts/User';
 import { removeToken } from 'commons/utils/storage';
 import PAGE_URL from 'commons/constants/routes';
 import Main from '..';
+
+beforeEach(() => {
+  jest.restoreAllMocks();
+});
 
 it('should match snapshot', () => {
   window.history.pushState({}, 'Test page', homeRoutes.main);
@@ -39,4 +44,29 @@ it('should display found page if not found url', async () => {
   );
 
   expect(await screen.findByText(/página não encontrada/i)).toBeInTheDocument();
+});
+
+it('should use div as default layout', () => {
+  const defaultRoutes = [...routes.default];
+
+  routes.default = [
+    {
+      path: '/test',
+      exact: true,
+      // eslint-disable-next-line react/display-name
+      component: () => <div id="test-component">Test Component</div>,
+    },
+  ];
+
+  renderWithRouter(
+    <UserProvider>
+      <Main />
+    </UserProvider>,
+    { route: '/test' },
+  );
+
+  expect(screen.getByTestId('layout')).toBeInTheDocument();
+  expect(screen.getByTestId('test-component')).toBeInTheDocument();
+
+  routes.default = defaultRoutes;
 });
