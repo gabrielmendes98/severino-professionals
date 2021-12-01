@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
+import { homeRoutes } from 'routes/home';
 import api, { filesApi } from 'services/api';
 import loginApi from 'services/requests/login';
 import workersApi from 'services/requests/workers';
@@ -33,7 +34,7 @@ const UserProvider = ({ children, history }) => {
     setUser(null);
     removeToken();
     setApiHeaders(undefined);
-    history.push(PAGE_URL.HOME);
+    history.push(homeRoutes.main);
   };
 
   const changePassword = ({ newPassword, currentPassword }) => {

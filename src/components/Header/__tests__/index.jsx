@@ -1,4 +1,5 @@
 import { renderWithRouter, screen, userEvent } from 'test-utils';
+import { homeRoutes } from 'routes/home';
 import PAGE_URL from 'commons/constants/routes';
 import UserProvider, { UserContext } from 'commons/contexts/User';
 import { getToken } from 'commons/utils/storage';
@@ -11,7 +12,7 @@ it('should redirect to home', () => {
     </UserProvider>,
   );
   userEvent.click(screen.getByAltText(/severino/i));
-  expect(window.location.pathname).toBe(PAGE_URL.HOME);
+  expect(window.location.pathname).toBe(homeRoutes.main);
 });
 
 describe('when user is not signed', () => {

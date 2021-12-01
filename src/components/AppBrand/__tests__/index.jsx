@@ -1,7 +1,7 @@
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
+import { homeRoutes } from 'routes/home';
 import { render, toMatchSnapshot, screen, userEvent } from 'test-utils';
-import PAGE_URL from 'commons/constants/routes';
 import AppBrand from '..';
 
 it('should match snapshot', () => {
@@ -18,5 +18,5 @@ it('should redirect to home', () => {
   );
 
   userEvent.click(screen.getByAltText(/severino/i));
-  expect(history.location.pathname).toBe(PAGE_URL.HOME);
+  expect(history.location.pathname).toBe(homeRoutes.main);
 });
