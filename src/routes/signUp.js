@@ -1,18 +1,14 @@
+import PAGE_URL from 'commons/constants/routes';
 import SignUp from 'pages/SignUp';
 import Layout from 'components/Layout/Main';
 
-const signUpRoutes = {
-  main: '/sign-up',
-};
-
 const signUp = [
   {
-    path: signUpRoutes.main,
+    path: PAGE_URL.SIGN_UP,
     component: SignUp,
     layout: Layout,
     exact: true,
   },
 ];
 
-export { signUpRoutes };
 export default signUp;

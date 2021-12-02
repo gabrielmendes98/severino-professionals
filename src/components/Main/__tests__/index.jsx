@@ -1,5 +1,4 @@
 import * as routes from 'routes';
-import { homeRoutes } from 'routes/home';
 import { renderWithRouter, screen, toMatchSnapshot, waitFor } from 'test-utils';
 import UserProvider from 'commons/contexts/User';
 import { removeToken } from 'commons/utils/storage';
@@ -11,7 +10,7 @@ beforeEach(() => {
 });
 
 it('should match snapshot', () => {
-  window.history.pushState({}, 'Test page', homeRoutes.main);
+  window.history.pushState({}, 'Test page', PAGE_URL.HOME);
   toMatchSnapshot(
     <UserProvider>
       <Main />

@@ -1,15 +1,12 @@
 import { lazy } from 'react';
+import PAGE_URL from 'commons/constants/routes';
 import Layout from 'components/Layout/Main';
 
 const ChangePassword = lazy(() => import('pages/ChangePassword'));
 
-const changePasswordRoutes = {
-  main: '/change-password',
-};
-
 const changePassword = [
   {
-    path: changePasswordRoutes.main,
+    path: PAGE_URL.CHANGE_PASSWORD,
     component: ChangePassword,
     layout: Layout,
     exact: true,
@@ -17,5 +14,4 @@ const changePassword = [
   },
 ];
 
-export { changePasswordRoutes };
 export default changePassword;

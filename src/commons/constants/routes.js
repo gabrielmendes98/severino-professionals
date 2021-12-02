@@ -6,6 +6,7 @@ const PAGE_URL = {
   PROFILE: '/profile',
   LOGIN: '/login',
   CHANGE_PASSWORD: '/change-password',
+  NOT_FOUND: '/not-found',
 };
 
 export default PAGE_URL;

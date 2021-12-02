@@ -1,18 +1,14 @@
+import PAGE_URL from 'commons/constants/routes';
 import Login from 'pages/Login';
 import Layout from 'components/Layout/Main';
 
-const loginRoutes = {
-  main: '/login',
-};
-
 const login = [
   {
-    path: loginRoutes.main,
+    path: PAGE_URL.LOGIN,
     component: Login,
     layout: Layout,
     exact: true,
   },
 ];
 
-export { loginRoutes };
 export default login;
