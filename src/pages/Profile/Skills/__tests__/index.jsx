@@ -28,14 +28,20 @@ it('should add skill', async () => {
   );
 
   userEvent.type(screen.getByLabelText(/^habilidade. ex:/i), postData.name);
+
+  const getSkillsSpy = jest
+    .spyOn(skillsApi, 'list')
+    .mockImplementation(() => Promise.resolve([]));
+
   userEvent.click(screen.getByRole('button', { name: /^adicionar$/i }));
 
   await waitFor(() => {
     expect(addSkill).toHaveBeenCalledTimes(1);
   });
+  expect(addSkill).toHaveBeenCalledWith(mockedUser.id, postData);
 
   await waitFor(() => {
-    expect(addSkill).toHaveBeenCalledWith(mockedUser.id, postData);
+    expect(getSkillsSpy).toHaveBeenCalledTimes(1);
   });
 });
 

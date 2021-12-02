@@ -50,7 +50,7 @@ it('should be able to add academic graduation', async () => {
   const createAcademicGraduation = jest
     .spyOn(academicGraduationsApi, 'create')
     .mockImplementationOnce(() => Promise.resolve());
-  jest
+  const getAcademicGraduationsSpy = jest
     .spyOn(academicGraduationsApi, 'list')
     .mockImplementationOnce(() => Promise.resolve([]));
 
@@ -89,19 +89,24 @@ it('should be able to add academic graduation', async () => {
     postData.studyArea,
   );
 
+  const cancelEditing = jest
+    .spyOn(utils, 'cancelEditing')
+    .mockImplementation(jest.fn);
+
   userEvent.click(screen.getByRole('button', { name: /^adicionar$/i }));
 
   await waitFor(() => {
     expect(createAcademicGraduation).toHaveBeenCalledTimes(1);
   });
+  expect(createAcademicGraduation).toHaveBeenCalledWith(
+    mockedUser.id,
+    postData,
+  );
 
-  // wait for promises to resolve
   await waitFor(() => {
-    expect(createAcademicGraduation).toHaveBeenCalledWith(
-      mockedUser.id,
-      postData,
-    );
+    expect(getAcademicGraduationsSpy).toHaveBeenCalledTimes(2);
   });
+  expect(cancelEditing).toHaveBeenCalledTimes(1);
 });
 
 it('should be able to edit', async () => {
@@ -137,19 +142,28 @@ it('should be able to edit', async () => {
   userEvent.clear(institutionInput);
   userEvent.type(institutionInput, postData.institution);
 
+  const getAcademicGraduationsSpy = jest
+    .spyOn(academicGraduationsApi, 'list')
+    .mockImplementation(() => Promise.resolve([]));
+  const cancelEditing = jest
+    .spyOn(utils, 'cancelEditing')
+    .mockImplementation(jest.fn);
+
   userEvent.click(screen.getByRole('button', { name: /^salvar$/i }));
 
   await waitFor(() => {
     expect(updateAcademicGraduation).toHaveBeenCalledTimes(1);
   });
+  expect(updateAcademicGraduation).toHaveBeenCalledWith(
+    mockedUser.id,
+    postData.id,
+    postData,
+  );
 
   await waitFor(() => {
-    expect(updateAcademicGraduation).toHaveBeenCalledWith(
-      mockedUser.id,
-      postData.id,
-      postData,
-    );
+    expect(getAcademicGraduationsSpy).toHaveBeenCalledTimes(1);
   });
+  expect(cancelEditing).toHaveBeenCalledTimes(1);
 });
 
 it('should be able to delete', async () => {
@@ -172,17 +186,22 @@ it('should be able to delete', async () => {
     await screen.findByTestId('delete-academic-graduation-0'),
   ).toBeInTheDocument();
 
+  const getAcademicGraduationsSpy = jest
+    .spyOn(academicGraduationsApi, 'list')
+    .mockImplementation(() => Promise.resolve([]));
+
   userEvent.click(screen.getByTestId('delete-academic-graduation-0'));
 
   await waitFor(() => {
     expect(excludeAcademicGraduation).toHaveBeenCalledTimes(1);
   });
+  expect(excludeAcademicGraduation).toHaveBeenCalledWith(
+    mockedUser.id,
+    getAcademicGraduations[0].id,
+  );
 
   await waitFor(() => {
-    expect(excludeAcademicGraduation).toHaveBeenCalledWith(
-      mockedUser.id,
-      getAcademicGraduations[0].id,
-    );
+    expect(getAcademicGraduationsSpy).toHaveBeenCalledTimes(1);
   });
 });
 

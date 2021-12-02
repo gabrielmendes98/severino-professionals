@@ -41,6 +41,6 @@ it('should signup, login and redirect user to profile page', async () => {
   userEvent.type(screen.getByLabelText(/confirmar senha/i), '123123');
   userEvent.click(screen.getByRole('button', { name: /finalizar/i }));
 
-  await waitFor(() => expect(getToken()).toBe(session.token));
-  expect(window.location.pathname).toBe(PAGE_URL.PROFILE);
+  await waitFor(() => expect(window.location.pathname).toBe(PAGE_URL.PROFILE));
+  expect(getToken()).toBe(session.token);
 });

@@ -75,9 +75,20 @@ it('should fill data and call createExperience api on form submit', async () => 
   });
   userEvent.click(screen.getByRole('button', { name: /adicionar/i }));
 
+  jest
+    .spyOn(utils, 'fetchExperiences')
+    .mockImplementation(() => Promise.resolve([]));
+  const cancelEditing = jest
+    .spyOn(utils, 'cancelEditing')
+    .mockImplementation(jest.fn);
+
   await waitFor(() => {
     expect(addExperienceSpy).toHaveBeenCalledTimes(1);
-    expect(addExperienceSpy).toHaveBeenCalledWith(mockedUser.id, postData);
+  });
+  expect(addExperienceSpy).toHaveBeenCalledWith(mockedUser.id, postData);
+
+  await waitFor(() => {
+    expect(cancelEditing).toHaveBeenCalledTimes(1);
   });
 });
 
