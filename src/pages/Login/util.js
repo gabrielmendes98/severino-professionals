@@ -1,3 +1,4 @@
+import { O_AUTH_PROVIDERS } from 'commons/constants';
 import PAGE_URL from 'commons/constants/routes';
 import yup from 'commons/utils/yup';
 
@@ -15,4 +16,13 @@ const validations = yup.object().shape({
 
 const getRedirectRoute = location => location.state?.redirect || defaultRoute;
 
-export { initialValues, validations, getRedirectRoute };
+const getToken = (response, provider) => {
+  switch (provider) {
+    case O_AUTH_PROVIDERS.GOOGLE:
+      return response.tokenId;
+    default:
+      return '';
+  }
+};
+
+export { initialValues, validations, getRedirectRoute, getToken };

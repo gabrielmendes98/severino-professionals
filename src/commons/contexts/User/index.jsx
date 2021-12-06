@@ -21,13 +21,18 @@ const UserProvider = ({ children, history }) => {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState();
 
+  const configureUser = ({ token }) => {
+    const decodedToken = jwtDecode(token);
+    setToken(token);
+    setUser(decodedToken.user);
+    setApiHeaders(token);
+  };
+
   const login = ({ email, password }) =>
-    loginApi.login(email, password).then(({ token }) => {
-      const decodedToken = jwtDecode(token);
-      setToken(token);
-      setUser(decodedToken.user);
-      setApiHeaders(token);
-    });
+    loginApi.login(email, password).then(configureUser);
+
+  const oAuthLogin = (oAuthToken, provider) =>
+    loginApi.oAuthLogin(oAuthToken, provider).then(configureUser);
 
   const signOut = () => {
     setUser(null);
@@ -61,7 +66,15 @@ const UserProvider = ({ children, history }) => {
 
   return (
     <UserContext.Provider
-      value={{ login, user, signed, signOut, changePassword, signUp }}
+      value={{
+        login,
+        user,
+        signed,
+        signOut,
+        changePassword,
+        signUp,
+        oAuthLogin,
+      }}
     >
       {loading ? <Loading fullScreen /> : children}
     </UserContext.Provider>

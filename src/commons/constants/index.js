@@ -9,3 +9,7 @@ export const ERRORS = {
 export const SUCCESS_OPERATION_MESSAGE = 'Operação realizada com sucesso!';
 
 export const DATE_LOCALE = 'pt-br';
+
+export const O_AUTH_PROVIDERS = {
+  GOOGLE: 'GOOGLE',
+};
