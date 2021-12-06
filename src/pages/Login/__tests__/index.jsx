@@ -14,7 +14,7 @@ it('should login and redirect to profile', async () => {
 
   userEvent.type(screen.getByLabelText(/e-mail/i), 'test@test.com');
   userEvent.type(screen.getByLabelText(/senha/i), '123123');
-  userEvent.click(screen.getByRole('button', { name: /entrar/i }));
+  userEvent.click(screen.getByRole('button', { name: /^entrar$/i }));
 
   await waitFor(() => expect(window.location.pathname).toBe(PAGE_URL.PROFILE));
   expect(getToken()).toBe(session.token);
