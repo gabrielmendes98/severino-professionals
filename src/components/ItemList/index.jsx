@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import showDeleteModal from 'components/Modal/showModalCommons/showDeleteModal';
 import IconButton from 'components/IconButton';
 import {
   Wrapper,
@@ -39,7 +40,9 @@ const ItemList = ({ items, deleteItem, editItem, id, ItemTemplate }) => (
             )}
             <IconButton
               tooltip="Deletar"
-              onClick={() => deleteItem(item.id)}
+              onClick={() =>
+                showDeleteModal({ onConfirm: () => deleteItem(item.id) })
+              }
               // eslint-disable-next-line prefer-template
               id={'delete-' + id + '-' + index}
             >
