@@ -50,6 +50,9 @@ exports[`should match snapshot full screen 1`] = `
     </div>
   </div>
   <div
+    id="modal"
+  />
+  <div
     class="Toastify"
   />
 </DocumentFragment>
@@ -76,6 +79,9 @@ exports[`should match snapshot normal 1`] = `
       />
     </svg>
   </div>
+  <div
+    id="modal"
+  />
   <div
     class="Toastify"
   />

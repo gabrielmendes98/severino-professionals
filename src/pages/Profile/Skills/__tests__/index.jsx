@@ -82,6 +82,7 @@ it('should delete skill', async () => {
     .mockImplementationOnce(() => Promise.resolve([]));
 
   userEvent.click(screen.getByTestId('delete-skill-0'));
+  userEvent.click(await screen.findByTestId('modal-confirm'));
 
   expect(deleteSkill).toHaveBeenCalledTimes(1);
   expect(deleteSkill).toHaveBeenCalledWith(mockedUser.id, getSkills[0].id);

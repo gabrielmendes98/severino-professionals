@@ -64,6 +64,9 @@ exports[`should match snapshot when accordion is closed 1`] = `
     </div>
   </div>
   <div
+    id="modal"
+  />
+  <div
     class="Toastify"
   />
 </DocumentFragment>
@@ -158,6 +161,9 @@ exports[`should match snapshot when accordion is opened 1`] = `
       </div>
     </div>
   </div>
+  <div
+    id="modal"
+  />
   <div
     class="Toastify"
   />

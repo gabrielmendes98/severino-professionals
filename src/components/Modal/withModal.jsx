@@ -82,7 +82,7 @@ const withModal =
             actions={actions}
             content={content}
             handleClose={handleClose}
-            onBackdropClick={handleClose}
+            onClose={handleClose}
             setModalData={setModalData}
             {...other}
             {...modalProps}

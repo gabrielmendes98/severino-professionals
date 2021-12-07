@@ -102,6 +102,7 @@ it('should delete photo on button click and refresh list', async () => {
     .mockImplementationOnce(() => Promise.resolve([]));
 
   userEvent.click(screen.getByTestId('delete-photo-0'));
+  userEvent.click(await screen.findByTestId('modal-confirm'));
 
   await waitFor(() => {
     expect(deletePhoto).toHaveBeenCalledTimes(1);

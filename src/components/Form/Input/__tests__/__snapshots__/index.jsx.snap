@@ -43,6 +43,9 @@ exports[`should match snapshot with masked input 1`] = `
     </div>
   </form>
   <div
+    id="modal"
+  />
+  <div
     class="Toastify"
   />
 </DocumentFragment>
@@ -90,6 +93,9 @@ exports[`should match snapshot with normal input 1`] = `
       </div>
     </div>
   </form>
+  <div
+    id="modal"
+  />
   <div
     class="Toastify"
   />
@@ -145,6 +151,9 @@ exports[`should match snapshot with normal input with error 1`] = `
       </p>
     </div>
   </form>
+  <div
+    id="modal"
+  />
   <div
     class="Toastify"
   />

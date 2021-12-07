@@ -173,6 +173,9 @@ exports[`should match snapshot 1`] = `
     </ul>
   </div>
   <div
+    id="modal"
+  />
+  <div
     class="Toastify"
   />
 </DocumentFragment>

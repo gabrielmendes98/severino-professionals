@@ -8,7 +8,6 @@ const Buttons = ({ actions, handleClose }) => (
     {actions.map(
       ({ onClick, children, label, skipClose, color, ...btnProps }) => (
         <Button
-          auto
           key={label}
           color={color}
           margin={{ top: 2, right: 2, bottom: 2 }}

@@ -1,5 +1,5 @@
 import { render, unmountComponentAtNode } from 'react-dom';
-import ThemeProvider from 'commons/providers/ThemeProvider';
+import MainProvider from 'commons/providers/MainProvider';
 import ModalContent from './ModalContent';
 
 const MODAL_ID = 'modal';
@@ -9,9 +9,9 @@ const handleClose = () =>
 
 const showModal = modalData => {
   const element = (
-    <ThemeProvider>
+    <MainProvider>
       <ModalContent {...modalData} handleClose={handleClose} />
-    </ThemeProvider>
+    </MainProvider>
   );
 
   handleClose();

@@ -151,6 +151,7 @@ it('should be able to delete experience and refresh experiences', async () => {
   const deleteExperienceMock = jest.spyOn(utils, 'removeExperience');
 
   userEvent.click(firstDeleteButton);
+  userEvent.click(await screen.findByTestId('modal-confirm'));
 
   await waitFor(() => {
     expect(deleteExperienceMock).toHaveBeenCalledTimes(1);

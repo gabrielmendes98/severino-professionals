@@ -191,6 +191,7 @@ it('should be able to delete', async () => {
     .mockImplementation(() => Promise.resolve([]));
 
   userEvent.click(screen.getByTestId('delete-academic-graduation-0'));
+  userEvent.click(await screen.findByTestId('modal-confirm'));
 
   await waitFor(() => {
     expect(excludeAcademicGraduation).toHaveBeenCalledTimes(1);

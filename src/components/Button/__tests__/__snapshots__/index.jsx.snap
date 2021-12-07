@@ -24,6 +24,9 @@ exports[`should match snapshot 1`] = `
     />
   </button>
   <div
+    id="modal"
+  />
+  <div
     class="Toastify"
   />
 </DocumentFragment>
@@ -58,6 +61,9 @@ exports[`should match snapshot with custom color 1`] = `
       class="MuiTouchRipple-root"
     />
   </button>
+  <div
+    id="modal"
+  />
   <div
     class="Toastify"
   />

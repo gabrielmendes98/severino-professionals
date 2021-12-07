@@ -55,7 +55,7 @@ it('should match snapshot', () => {
   );
 });
 
-it('should call functions on button click', () => {
+it('should call functions on button click', async () => {
   const deleteItem = jest.fn();
   const editItem = jest.fn();
   render(
@@ -72,5 +72,6 @@ it('should call functions on button click', () => {
   expect(editItem).toHaveBeenCalledTimes(1);
 
   userEvent.click(screen.getByTestId('delete-test-0'));
+  userEvent.click(await screen.findByTestId('modal-confirm'));
   expect(deleteItem).toHaveBeenCalledTimes(1);
 });

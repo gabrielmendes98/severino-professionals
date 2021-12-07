@@ -24,7 +24,7 @@ const Modal = ({
   content,
   body: Body,
   handleClose,
-  onBackdropClick,
+  onClose,
   setModalData,
   fullWidth,
   maxWidth,
@@ -48,7 +48,6 @@ const Modal = ({
       maxWidth={maxWidth}
       fullWidth={fullWidth}
       onClose={handleClose}
-      onBackdropClick={onBackdropClick}
       TransitionComponent={Transition}
     >
       {title && <DialogTitle>{title}</DialogTitle>}
@@ -73,7 +72,7 @@ Modal.propTypes = {
   maxWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
   handleClose: PropTypes.func,
   setModalData: PropTypes.func,
-  onBackdropClick: PropTypes.func,
+  onClose: PropTypes.func,
 };
 
 Modal.defaultProps = {

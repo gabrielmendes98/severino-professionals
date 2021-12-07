@@ -18,6 +18,7 @@ const MainProvider = ({ children }) => (
       locale={DATE_LOCALE}
     >
       {children}
+      <div id="modal" />
       <ToastContainer position="bottom-right" />
     </MuiPickersUtilsProvider>
   </ThemeProvider>

@@ -209,7 +209,7 @@ it('should be able to cancel avatar editing', async () => {
   const bodyFormData = new FormData();
   bodyFormData.append('file', file);
 
-  const updateAvatar = jest.spyOn(workersApi, 'updateAvatar');
+  jest.spyOn(workersApi, 'updateAvatar');
 
   renderWithRouter(
     <UserContext.Provider value={{ user: mockedUser }}>

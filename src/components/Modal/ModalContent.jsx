@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Modal from './Modal';
 
 const buttonCancel = label => ({
-  variant: 'default',
+  variant: 'text',
+  color: 'default',
   id: 'modal-cancel',
   label: label || 'Cancelar',
 });
@@ -53,7 +54,7 @@ const ModalContent = props => {
       setConfig={setConfig}
       closeModal={props.handleClose}
       handleClose={props.handleClose}
-      onBackdropClick={props.handleClose}
+      onClose={props.handleClose}
       setModalData={setModalData}
       {...modalData}
     />
