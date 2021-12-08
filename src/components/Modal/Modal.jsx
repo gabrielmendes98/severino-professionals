@@ -21,7 +21,6 @@ const Modal = ({
   title,
   message,
   actions,
-  content,
   body: Body,
   handleClose,
   onClose,
@@ -50,11 +49,12 @@ const Modal = ({
       onClose={handleClose}
       TransitionComponent={Transition}
     >
-      {title && <DialogTitle>{title}</DialogTitle>}
+      {title && <DialogTitle id="modal-title">{title}</DialogTitle>}
       <DialogContent>
-        {message && <DialogContentText>{message}</DialogContentText>}
+        {message && (
+          <DialogContentText id="modal-message">{message}</DialogContentText>
+        )}
         {bodyContent}
-        {content}
       </DialogContent>
       {actions && actions.length ? renderButtons(actions) : null}
     </Dialog>
@@ -66,7 +66,6 @@ Modal.propTypes = {
   body: PropTypes.any,
   title: PropTypes.any,
   message: PropTypes.any,
-  content: PropTypes.any,
   actions: PropTypes.array,
   fullWidth: PropTypes.bool,
   maxWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),

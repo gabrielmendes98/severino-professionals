@@ -43,10 +43,10 @@ exports[`should match snapshot with masked input 1`] = `
     </div>
   </form>
   <div
-    id="modal"
+    class="Toastify"
   />
   <div
-    class="Toastify"
+    id="modal"
   />
 </DocumentFragment>
 `;
@@ -94,10 +94,10 @@ exports[`should match snapshot with normal input 1`] = `
     </div>
   </form>
   <div
-    id="modal"
+    class="Toastify"
   />
   <div
-    class="Toastify"
+    id="modal"
   />
 </DocumentFragment>
 `;
@@ -152,10 +152,10 @@ exports[`should match snapshot with normal input with error 1`] = `
     </div>
   </form>
   <div
-    id="modal"
+    class="Toastify"
   />
   <div
-    class="Toastify"
+    id="modal"
   />
 </DocumentFragment>
 `;

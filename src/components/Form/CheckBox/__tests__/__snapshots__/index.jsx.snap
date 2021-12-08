@@ -56,10 +56,10 @@ exports[`should render checkbox without errors 1`] = `
     </div>
   </form>
   <div
-    id="modal"
+    class="Toastify"
   />
   <div
-    class="Toastify"
+    id="modal"
   />
 </DocumentFragment>
 `;

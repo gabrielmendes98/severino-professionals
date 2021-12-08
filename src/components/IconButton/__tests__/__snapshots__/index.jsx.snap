@@ -36,10 +36,10 @@ exports[`should match snapshot 1`] = `
     />
   </button>
   <div
-    id="modal"
+    class="Toastify"
   />
   <div
-    class="Toastify"
+    id="modal"
   />
 </DocumentFragment>
 `;
@@ -86,10 +86,10 @@ exports[`should match snapshot with custom color 1`] = `
     />
   </button>
   <div
-    id="modal"
+    class="Toastify"
   />
   <div
-    class="Toastify"
+    id="modal"
   />
 </DocumentFragment>
 `;

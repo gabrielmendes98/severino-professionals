@@ -4,13 +4,23 @@ import ModalContent from './ModalContent';
 
 const MODAL_ID = 'modal';
 
-const handleClose = () =>
+export const handleClose = () =>
   unmountComponentAtNode(document.getElementById(MODAL_ID));
 
 const showModal = modalData => {
+  const onClose = () => {
+    if (modalData.handleClose) {
+      modalData.handleClose();
+      handleClose();
+      return;
+    }
+
+    handleClose();
+  };
+
   const element = (
     <MainProvider>
-      <ModalContent {...modalData} handleClose={handleClose} />
+      <ModalContent {...modalData} handleClose={onClose} />
     </MainProvider>
   );
 

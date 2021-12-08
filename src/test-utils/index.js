@@ -6,7 +6,12 @@ import MainProvider from 'commons/providers/MainProvider';
 
 configure({ testIdAttribute: 'id' });
 
-const Wrapper = ({ children }) => <MainProvider>{children}</MainProvider>;
+const Wrapper = ({ children }) => (
+  <>
+    <MainProvider>{children}</MainProvider>
+    <div id="modal"></div>
+  </>
+);
 const RouteWrapper = ({ children }) => (
   <BrowserRouter>
     <Wrapper>{children}</Wrapper>

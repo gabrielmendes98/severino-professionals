@@ -50,10 +50,10 @@ exports[`should match snapshot full screen 1`] = `
     </div>
   </div>
   <div
-    id="modal"
+    class="Toastify"
   />
   <div
-    class="Toastify"
+    id="modal"
   />
 </DocumentFragment>
 `;
@@ -80,10 +80,10 @@ exports[`should match snapshot normal 1`] = `
     </svg>
   </div>
   <div
-    id="modal"
+    class="Toastify"
   />
   <div
-    class="Toastify"
+    id="modal"
   />
 </DocumentFragment>
 `;

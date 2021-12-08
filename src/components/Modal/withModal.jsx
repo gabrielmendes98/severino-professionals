@@ -2,7 +2,8 @@ import { Fragment, useState, useCallback } from 'react';
 import Modal from './Modal';
 
 const buttonCancel = label => ({
-  variant: 'default',
+  variant: 'text',
+  color: 'default',
   id: 'modal-cancel',
   label: label || 'Cancelar',
 });
@@ -24,29 +25,27 @@ const withModal =
 
     const handleShow = useCallback(
       ({
-        title: currentTitle = '',
-        message: currentMessage = '',
-        actions: currentActions = [],
-        content: currentContent = '',
-        cancelButton: currentCancelButton = true,
-        body: currentBody = null,
-        handleClose: currentHandleClose,
+        title = '',
+        message = '',
+        actions = [],
+        cancelButton = true,
+        body = null,
+        handleClose,
         cancelLabel = '',
         ...othersProps
       }) => {
         const currentModalData = {
-          title: currentTitle,
-          message: currentMessage,
-          actions: currentCancelButton
-            ? [buttonCancel(cancelLabel), ...currentActions]
-            : currentActions,
-          content: currentContent,
-          body: currentBody,
+          title,
+          message,
+          actions: cancelButton
+            ? [buttonCancel(cancelLabel), ...actions]
+            : actions,
+          body,
           ...othersProps,
         };
 
-        if (currentHandleClose) {
-          currentModalData.handleClose = currentHandleClose;
+        if (handleClose) {
+          currentModalData.handleClose = handleClose;
         }
 
         setModalData(currentModalData);
@@ -55,7 +54,7 @@ const withModal =
       [],
     );
 
-    const { title, message, actions, content, body, ...other } = modalData;
+    const { title, message, actions, body, ...other } = modalData;
 
     const setConfig = (data = {}) =>
       setModalData(init => ({
@@ -80,7 +79,6 @@ const withModal =
             title={title}
             message={message}
             actions={actions}
-            content={content}
             handleClose={handleClose}
             onClose={handleClose}
             setModalData={setModalData}

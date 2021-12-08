@@ -346,10 +346,10 @@ exports[`should match snapshot 1`] = `
     </div>
   </footer>
   <div
-    id="modal"
+    class="Toastify"
   />
   <div
-    class="Toastify"
+    id="modal"
   />
 </DocumentFragment>
 `;

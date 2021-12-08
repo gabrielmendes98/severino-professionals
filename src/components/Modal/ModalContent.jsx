@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import Modal from './Modal';
+import { throwError } from 'commons/utils/log';
 
 const buttonCancel = label => ({
   variant: 'text',
@@ -10,43 +11,36 @@ const buttonCancel = label => ({
 });
 
 const handleInitialProps = ({
-  title: currentTitle = '',
-  message: currentMessage = '',
-  actions: currentActions = [],
-  content: currentContent = '',
-  cancelButton: currentCancelButton = true,
-  body: currentBody = null,
-  raw: currentRaw = false,
-  handleClose: currentHandleClose,
+  title = '',
+  message = '',
+  actions = [],
+  cancelButton = true,
+  body = null,
+  handleClose,
   cancelLabel = '',
   ...othersProps
-}) => {
-  const currentModalData = {
-    title: currentTitle,
-    message: currentRaw || currentMessage,
-    actions: currentCancelButton
-      ? [buttonCancel(cancelLabel), ...currentActions]
-      : currentActions,
-    content: currentContent,
-    body: currentBody,
-    ...othersProps,
-  };
-
-  if (currentHandleClose) {
-    currentModalData.handleClose = currentHandleClose;
-  }
-
-  return currentModalData;
-};
+}) => ({
+  title,
+  message,
+  actions: cancelButton ? [buttonCancel(cancelLabel), ...actions] : actions,
+  body,
+  handleClose,
+  ...othersProps,
+});
 
 const ModalContent = props => {
   const [modalData, setModalData] = useState(handleInitialProps(props));
 
-  const setConfig = (data = {}) =>
+  const setConfig = useCallback(config => {
+    if (!config) {
+      throwError('Passe ao menos uma configuração para o modal');
+    }
+
     setModalData(init => ({
       ...init,
-      ...data,
+      ...config,
     }));
+  }, []);
 
   return (
     <Modal
