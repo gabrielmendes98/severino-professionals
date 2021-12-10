@@ -1,5 +1,6 @@
 import { O_AUTH_PROVIDERS } from 'commons/constants';
 import PAGE_URL from 'commons/constants/routes';
+import { throwError } from 'commons/utils/log';
 import yup from 'commons/utils/yup';
 
 const defaultRoute = PAGE_URL.PROFILE;
@@ -21,7 +22,7 @@ const getToken = (response, provider) => {
     case O_AUTH_PROVIDERS.GOOGLE:
       return response.tokenId;
     default:
-      return '';
+      return throwError('Provider não encontrado');
   }
 };
 

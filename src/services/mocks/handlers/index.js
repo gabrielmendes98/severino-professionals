@@ -28,6 +28,9 @@ export const handlers = [
   rest.post(mountApiUrl(loginRoutes.login), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(session)),
   ),
+  rest.post(mountApiUrl(loginRoutes.oAuth), (req, res, ctx) =>
+    res(ctx.status(200), ctx.json(session)),
+  ),
   rest.post(mountApiUrl(workersRoutes.workers), (req, res, ctx) =>
     res(ctx.status(200), ctx.json(postWorkers)),
   ),
