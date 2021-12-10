@@ -1,4 +1,5 @@
 import { Fragment, useState, useCallback } from 'react';
+import { throwError } from 'commons/utils/log';
 import Modal from './Modal';
 
 const buttonCancel = label => ({
@@ -20,7 +21,7 @@ const withModal =
 
     const handleClose = useCallback(() => {
       setOpen(false);
-      return modalData.handleClose && modalData.handleClose();
+      return modalData.customHandleClose && modalData.customHandleClose();
     }, [modalData]);
 
     const handleShow = useCallback(
@@ -45,7 +46,7 @@ const withModal =
         };
 
         if (handleClose) {
-          currentModalData.handleClose = handleClose;
+          currentModalData.customHandleClose = handleClose;
         }
 
         setModalData(currentModalData);
@@ -56,11 +57,16 @@ const withModal =
 
     const { title, message, actions, body, ...other } = modalData;
 
-    const setConfig = (data = {}) =>
+    const setConfig = useCallback(config => {
+      if (!config) {
+        throwError('Passe ao menos uma configuração para o modal');
+      }
+
       setModalData(init => ({
         ...init,
-        ...data,
+        ...config,
       }));
+    }, []);
 
     return (
       <Fragment>
