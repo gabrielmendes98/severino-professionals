@@ -195,10 +195,12 @@ it('should be able to edit avatar', async () => {
   });
   expect(updateAvatar).toHaveBeenCalledWith(mockedUser.id, bodyFormData);
 
-  expect(await screen.findByAltText(/foto de perfil/i)).toHaveAttribute(
-    'src',
-    updateAvatarResponse.avatarUrl,
-  );
+  await waitFor(() => {
+    expect(screen.getByAltText(/foto de perfil/i)).toHaveAttribute(
+      'src',
+      updateAvatarResponse.avatarUrl,
+    );
+  });
   expect(
     screen.getByRole('button', { name: /alterar foto/i }),
   ).toBeInTheDocument();

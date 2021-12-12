@@ -6,12 +6,14 @@ import ibgeApi from 'services/requests/ibge';
 import signUpDoodle from 'assets/doodles/sign-up.svg';
 import PAGE_URL from 'commons/constants/routes';
 import useUser from 'commons/contexts/User/useUser';
+import { toast } from 'commons/utils/toast';
 import { Grid } from 'components/Styled';
 import Doodle from 'components/Doodle';
 import Button from 'components/Button';
 import Input from 'components/Form/Input';
 import Select from 'components/Form/Select';
 import Checkbox from 'components/Form/CheckBox';
+import GoogleLoginButton from 'components/GoogleLogin/Button';
 import Text from 'components/Text';
 import {
   initialValues,
@@ -23,14 +25,22 @@ import {
 import { StyledGrid, Paper } from './style';
 
 const SignUp = ({ history }) => {
-  const { signUp } = useUser();
+  const { signUp, oAuthLogin, handleOAuthFailure } = useUser();
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState();
+
+  const onSuccessSignUp = () => {
+    toast.success('Bem-vindo(a) ao Severino!');
+    history.push(PAGE_URL.PROFILE);
+  };
 
   const onSubmit = values => {
     const data = parseDataToService(values);
     signUp(data).then(() => history.push(PAGE_URL.PROFILE));
   };
+
+  const handleOAuthLogin = (response, provider) =>
+    oAuthLogin(response, provider).then(onSuccessSignUp);
 
   const onChangeState = (event, setFieldValue) => {
     const { value: state, name } = event.target;
@@ -148,6 +158,13 @@ const SignUp = ({ history }) => {
                 </Form>
               )}
             </Formik>
+
+            <Grid item xs={12} margin={{ top: 2 }}>
+              <GoogleLoginButton
+                handleOAuthLogin={handleOAuthLogin}
+                handleOAuthFailure={handleOAuthFailure}
+              />
+            </Grid>
           </Grid>
         </Paper>
       </StyledGrid>

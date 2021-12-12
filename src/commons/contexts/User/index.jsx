@@ -9,6 +9,7 @@ import { toast } from 'commons/utils/toast';
 import { getToken, removeToken, setToken } from 'commons/utils/storage';
 import PAGE_URL from 'commons/constants/routes';
 import Loading from 'components/Loading';
+import { getOAuthToken } from './util';
 
 const setApiHeaders = token => {
   api.defaults.headers.Authorization = `Bearer ${token}`;
@@ -31,8 +32,13 @@ const UserProvider = ({ children, history }) => {
   const login = ({ email, password }) =>
     loginApi.login(email, password).then(configureUser);
 
-  const oAuthLogin = (oAuthToken, provider) =>
-    loginApi.oAuthLogin(oAuthToken, provider).then(configureUser);
+  const oAuthLogin = (response, provider) => {
+    const oAuthToken = getOAuthToken(response, provider);
+    return loginApi.oAuthLogin(oAuthToken, provider).then(configureUser);
+  };
+
+  const handleOAuthFailure = () =>
+    toast.error('Erro com a autenticação, tente novamente');
 
   const signOut = () => {
     setUser(null);
@@ -74,6 +80,7 @@ const UserProvider = ({ children, history }) => {
         changePassword,
         signUp,
         oAuthLogin,
+        handleOAuthFailure,
       }}
     >
       {loading ? <Loading fullScreen /> : children}

@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import Modal from './Modal';
 import { throwError } from 'commons/utils/log';
+import Modal from './Modal';
 
 const buttonCancel = label => ({
   variant: 'text',

@@ -3,18 +3,18 @@ import { withRouter } from 'react-router-dom';
 import { Form, Formik } from 'formik';
 import loginDoodle from 'assets/doodles/login.svg';
 import useUser from 'commons/contexts/User/useUser';
-import { O_AUTH_PROVIDERS } from 'commons/constants';
 import { toast } from 'commons/utils/toast';
 import { Grid } from 'components/Styled';
 import Doodle from 'components/Doodle';
 import Input from 'components/Form/Input';
 import Text from 'components/Text';
 import Button from 'components/Button';
-import { getRedirectRoute, initialValues, validations, getToken } from './util';
-import { StyledGrid, Paper, GoogleLogin } from './style';
+import GoogleLoginButton from 'components/GoogleLogin/Button';
+import { getRedirectRoute, initialValues, validations } from './util';
+import { StyledGrid, Paper } from './style';
 
 const Login = ({ history, location }) => {
-  const { login, oAuthLogin } = useUser();
+  const { login, oAuthLogin, handleOAuthFailure } = useUser();
 
   const onSuccessLogin = () => {
     toast.success('Bem-vindo(a) ao Severino!');
@@ -23,14 +23,8 @@ const Login = ({ history, location }) => {
 
   const onSubmit = values => login(values).then(onSuccessLogin);
 
-  const handleOAuthLogin = (response, provider) => {
-    const token = getToken(response, provider);
-
-    oAuthLogin(token, provider).then(onSuccessLogin);
-  };
-
-  const handleOAuthFailure = () =>
-    toast.error('Erro com a autenticação, tente novamente');
+  const handleOAuthLogin = (response, provider) =>
+    oAuthLogin(response, provider).then(onSuccessLogin);
 
   return (
     <Grid container padding={{ bottom: 20 }}>
@@ -77,15 +71,9 @@ const Login = ({ history, location }) => {
                   </Grid>
 
                   <Grid item xs={12}>
-                    <GoogleLogin
-                      clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-                      buttonText="Entrar com Google"
-                      onSuccess={response =>
-                        handleOAuthLogin(response, O_AUTH_PROVIDERS.GOOGLE)
-                      }
-                      onFailure={handleOAuthFailure}
-                      cookiePolicy={'single_host_origin'}
-                      style={{ width: '100%' }}
+                    <GoogleLoginButton
+                      handleOAuthLogin={handleOAuthLogin}
+                      handleOAuthFailure={handleOAuthFailure}
                     />
                   </Grid>
                 </Grid>
