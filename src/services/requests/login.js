@@ -6,8 +6,7 @@ export const loginRoutes = {
 };
 
 const loginApi = {
-  login: ({ email, password, token }) =>
-    api.post(loginRoutes.login, { email, password, token }),
+  login: (email, password) => api.post(loginRoutes.login, { email, password }),
 
   oAuthLogin: (token, provider) =>
     api.post(loginRoutes.oAuth, { token, provider }),

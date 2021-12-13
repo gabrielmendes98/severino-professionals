@@ -14,15 +14,25 @@ beforeEach(() => {
 });
 
 it('should login and redirect to profile', async () => {
+  const login = jest.spyOn(loginApi, 'login');
+
   renderWithRouter(
     <UserProvider>
       <Login />
     </UserProvider>,
   );
 
-  userEvent.type(screen.getByLabelText(/e-mail/i), 'test@test.com');
-  userEvent.type(screen.getByLabelText(/senha/i), '123123');
+  const inputEmail = 'test@test.com';
+  const inputPassword = '123123';
+
+  userEvent.type(screen.getByLabelText(/e-mail/i), inputEmail);
+  userEvent.type(screen.getByLabelText(/senha/i), inputPassword);
   userEvent.click(screen.getByRole('button', { name: /^entrar$/i }));
+
+  await waitFor(() => {
+    expect(login).toHaveBeenCalledTimes(1);
+  });
+  expect(login).toHaveBeenCalledWith(inputEmail, inputPassword);
 
   await waitFor(() => expect(window.location.pathname).toBe(PAGE_URL.PROFILE));
   expect(getToken()).toBe(session.token);
