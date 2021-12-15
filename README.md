@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Severino Professionals
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a href="https://dsrfs16mf05d6.cloudfront.net/">Live Demo</a>
 
-## Available Scripts
+Severino é uma aplicação que busca facilitar a pesquisa por profissionais de
+diversas áreas, como um catálogo mais moderno.
 
-In the project directory, you can run:
+Este projeto é uma das partes da aplicação Severino, que será composta por:
 
-### `yarn start`
+- Um portal web para os clientes (React)
+- Um app para os clientes (React Native)
+- Um portal para os profissionais (React) - Corresponde a este repositório
+- Um servidor para servir todas as aplicações (NodeJS)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+As Principais bibliotecas utilizadas para fazer essa aplicação foram:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React
+- React Router Dom
+- Material UI
+- Formik
+- Yup
+- React Google Login
+- React Input Mask
+- Styled Components
 
-### `yarn test`
+Para testes automatizados e testes estáticos, foram utilizados:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Jest
+- React Testing Library
+- Eslint
+- Prettier
+- MSW
+- Husky
+- Lint Staged
 
-### `yarn build`
+Para hospedagem foi utilizado:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- AWS S3
+- AWS CloudFront
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br/>
+<hr/>
+<br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Cobertura de testes:
 
-### `yarn eject`
+![cobertura-severino-professionals](https://user-images.githubusercontent.com/26449308/146114742-534671b6-9bba-4abe-b837-01c45a7211bf.png)
+<br/> <br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Diagrama das páginas:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Fluxos ](https://user-images.githubusercontent.com/26449308/146116160-a8b09723-81b1-431b-aec6-23444cd603e2.png)
+<br/> <br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Arquitetura geral:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![arquitetura-geral](https://user-images.githubusercontent.com/26449308/146116357-83ade62b-9c51-4f55-ad7c-be62c8aedb11.png)
 
-## Learn More
+### TODO:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Melhorar seleção de cidades. Atualmente ao selecionar um estado, busca todas
+  as cidades naquele estado e isso pode ser lento às vezes.
+- Refatorar pasta services. Renomear pasta requests para apis.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Rodando localmente:
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `git clone https://github.com/gabrielmendes98/severino-professionals.git`
+- `cd severino-professionals`
+- `yarn`
+- `yarn start:prod`
