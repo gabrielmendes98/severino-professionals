@@ -1,6 +1,6 @@
 # Severino Professionals
 
-<a href="https://dsrfs16mf05d6.cloudfront.net/">Live Demo</a>
+<a href="https://dsrfs16mf05d6.cloudfront.net/" target="_blank">Live Demo</a>
 
 Severino é uma aplicação que busca facilitar a pesquisa por profissionais de
 diversas áreas, como um catálogo mais moderno.
