@@ -37,10 +37,9 @@ const createApi = (baseURL = '', config = {}) => {
 };
 
 const api = createApi(process.env.REACT_APP_API_URL);
-const ibgeApi = createApi(process.env.REACT_APP_IBGE_API_URL);
 const filesApi = createApi(process.env.REACT_APP_API_URL, {
   headers: { 'Content-Type': 'multipart/form-data' },
 });
 
-export { ibgeApi, filesApi };
+export { filesApi };
 export default api;

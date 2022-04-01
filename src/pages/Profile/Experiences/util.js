@@ -21,12 +21,6 @@ export const validations = yup.object().shape({
   endDate: yup.string().dateStartEnd('startDate').required(),
 });
 
-export const parseStateToSelect = states =>
-  states.map(state => ({ value: state.sigla, label: state.sigla }));
-
-export const parseCityToSelect = cities =>
-  cities.map(city => ({ label: city.nome, value: city.nome }));
-
 export const parseJobTypes = jobTypes =>
   jobTypes.map(jobType => ({ label: jobType.description, value: jobType.id }));
 
@@ -47,15 +41,17 @@ export const formatExperienceTime = experience => {
 };
 
 export const formatExperienceLocation = experience =>
-  `${experience.city}, ${experience.state}`;
+  `${experience.city.name}, ${experience.city.state.acronym}`;
 
 export const parseExperienceToFrom = experience => {
-  const { jobId, profileId, job, ...other } = experience;
+  const { jobId, profileId, job, city, ...other } = experience;
 
   return {
     ...initialValues,
     ...other,
     jobType: jobId,
+    state: city.state.id,
+    city: city.id,
   };
 };
 

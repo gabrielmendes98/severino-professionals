@@ -3,10 +3,11 @@ import { Form, Formik } from 'formik';
 import EditIcon from '@material-ui/icons/Edit';
 import SaveIcon from '@material-ui/icons/Save';
 import BlockIcon from '@material-ui/icons/Block';
-import ibgeApi from 'services/requests/ibge';
+import locationsApi from 'services/requests/locations';
 import workersApi from 'services/requests/workers';
 import { SUCCESS_OPERATION_MESSAGE } from 'commons/constants';
 import { toast } from 'commons/utils/toast';
+import { parseCityToSelect, parseStateToSelect } from 'commons/utils/parse';
 import useUser from 'commons/contexts/User/useUser';
 import withAccordion from 'components/Accordion/withAccordion';
 import { Grid } from 'components/Styled';
@@ -15,8 +16,6 @@ import Checkbox from 'components/Form/CheckBox';
 import Button from 'components/Button';
 import Select from 'components/Form/Select';
 import {
-  parseCityToSelect,
-  parseStateToSelect,
   initialValues,
   validations,
   parseUserToForm,
@@ -35,7 +34,10 @@ const MainInfo = () => {
 
   const onChangeState = (event, setFieldValue) => {
     const { value: state, name } = event.target;
-    ibgeApi.getCitiesByState(state).then(parseCityToSelect).then(setCities);
+    locationsApi
+      .getCitiesByState(state)
+      .then(parseCityToSelect)
+      .then(setCities);
     setFieldValue(name, state);
   };
 
@@ -83,11 +85,11 @@ const MainInfo = () => {
   };
 
   useEffect(() => {
-    Promise.all([workersApi.get(user.id), ibgeApi.getStates()]).then(
+    Promise.all([workersApi.get(user.id), locationsApi.getStates()]).then(
       ([responseWorker, responseStates]) => {
         setStates(parseStateToSelect(responseStates));
-        ibgeApi
-          .getCitiesByState(responseWorker.state)
+        locationsApi
+          .getCitiesByState(responseWorker.city.stateId)
           .then(parseCityToSelect)
           .then(setCities)
           .then(() => parseUserToForm(responseWorker))

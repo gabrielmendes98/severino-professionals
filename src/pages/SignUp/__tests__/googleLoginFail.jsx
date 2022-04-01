@@ -1,13 +1,13 @@
 import 'test-utils/mocks/google-login/fail';
 import { renderWithRouter, screen, userEvent, waitFor } from 'test-utils';
 import { toast } from 'react-toastify';
-import ibgeApi from 'services/requests/ibge';
+import locationsApi from 'services/requests/locations';
 import UserProvider from 'commons/contexts/User';
 import SignUp from '..';
 
 it('should show error if fail login', async () => {
   jest
-    .spyOn(ibgeApi, 'getStates')
+    .spyOn(locationsApi, 'getStates')
     .mockImplementation(() => Promise.resolve([]));
 
   renderWithRouter(

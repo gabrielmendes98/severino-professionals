@@ -5,8 +5,9 @@ import SaveIcon from '@material-ui/icons/Save';
 import BlockIcon from '@material-ui/icons/Block';
 import jobTypesApi from 'services/requests/jobTypes';
 import experiencesApi from 'services/requests/experiences';
-import ibgeApi from 'services/requests/ibge';
+import locationsApi from 'services/requests/locations';
 import { toast } from 'commons/utils/toast';
+import { parseCityToSelect, parseStateToSelect } from 'commons/utils/parse';
 import useUser from 'commons/contexts/User/useUser';
 import ItemList from 'components/ItemList';
 import withAccordion from 'components/Accordion/withAccordion';
@@ -18,8 +19,6 @@ import { Grid } from 'components/Styled';
 import ExperienceTemplate from './ExperienceTemplate';
 import {
   initialValues,
-  parseCityToSelect,
-  parseStateToSelect,
   validations,
   parseJobTypes,
   parseExperienceToFrom,
@@ -40,7 +39,10 @@ const Experiences = () => {
 
   const onChangeState = (event, setFieldValue) => {
     const { value: state, name } = event.target;
-    ibgeApi.getCitiesByState(state).then(parseCityToSelect).then(setCities);
+    locationsApi
+      .getCitiesByState(state)
+      .then(parseCityToSelect)
+      .then(setCities);
     setFieldValue(name, state);
   };
 
@@ -50,8 +52,8 @@ const Experiences = () => {
   );
 
   const editExperience = experience => {
-    ibgeApi
-      .getCitiesByState(experience.state)
+    locationsApi
+      .getCitiesByState(experience.city.state.id)
       .then(parseCityToSelect)
       .then(setCities)
       .then(() => parseExperienceToFrom(experience))
@@ -87,7 +89,7 @@ const Experiences = () => {
 
     jobTypesApi.list().then(parseJobTypes).then(setJobTypes);
 
-    ibgeApi.getStates().then(parseStateToSelect).then(setStates);
+    locationsApi.getStates().then(parseStateToSelect).then(setStates);
   }, [getExperiences]);
 
   return (

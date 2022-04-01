@@ -24,12 +24,6 @@ const validations = yup.object().shape({
   city: yup.string().trim().required(),
 });
 
-const parseStateToSelect = states =>
-  states.map(state => ({ value: state.sigla, label: state.sigla }));
-
-const parseCityToSelect = cities =>
-  cities.map(city => ({ label: city.nome, value: city.nome }));
-
 const parseDataToService = values => {
   const { name, lastName, ...other } = values;
 
@@ -40,7 +34,7 @@ const parseDataToService = values => {
 };
 
 const parseUserToForm = user => {
-  const { name, avatarUrl, ...other } = user;
+  const { name, avatarUrl, city, ...other } = user;
 
   const firstOccurrence = name.indexOf(' ');
   const [firstName, lastName] = [
@@ -54,6 +48,8 @@ const parseUserToForm = user => {
       name: firstName,
       lastName,
       description: other.description ?? initialValues.description,
+      city: city.id,
+      state: city.stateId,
     },
     avatar: {
       url: avatarUrl,
@@ -66,11 +62,4 @@ const parseUserToForm = user => {
 const saveUserData = (values, userId) =>
   workersApi.update(userId, parseDataToService(values));
 
-export {
-  initialValues,
-  validations,
-  parseStateToSelect,
-  parseCityToSelect,
-  parseUserToForm,
-  saveUserData,
-};
+export { initialValues, validations, parseUserToForm, saveUserData };

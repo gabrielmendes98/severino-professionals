@@ -4,7 +4,7 @@ import { renderWithRouter, userEvent, screen, waitFor } from 'test-utils';
 import { googleLoginSuccess } from 'test-utils/mocks/google-login/response';
 import session from 'services/mocks/data/session';
 import loginApi from 'services/requests/login';
-import ibgeApi from 'services/requests/ibge';
+import locationsApi from 'services/requests/locations';
 import { O_AUTH_PROVIDERS } from 'commons/constants';
 import { getToken, removeToken } from 'commons/utils/storage';
 import PAGE_URL from 'commons/constants/routes';
@@ -52,7 +52,7 @@ it('should signup, login and redirect user to profile page', async () => {
 
 it('should be able to login with google', async () => {
   jest
-    .spyOn(ibgeApi, 'getStates')
+    .spyOn(locationsApi, 'getStates')
     .mockImplementation(() => Promise.resolve([]));
 
   renderWithRouter(

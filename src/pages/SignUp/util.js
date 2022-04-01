@@ -32,14 +32,8 @@ const validations = yup.object().shape({
     }),
 });
 
-const parseStateToSelect = states =>
-  states.map(state => ({ value: state.sigla, label: state.sigla }));
-
-const parseCityToSelect = cities =>
-  cities.map(city => ({ label: city.nome, value: city.nome }));
-
 const parseDataToService = values => {
-  const { name, lastName, ...other } = values;
+  const { name, lastName, state, ...other } = values;
 
   return {
     ...other,
@@ -47,10 +41,4 @@ const parseDataToService = values => {
   };
 };
 
-export {
-  initialValues,
-  validations,
-  parseStateToSelect,
-  parseCityToSelect,
-  parseDataToService,
-};
+export { initialValues, validations, parseDataToService };

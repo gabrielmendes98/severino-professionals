@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import { Form, Formik } from 'formik';
-import ibgeApi from 'services/requests/ibge';
+import locationsApi from 'services/requests/locations';
 import signUpDoodle from 'assets/doodles/sign-up.svg';
 import PAGE_URL from 'commons/constants/routes';
 import useUser from 'commons/contexts/User/useUser';
 import { toast } from 'commons/utils/toast';
+import { parseCityToSelect, parseStateToSelect } from 'commons/utils/parse';
 import { Grid } from 'components/Styled';
 import Doodle from 'components/Doodle';
 import Button from 'components/Button';
@@ -15,13 +16,7 @@ import Select from 'components/Form/Select';
 import Checkbox from 'components/Form/CheckBox';
 import GoogleLoginButton from 'components/GoogleLogin/Button';
 import Text from 'components/Text';
-import {
-  initialValues,
-  parseCityToSelect,
-  parseStateToSelect,
-  validations,
-  parseDataToService,
-} from './util';
+import { initialValues, validations, parseDataToService } from './util';
 import { StyledGrid, Paper } from './style';
 
 const SignUp = ({ history }) => {
@@ -44,12 +39,15 @@ const SignUp = ({ history }) => {
 
   const onChangeState = (event, setFieldValue) => {
     const { value: state, name } = event.target;
-    ibgeApi.getCitiesByState(state).then(parseCityToSelect).then(setCities);
+    locationsApi
+      .getCitiesByState(state)
+      .then(parseCityToSelect)
+      .then(setCities);
     setFieldValue(name, state);
   };
 
   useEffect(() => {
-    ibgeApi.getStates().then(parseStateToSelect).then(setStates);
+    locationsApi.getStates().then(parseStateToSelect).then(setStates);
   }, []);
 
   return (
