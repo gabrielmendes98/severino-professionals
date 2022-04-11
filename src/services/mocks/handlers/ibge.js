@@ -1,8 +1,8 @@
 import { rest } from 'msw';
 import { locationRoutes } from 'services/requests/locations';
 import { mountIbgeApiUrl } from '../helpers/util';
-import cities from '../data/ibge/cities';
-import states from '../data/ibge/states';
+import cities from '../data/locations/cities';
+import states from '../data/locations/states';
 
 const ibgeHandler = [
   rest.get(

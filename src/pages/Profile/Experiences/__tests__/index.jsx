@@ -11,8 +11,8 @@ import {
 } from 'test-utils';
 import mockedUser from 'test-utils/mockedUser';
 import getJobTypes from 'services/mocks/data/workers/getJobTypes';
-import states from 'services/mocks/data/ibge/states';
-import cities from 'services/mocks/data/ibge/cities';
+import states from 'services/mocks/data/locations/states';
+import cities from 'services/mocks/data/locations/cities';
 import getExperiences from 'services/mocks/data/workers/getExperiences';
 import experiencesApi from 'services/requests/experiences';
 import deleteExperience from 'services/mocks/data/workers/deleteExperience';
@@ -35,8 +35,8 @@ it('should fill data and call createExperience api on form submit', async () => 
     role: 'Test Role',
     jobType: getJobTypes[0].id,
     company: 'Test Company',
-    state: states[1].sigla,
-    city: cities[0].nome,
+    city: cities[0].id,
+    state: states[1].id,
     startDate: '2020-10-31T21:00:00-03:00',
     endDate: '2021-10-31T21:00:00-03:00',
   };
@@ -122,7 +122,7 @@ it('should display experiences list', async () => {
   ).toBeInTheDocument();
   expect(
     experiencesList.getByText(
-      `${getExperiences[0].city}, ${getExperiences[0].state}`,
+      `${getExperiences[0].city.name}, ${getExperiences[0].city.state.acronym}`,
     ),
   ).toBeInTheDocument();
 });
@@ -194,11 +194,11 @@ it('should fill form and change buttons when click on edit experience button', a
     getExperiences[0].company,
   );
   expect(screen.getByLabelText(/^estado$/i)).toHaveValue(
-    getExperiences[0].state,
+    getExperiences[0].city.state.id,
   );
   await waitFor(() => {
     expect(screen.getByLabelText(/^cidade$/i)).toHaveValue(
-      getExperiences[0].city,
+      getExperiences[0].city.id,
     );
   });
   expect(screen.getByLabelText(/^data de início$/i)).toHaveValue(
@@ -223,7 +223,6 @@ it('should be able to edit experience and save then clear form', async () => {
     jobType,
     company,
     city,
-    state,
     startDate,
     endDate,
     createdAt,
@@ -234,8 +233,8 @@ it('should be able to edit experience and save then clear form', async () => {
     id,
     jobType,
     company,
-    city,
-    state,
+    city: city.id,
+    state: city.state.id,
     startDate,
     endDate,
     createdAt,

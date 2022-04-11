@@ -7,6 +7,7 @@ import updateAvatarResponse from 'services/mocks/data/workers/updateAvatar';
 import PAGE_URL from 'commons/constants/routes';
 import { UserContext } from 'commons/contexts/User';
 import { toast } from 'commons/utils/toast';
+import * as parse from 'commons/utils/parse';
 import MainInfo from '..';
 import * as utils from '../util';
 
@@ -110,7 +111,7 @@ it('should cancel editing and disable inputs when click on cancel button', async
 });
 
 it('should retrive cities when change state', async () => {
-  const parseCitiesToSelectMock = jest.spyOn(utils, 'parseCityToSelect');
+  const parseCitiesToSelectMock = jest.spyOn(parse, 'parseCityToSelect');
   renderWithRouter(
     <UserContext.Provider value={{ user: mockedUser }}>
       <MainInfo
@@ -130,13 +131,15 @@ it('should retrive cities when change state', async () => {
   );
 
   userEvent.click(screen.getByRole('button', { name: /editar/i }));
-  userEvent.selectOptions(screen.getByLabelText(/estado/i), 'SP');
+  userEvent.selectOptions(screen.getByLabelText(/estado/i), 'São Paulo');
   await waitFor(() => {
     expect(parseCitiesToSelectMock).toHaveBeenCalledTimes(1);
   });
 
   await waitFor(() => {
-    expect(screen.getByLabelText(/estado/i)).toHaveValue('SP');
+    expect(screen.getByLabelText(/estado/i)).toHaveValue(
+      'dcc8fd45-196e-490c-97ab-4bae8b8d8877',
+    );
   });
 });
 

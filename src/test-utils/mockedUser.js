@@ -7,7 +7,7 @@ const mockedUser = {
   description: null,
   avatarUrl: 'www.avatarurlfake.com',
   phone: '(11) 11111-1112',
-  state: 'MG',
+  state: 'Minas Gerais',
   city: 'Águas Formosas',
   hasWhatsapp: false,
 };

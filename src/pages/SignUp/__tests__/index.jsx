@@ -9,12 +9,12 @@ import { O_AUTH_PROVIDERS } from 'commons/constants';
 import { getToken, removeToken } from 'commons/utils/storage';
 import PAGE_URL from 'commons/constants/routes';
 import UserProvider from 'commons/contexts/User';
+import * as parser from 'commons/utils/parse';
 import SignUp from '..';
-import * as utils from '../util';
 
 it('should signup, login and redirect user to profile page', async () => {
-  const parseStateToSelect = jest.spyOn(utils, 'parseStateToSelect');
-  const parseCityToSelect = jest.spyOn(utils, 'parseCityToSelect');
+  const parseStateToSelect = jest.spyOn(parser, 'parseStateToSelect');
+  const parseCityToSelect = jest.spyOn(parser, 'parseCityToSelect');
   renderWithRouter(
     <UserProvider>
       <SignUp />
@@ -34,7 +34,7 @@ it('should signup, login and redirect user to profile page', async () => {
   await waitFor(() => {
     expect(parseStateToSelect).toHaveBeenCalledTimes(1);
   });
-  userEvent.selectOptions(screen.getByLabelText(/estado/i), 'MG');
+  userEvent.selectOptions(screen.getByLabelText(/estado/i), 'Minas Gerais');
   await waitFor(() => {
     expect(parseCityToSelect).toHaveBeenCalledTimes(1);
   });

@@ -7,8 +7,14 @@ export default [
     profileId: '9986ea61-847e-405f-bc90-39b130cc5091',
     role: 'Engenheiro de Software',
     company: 'TQI',
-    city: 'Uberlândia',
-    state: 'MG',
+    city: {
+      id: 'c4d031ec-003b-4ecb-af64-326511f62233',
+      name: 'Uberlândia',
+      state: {
+        acronym: 'MG',
+        id: '639d65b2-3ed5-43ab-a532-fc23acf6b649',
+      },
+    },
     startDate: '2020-09-12T22:19:55.000Z',
     endDate: '2021-09-12T22:19:55.000Z',
     job: {
@@ -25,8 +31,14 @@ export default [
     profileId: '9986ea61-847e-405f-bc90-39b130cc5091',
     role: 'Pedreiro',
     company: 'Cia Metálica',
-    city: 'São Paulo',
-    state: 'SP',
+    city: {
+      id: 'fd47a0d2-6178-43ab-a547-232420ae45a9',
+      name: 'São Paulo',
+      state: {
+        acronym: 'São Paulo',
+        id: 'dcc8fd45-196e-490c-97ab-4bae8b8d8877',
+      },
+    },
     startDate: '2018-12-12T22:11:14.000Z',
     endDate: '2021-05-12T23:11:14.000Z',
     job: {

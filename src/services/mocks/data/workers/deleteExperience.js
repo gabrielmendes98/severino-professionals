@@ -7,14 +7,18 @@ export default [
     profileId: '9986ea61-847e-405f-bc90-39b130cc5091',
     role: 'Pedreiro',
     company: 'Cia Metálica',
-    city: 'São Paulo',
-    state: 'SP',
+    cityId: 'c4d031ec-003b-4ecb-af64-326511f62233',
     startDate: '2018-12-12T22:11:14.000Z',
     endDate: '2021-05-12T23:11:14.000Z',
     job: {
       id: 'a0fd28ea-a200-4dcc-9ff2-7ae7a88fc9f1',
       type: 'PART_TIME',
       description: 'Meio período',
+    },
+    city: {
+      id: 'c4d031ec-003b-4ecb-af64-326511f62233',
+      name: 'Uberlândia',
+      state: { acronym: 'MG', id: '639d65b2-3ed5-43ab-a532-fc23acf6b649' },
     },
   },
 ];

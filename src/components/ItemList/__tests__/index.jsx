@@ -11,7 +11,7 @@ const data = [
     role: 'Engenheiro de Software',
     company: 'TQI',
     city: 'Uberlândia',
-    state: 'MG',
+    state: 'Minas Gerais',
     startDate: '2020-10-11T12:44:59.000Z',
     endDate: '2021-10-11T12:44:59.000Z',
     job: {
@@ -29,7 +29,7 @@ const data = [
     role: 'Pedreiro',
     company: '',
     city: 'Jeceaba',
-    state: 'MG',
+    state: 'Minas Gerais',
     startDate: '2020-10-11T12:59:37.000Z',
     endDate: '2022-10-11T12:59:37.000Z',
     job: {
