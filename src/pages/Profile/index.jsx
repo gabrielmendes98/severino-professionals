@@ -5,6 +5,7 @@ import Experiences from './Experiences';
 import Photos from './Photos';
 import AcademicGraduation from './AcademicGraduations';
 import Skills from './Skills';
+import Services from './Services';
 
 const Profile = () => {
   const [expanded, setExpanded] = useState(false);
@@ -18,6 +19,13 @@ const Profile = () => {
       <MainInfo
         name="main"
         title="Informações principais"
+        expanded={expanded}
+        handleChange={handleChange}
+      />
+
+      <Services
+        name="services"
+        title="Serviços que presto"
         expanded={expanded}
         handleChange={handleChange}
       />
