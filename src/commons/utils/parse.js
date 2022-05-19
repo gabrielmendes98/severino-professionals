@@ -3,3 +3,9 @@ export const parseStateToSelect = states =>
 
 export const parseCityToSelect = cities =>
   cities.map(city => ({ label: city.name, value: city.id }));
+
+export const parseToSelect = (options, labelMapper, valueMapper) =>
+  options.map(option => ({
+    label: option[labelMapper],
+    value: option[valueMapper],
+  }));
