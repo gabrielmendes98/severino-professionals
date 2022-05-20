@@ -6,23 +6,16 @@ import MuiAutocomplete from '@material-ui/lab/Autocomplete';
 import { useField } from 'formik';
 import debounce from 'lodash.debounce';
 
-const Autocomplete = ({
-  name,
-  id,
-  options,
-  onChange,
-  setOptions,
-  ...otherProps
-}) => {
+const Autocomplete = ({ name, id, options, onChange, ...otherProps }) => {
   const [field, meta, helpers] = useField(name);
-  const configTextfield = {};
-
   const [open, setOpen] = useState(false);
-  const [selectedLabel, setSelectedLabel] = useState('');
+  const [prevSelectedLabel, setPrevSelectedLabel] = useState('');
   const [inputValue, setInputValue] = useState('');
 
+  const configTextfield = {};
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const onValueChange = useMemo(() => debounce(onChange, 500), []);
+  const debounceValueChange = useMemo(() => debounce(onChange, 500), []);
 
   const onInputChange = useCallback(
     (e, value, reason) => {
@@ -35,19 +28,41 @@ const Autocomplete = ({
       }
       setOpen(true);
 
-      onValueChange(value);
+      debounceValueChange(value);
     },
-    [onValueChange],
+    [debounceValueChange],
   );
+
+  const onValueChange = (event, newValue) => {
+    helpers.setValue(newValue?.value);
+    setInputValue(newValue?.label);
+    setPrevSelectedLabel(newValue?.label);
+  };
 
   if (meta && meta.touched && meta.error) {
     configTextfield.error = true;
     configTextfield.helperText = meta.error;
   }
 
+  const getOptionLabel = option => option.label || '';
+
+  const onBlur = () => {
+    setOpen(false);
+    if (prevSelectedLabel !== inputValue) {
+      setInputValue(prevSelectedLabel);
+    }
+  };
+
+  // need this to clear input value on form reset
+  useEffect(() => {
+    if (!field.value) {
+      setInputValue('');
+    }
+  }, [field.value]);
+
   useEffect(
     () => () => {
-      onValueChange.cancel();
+      debounceValueChange.cancel();
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
@@ -55,27 +70,15 @@ const Autocomplete = ({
 
   return (
     <MuiAutocomplete
-      value={field.value || ''}
-      onChange={(event, newValue) => {
-        helpers.setValue(newValue?.value);
-        setInputValue(newValue?.label);
-        setSelectedLabel(newValue?.label);
-      }}
-      inputValue={inputValue || ''}
-      id={id || name}
       freeSolo
-      open={open}
-      onBlur={() => {
-        setOpen(false);
-        if (selectedLabel !== inputValue) {
-          setInputValue(selectedLabel);
-        }
-      }}
-      onClose={() => {
-        setOptions([]);
-      }}
-      getOptionLabel={option => option.label || ''}
+      id={id || name}
+      value={field.value || ''}
+      onChange={onValueChange}
+      inputValue={inputValue || ''}
       onInputChange={onInputChange}
+      open={open}
+      onBlur={onBlur}
+      getOptionLabel={getOptionLabel}
       options={options}
       renderInput={params => (
         <TextField
@@ -106,7 +109,6 @@ Autocomplete.propTypes = {
     }),
   ),
   onChange: PropTypes.func.isRequired,
-  setOptions: PropTypes.func.isRequired,
 };
 
 export default Autocomplete;

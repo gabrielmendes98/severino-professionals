@@ -56,30 +56,23 @@ const Services = () => {
         validationSchema={validations}
         onSubmit={onSubmit}
       >
-        {({ values, errors }) => (
-          <Form noValidate>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <div>
-                  {values.serviceId}, {Object.keys(errors)}
-                </div>
-
-                <Autocomplete
-                  name="serviceId"
-                  label="Buscar serviço"
-                  onChange={onSearch}
-                  options={serviceOptions}
-                  setOptions={setServiceOptions}
-                />
-              </Grid>
-              <Grid container item justifyContent="flex-end">
-                <Button type="submit" startIcon={<AddIcon />} size="large">
-                  Adicionar
-                </Button>
-              </Grid>
+        <Form noValidate>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <Autocomplete
+                name="serviceId"
+                label="Buscar serviço"
+                onChange={onSearch}
+                options={serviceOptions}
+              />
             </Grid>
-          </Form>
-        )}
+            <Grid container item justifyContent="flex-end">
+              <Button type="submit" startIcon={<AddIcon />} size="large">
+                Adicionar
+              </Button>
+            </Grid>
+          </Grid>
+        </Form>
       </Formik>
 
       <Grid container margin={{ top: 3 }}>

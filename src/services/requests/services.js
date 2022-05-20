@@ -7,7 +7,8 @@ export const servicesRoutes = {
 };
 
 const servicesApi = {
-  addToWorker: (userId, data) => api.post(servicesRoutes.skills(userId), data),
+  addToWorker: (userId, data) =>
+    api.post(servicesRoutes.services(userId), data),
   list: userId => api.get(servicesRoutes.services(userId)),
   exclude: (userId, serviceId) =>
     api.delete(servicesRoutes.servicesId(userId, serviceId)),
