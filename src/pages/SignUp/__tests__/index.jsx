@@ -9,12 +9,9 @@ import { O_AUTH_PROVIDERS } from 'commons/constants';
 import { getToken, removeToken } from 'commons/utils/storage';
 import PAGE_URL from 'commons/constants/routes';
 import UserProvider from 'commons/contexts/User';
-import * as parser from 'commons/utils/parse';
 import SignUp from '..';
 
 it('should signup, login and redirect user to profile page', async () => {
-  const parseStateToSelect = jest.spyOn(parser, 'parseStateToSelect');
-  const parseCityToSelect = jest.spyOn(parser, 'parseCityToSelect');
   renderWithRouter(
     <UserProvider>
       <SignUp />
@@ -32,16 +29,14 @@ it('should signup, login and redirect user to profile page', async () => {
     '34999999999',
   );
   await waitFor(() => {
-    expect(parseStateToSelect).toHaveBeenCalledTimes(1);
+    userEvent.selectOptions(screen.getByLabelText(/estado/i), 'Minas Gerais');
   });
-  userEvent.selectOptions(screen.getByLabelText(/estado/i), 'Minas Gerais');
   await waitFor(() => {
-    expect(parseCityToSelect).toHaveBeenCalledTimes(1);
+    userEvent.selectOptions(
+      screen.getByLabelText(/cidade/i),
+      'Abadia dos Dourados',
+    );
   });
-  userEvent.selectOptions(
-    screen.getByLabelText(/cidade/i),
-    'Abadia dos Dourados',
-  );
   userEvent.type(screen.getByLabelText(/^senha/i), '123123');
   userEvent.type(screen.getByLabelText(/confirmar senha/i), '123123');
   userEvent.click(screen.getByRole('button', { name: /finalizar/i }));
