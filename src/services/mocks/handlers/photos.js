@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 import { photosRoutes } from 'services/requests/photos';
-import getPhotos from '../data/photos/getPhotos';
+import getPhotos from '../data/photos/list';
 import { mountApiUrl } from '../helpers/util';
 
 const photosHandler = [

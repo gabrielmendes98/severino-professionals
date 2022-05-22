@@ -7,6 +7,7 @@ import loginHandler from './login';
 import workersHandler from './workers';
 import experiencesHandler from './experiences';
 import jobTypesHandler from './jobTypes';
+import servicesHandler from './services';
 
 export const handlers = [
   ...ibgeHandler,
@@ -18,4 +19,5 @@ export const handlers = [
   ...workersHandler,
   ...experiencesHandler,
   ...jobTypesHandler,
+  ...servicesHandler,
 ];

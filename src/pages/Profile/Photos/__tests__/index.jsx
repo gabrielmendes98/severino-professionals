@@ -1,7 +1,7 @@
 import { render, screen, userEvent, waitFor } from 'test-utils';
 import mockedUser from 'test-utils/mockedUser';
 import photosApi from 'services/requests/photos';
-import getPhotos from 'services/mocks/data/photos/getPhotos';
+import getPhotos from 'services/mocks/data/photos/list';
 import { UserContext } from 'commons/contexts/User';
 import Photos from '..';
 

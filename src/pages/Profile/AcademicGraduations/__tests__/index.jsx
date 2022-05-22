@@ -1,7 +1,7 @@
 import 'test-utils/mocks/material-ui/select';
 import { render, screen, userEvent, waitFor } from 'test-utils';
 import mockedUser from 'test-utils/mockedUser';
-import getAcademicGraduations from 'services/mocks/data/academicGraduations/getAcademicGraduations';
+import getAcademicGraduations from 'services/mocks/data/academicGraduations/list';
 import academicGraduationsApi from 'services/requests/academicGraduations';
 import degreeTypesApi from 'services/requests/degreeTypes';
 import getDegreeTypes from 'services/mocks/data/getDegreeTypes';

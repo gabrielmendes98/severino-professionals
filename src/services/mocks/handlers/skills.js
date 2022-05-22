@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 import { skillsRoutes } from 'services/requests/skills';
-import getSkills from '../data/skills/getSkills';
+import getSkills from '../data/skills/list';
 import { mountApiUrl } from '../helpers/util';
 
 const skillsHandler = [

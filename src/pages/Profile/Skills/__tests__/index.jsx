@@ -1,7 +1,7 @@
 import { render, userEvent, screen, waitFor } from 'test-utils';
 import mockedUser from 'test-utils/mockedUser';
 import skillsApi from 'services/requests/skills';
-import getSkills from 'services/mocks/data/skills/getSkills';
+import getSkills from 'services/mocks/data/skills/list';
 import { UserContext } from 'commons/contexts/User';
 import Skills from '..';
 

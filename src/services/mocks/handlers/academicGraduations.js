@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 import { academicGraduationsRoutes } from 'services/requests/academicGraduations';
-import getAcademicGraduations from '../data/academicGraduations/getAcademicGraduations';
+import getAcademicGraduations from '../data/academicGraduations/list';
 import { mountApiUrl } from '../helpers/util';
 
 const academicGraduationsHandler = [
