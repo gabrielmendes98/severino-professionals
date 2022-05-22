@@ -52,7 +52,6 @@ const Autocomplete = ({ name, id, options, onChange, ...otherProps }) => {
       setInputValue(prevSelectedLabel);
     }
   };
-
   // need this to clear input value on form reset
   useEffect(() => {
     if (!field.value) {

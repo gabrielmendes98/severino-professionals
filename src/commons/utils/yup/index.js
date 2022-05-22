@@ -2,7 +2,7 @@ import * as yup from 'yup';
 import { dateStartEndValidate } from './date';
 import { phoneValidate } from './phone';
 
-const locale = {
+const validationMessages = {
   mixed: {
     default: 'Campo Inválido',
     required: 'Campo Obrigatório',
@@ -15,9 +15,10 @@ const locale = {
   },
 };
 
-yup.setLocale(locale);
+yup.setLocale(validationMessages);
 
 yup.addMethod(yup.string, 'phone', phoneValidate);
 yup.addMethod(yup.string, 'dateStartEnd', dateStartEndValidate);
 
+export { validationMessages };
 export default yup;
