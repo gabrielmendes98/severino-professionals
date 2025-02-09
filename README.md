@@ -2,17 +2,17 @@
 
 <a href="https://dsrfs16mf05d6.cloudfront.net/" target="_blank">Live Demo</a>
 
-Severino é uma aplicação que busca facilitar a pesquisa por profissionais de
-diversas áreas, como um catálogo mais moderno.
+Severino is an application that seeks to facilitate the search for professionals in
+various areas, with a more modern catalog.
 
-Este projeto é uma das partes da aplicação Severino, que será composta por:
+This project is one of the parts of the Severino application, which will be composed of:
 
-- Um portal web para os clientes (React)
-- Um app para os clientes (React Native)
-- Um portal para os profissionais (React) - Corresponde a este repositório
-- Um servidor para servir todas as aplicações (NodeJS)
+- A web portal for customers (React)
+- An app for customers (React Native)
+- A portal for professionals (React) - Corresponds to this repository
+- A server to serve all applications (NodeJS)
 
-As Principais bibliotecas utilizadas para fazer essa aplicação foram:
+The main libraries used to make this application were:
 
 - React
 - React Router Dom
@@ -23,7 +23,7 @@ As Principais bibliotecas utilizadas para fazer essa aplicação foram:
 - React Input Mask
 - Styled Components
 
-Para testes automatizados e testes estáticos, foram utilizados:
+For automated tests and static tests, the following were used:
 
 - Jest
 - React Testing Library
@@ -33,7 +33,7 @@ Para testes automatizados e testes estáticos, foram utilizados:
 - Husky
 - Lint Staged
 
-Para hospedagem foi utilizado:
+For hosting, the following were used:
 
 - AWS S3
 - AWS CloudFront
@@ -42,27 +42,28 @@ Para hospedagem foi utilizado:
 <hr/>
 <br/>
 
-### Cobertura de testes:
+### Coverage tests:
 
-![cobertura-severino-professionals](https://user-images.githubusercontent.com/26449308/146114742-534671b6-9bba-4abe-b837-01c45a7211bf.png)
+![coverage-severino-professionals](https://user-images.githubusercontent.com/26449308/146114742-534671b6-9bba-4abe-b837-01c45a7211bf.png)
 <br/> <br/>
 
-### Diagrama das páginas:
+### Page diagram:
 
 ![Fluxos ](https://user-images.githubusercontent.com/26449308/146116160-a8b09723-81b1-431b-aec6-23444cd603e2.png)
 <br/> <br/>
 
-### Arquitetura geral:
+### Architecture general:
 
-![arquitetura-geral](https://user-images.githubusercontent.com/26449308/146116357-83ade62b-9c51-4f55-ad7c-be62c8aedb11.png)
+![general-architecture](https://user-images.githubusercontent.com/26449308/146116357-83ade62b-9c51-4f55-ad7c-be62c8aedb11.png)
 
 ### TODO:
 
-- Melhorar seleção de cidades. Atualmente ao selecionar um estado, busca todas
-  as cidades naquele estado e isso pode ser lento às vezes.
-- Refatorar pasta services. Renomear pasta requests para apis.
+- Improve city selection. Currently, when selecting a state, it searches for all
+cities in that state and this can be slow at times.
 
-### Rodando localmente:
+- Refactor services folder. Rename requests folder to apis.
+
+### Running locally:
 
 - `git clone https://github.com/gabrielmendes98/severino-professionals.git`
 - `cd severino-professionals`
